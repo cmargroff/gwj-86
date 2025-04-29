@@ -1,6 +1,8 @@
 using Godot;
 using Godot.Collections;
 
+namespace JamTemplate.Managers;
+
 public partial class SaveManager : Node
 {
   public const string SaveGroup = "savedata";

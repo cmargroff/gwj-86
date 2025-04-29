@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Game;
+namespace JamTemplate.Managers;
 
 using Preloads = Dictionary<string, Dictionary<string, string>>;
 using Preloaded = Dictionary<string, Dictionary<string, Resource>>;

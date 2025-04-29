@@ -1,5 +1,6 @@
 using Godot;
-using Game;
+
+namespace JamTemplate.Managers;
 
 public partial class GameManager : Node
 {
