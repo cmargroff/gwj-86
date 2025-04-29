@@ -33,3 +33,12 @@ It will emit scene loading scene events when a new scene is requested so that yo
 This is the main entry point of the project. Its job is to start the first scene of your project and as such it is the default scene of the project.<br>
 By default the initial scene is set to `res://views/boot.tscn` but you can change it to whatever you need your initial scene to be. <br>
 This class may be expanded to include your main game state.
+
+### SaveManager
+This is a singleton that is used to persist nodes as .scn files to the user directory.
+The _EnterTree method calls loading on any objects in the SceneTree that are in the `savedata` node group.
+
+### Data stores
+These are globals in the project that are used as the persistent files. The node name dictates the filename that is used to save. These files are automatically loaded when the game starts if they are available.
+
+The current procedure here for saving and loading is naive but works.
