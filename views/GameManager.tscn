@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://djbv6asp7c24i"]
+
+[ext_resource type="Script" uid="uid://cj08dutrfh6j0" path="res://scripts/managers/GameManager.cs" id="1_xwnk1"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_xwnk1")
+InitialNodePath = "C:/Users/sora3/Documents/template/views/boot.tscn"

@@ -1,0 +1,28 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="template"
+run/main_scene="uid://djbv6asp7c24i"
+config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Settings="*res://scripts/stores/SettingsStore.cs"
+Config="*res://scripts/stores/ConfigStore.cs"
+PlayerData="*res://scripts/stores/PlayerDataStore.cs"
+SaveManager="*res://scripts/managers/SaveManager.cs"
+SceneManager="*res://views/SceneManager.tscn"
+
+[dotnet]
+
+project/assembly_name="template"
