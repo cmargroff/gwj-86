@@ -4,4 +4,4 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_xwnk1")
-InitialNodePath = "C:/Users/sora3/Documents/template/views/boot.tscn"
+InitialNodePath = "res://views/boot.tscn"
