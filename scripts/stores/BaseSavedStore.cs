@@ -6,6 +6,8 @@ namespace JamTemplate.Stores;
 
 public partial class BaseSavedStore
 {
+  public const string SK = "CHANGEME";
+  protected bool Encrypted = false;
   protected ConfigFile _configFile;
   public BaseSavedStore()
   {
@@ -22,10 +24,18 @@ public partial class BaseSavedStore
   }
   public void Load()
   {
-    var err = _configFile.Load(Filename);
+    Error err;
+    if (Encrypted)
+    {
+      err = _configFile.LoadEncryptedPass(Filename, SK);
+    }
+    else
+    {
+      err = _configFile.Load(Filename);
+    }
     if (err == Error.Ok)
     {
-      // do a thing
+      // bind values from file
     }
     else
     {
@@ -34,6 +44,11 @@ public partial class BaseSavedStore
   }
   public void Save()
   {
+    if (Encrypted)
+    {
+      _configFile.SaveEncryptedPass(Filename, SK);
+      return;
+    }
     _configFile.Save(Filename);
   }
   private void Initialize()
