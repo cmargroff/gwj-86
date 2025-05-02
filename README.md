@@ -5,7 +5,7 @@ This will always be a work in progress but it should be enough to jumpstart your
 ## Features
 - Save data manager
 - Scene manager with loading scene
-- Doesn't include other libraries
+- IoC structure to handle getting the most important parts of the code from anywhere automatically! [WIP]
 - VSCode debugging setup
 
 ## Planned features
