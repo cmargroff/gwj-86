@@ -130,15 +130,7 @@ public partial class SceneManager : Node3D
   }
   public void ChangeScene(string path)
   {
-    _nextStringPath = path;
-    EmitSignal(SignalName.LoadingShown);
-    ShowLoading();
-
-    if (_currentScene != null)
-      _currentScene.QueueFree();
-
-    FreePreloads();
-    LoadNextScene();
+    ChangeScene(path, new());
   }
   public void ChangeScene(string path, Preloads preloads)
   {
