@@ -1,7 +1,10 @@
 using Godot;
+using JamTemplate.Util;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace JamTemplate.Managers;
 
@@ -10,7 +13,6 @@ using Preloaded = Dictionary<string, Dictionary<string, Resource>>;
 
 public partial class SceneManager : Node3D
 {
-  public static SceneManager Instance { get; private set; }
   [Signal]
   public delegate void LoadingShownEventHandler();
   [Signal]
@@ -21,12 +23,17 @@ public partial class SceneManager : Node3D
   private Preload _currentLoading;
   private Godot.Collections.Array _currentProgress;
   private List<Preload> _preloadQueue;
-  private string _nextStringPath;
+  private string _nextName;
   private bool _processing = false;
+  private IServiceProvider _serviceProvider;
+  [FromServices]
+  public void Inject(IServiceProvider serviceProvider)
+  {
+    _serviceProvider = serviceProvider;
+  }
   public override void _Ready()
   {
     GD.Print(GetType().Name, " Ready");
-    Instance = this;
   }
   public override void _EnterTree()
   {
@@ -128,13 +135,13 @@ public partial class SceneManager : Node3D
   {
     CheckPreload();
   }
-  public void ChangeScene(string path)
+  public void ChangeScene(string name)
   {
-    ChangeScene(path, new());
+    ChangeScene(name, new());
   }
-  public void ChangeScene(string path, Preloads preloads)
+  public void ChangeScene(string name, Preloads preloads)
   {
-    _nextStringPath = path;
+    _nextName = name;
     EmitSignal(SignalName.LoadingShown);
     ShowLoading();
 
@@ -143,9 +150,15 @@ public partial class SceneManager : Node3D
 
     FreePreloads();
 
-    ListPreloads(preloads);
-
-    StartPreloads();
+    if (preloads.Count > 0)
+    {
+      ListPreloads(preloads);
+      StartPreloads();
+    }
+    else
+    {
+      LoadNextScene();
+    }
   }
   private void FinishedPreloading()
   {
@@ -155,11 +168,10 @@ public partial class SceneManager : Node3D
   }
   private void LoadNextScene()
   {
-    if (_nextStringPath != null)
+    if (_nextName != null)
     {
       // load the next scene and append it to the manager
-      var packedScene = ResourceLoader.Singleton.Load(_nextStringPath) as PackedScene;
-      var scene = packedScene.Instantiate();
+      var scene = _serviceProvider.GetKeyedService<Node>(_nextName);
       scene.Connect(Node.SignalName.Ready, Callable.From(SceneFinishedLoading));
       AddChild(scene);
       _currentScene = scene;
@@ -174,5 +186,14 @@ public partial class SceneManager : Node3D
   {
     public string Key;
     public string Path;
+  }
+  public static string[] ListAvailableScenes()
+  {
+    return ResourceLoader.ListDirectory("res://views")
+      .Where(
+        path => Regex.Match(path, "\\.t?scn$").Success
+      )
+      .Select(rel => $"res://views/{rel}")
+      .ToArray();
   }
 }

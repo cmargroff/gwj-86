@@ -1,11 +1,12 @@
-using System;
 using Godot;
 using JamTemplate.Managers;
-using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
-using System.Linq;
-using JamTemplate.Util;
 using JamTemplate.Stores;
+using JamTemplate.Util;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 
 namespace JamTemplate;
 
@@ -17,12 +18,12 @@ public partial class Entry : Node
   {
     var Services = new ServiceCollection()
     .AddSingleton(InjectNodeClass<GameManager>())
-    // .AddSingleton(InjectNodeClass<SaveManager>())
     .AddSingleton<PlayerDataStore>()
     .AddSingleton<ConfigStore>()
     .AddSingleton<SettingsStore>()
     .AddSingleton(InjectInstantiatedPackedScene<SceneManager>("res://views/SceneManager.tscn"))
     ;
+    AddScenes(Services);
     ServiceProvider = Services.BuildServiceProvider();
     var gameManager = ServiceProvider.GetRequiredService<GameManager>();
     GetTree().Root.CallDeferred("add_child", gameManager);
@@ -38,16 +39,19 @@ public partial class Entry : Node
       return obj;
     };
   }
-  private Func<IServiceProvider, T> InjectInstantiatedPackedScene<T>(string path) where T : Node
+  private Func<IServiceProvider, T> InjectInstantiatedPackedScene<T>(string path, bool autoParent = true) where T : Node
   {
     return (serviceProvider) =>
     {
-      var packed = ResourceLoader.Load<PackedScene>("res://views/SceneManager.tscn");
+      var packed = ResourceLoader.Load<PackedScene>(path);
       var node = packed.Instantiate<T>();
 
       InjectAttributedMethods(node, serviceProvider);
 
-      GetTree().Root.CallDeferred("add_child", node);
+      if (autoParent)
+      {
+        GetTree().Root.CallDeferred("add_child", node);
+      }
       return node;
     };
   }
@@ -68,5 +72,20 @@ public partial class Entry : Node
         .Select(param => provider.GetService(param.ParameterType)).ToArray();
       method.Invoke(obj, args);
     }
+  }
+  public void AddScenes(IServiceCollection collection)
+  {
+    var paths = SceneManager.ListAvailableScenes();
+    foreach (var path in paths)
+    {
+      collection.AddKeyedTransient(Path.GetFileNameWithoutExtension(path), InjectAvailableScene(path));
+    }
+  }
+  public Func<IServiceProvider, object?, Node> InjectAvailableScene(string path)
+  {
+    return (ServiceProvider, serviceKey) =>
+    {
+      return InjectInstantiatedPackedScene<Node>(path, false)(ServiceProvider);
+    };
   }
 }
