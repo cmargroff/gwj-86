@@ -4,4 +4,4 @@
 
 [node name="GameManager" type="Node"]
 script = ExtResource("1_xwnk1")
-InitialNodePath = "res://views/boot.tscn"
+InitialNodePath = "res://views/Title.tscn"

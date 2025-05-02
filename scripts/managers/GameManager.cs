@@ -1,17 +1,27 @@
 using Godot;
+using JamTemplate.Util;
 
 namespace JamTemplate.Managers;
 
 public partial class GameManager : Node
 {
-  [Export]
-  public string InitialNodePath;
+  private ConfigFile _config;
+  private SceneManager _sceneManager;
+  [FromServices]
+  public void Inject(SceneManager sceneManager)
+  {
+    GD.Print(GetType().Name, " Constructed");
+    _config = new ConfigFile();
+    _config.Load("res://config.ini");
+    _sceneManager = sceneManager;
+  }
   public override void _Ready()
   {
     GD.Print(GetType().Name, " Started");
-    if (InitialNodePath != null)
+    var InitialScenePath = (string)_config.GetValue("game", "INITIAL_SCENE_PATH");
+    if (InitialScenePath != "")
     {
-      SceneManager.Instance.ChangeScene(InitialNodePath);
+      _sceneManager.ChangeScene(InitialScenePath);
     }
   }
 }
