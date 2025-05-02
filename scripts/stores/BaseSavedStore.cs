@@ -1,12 +1,60 @@
 using Godot;
-using JamTemplate.Managers;
+using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace JamTemplate.Stores;
 
-public partial class BaseSavedStore : Node
+public partial class BaseSavedStore
 {
-  public override void _EnterTree()
+  protected ConfigFile _configFile;
+  public BaseSavedStore()
   {
-    AddToGroup(SaveManager.SaveGroup);
+    _configFile = new ConfigFile();
+    Load();
+  }
+  private string Filename
+  {
+    get
+    {
+      var basename = Regex.Replace(GetType().Name, "[Ss]tore$", "");
+      return $"user://{basename}.ini";
+    }
+  }
+  public void Load()
+  {
+    var err = _configFile.Load(Filename);
+    if (err == Error.Ok)
+    {
+      // do a thing
+    }
+    else
+    {
+      Initialize();
+    }
+  }
+  public void Save()
+  {
+    _configFile.Save(Filename);
+  }
+  private void Initialize()
+  {
+    var thisType = GetType();
+    var fields = thisType.GetFields(BindingFlags.Public | BindingFlags.Instance);
+
+    foreach (var field in fields)
+    {
+      switch (field.FieldType.Name)
+      {
+        case "Int32":
+          _configFile.SetValue("", field.Name, (int)field.GetValue(this));
+          break;
+        case "String":
+          _configFile.SetValue("", field.Name, (string)field.GetValue(this));
+          break;
+        default:
+          break;
+      }
+    }
+    Save();
   }
 }

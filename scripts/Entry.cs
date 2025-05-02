@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using System.Linq;
 using JamTemplate.Util;
+using JamTemplate.Stores;
 
 namespace JamTemplate;
 
@@ -16,7 +17,10 @@ public partial class Entry : Node
   {
     var Services = new ServiceCollection()
     .AddSingleton(InjectNodeClass<GameManager>())
-    .AddSingleton(InjectNodeClass<SaveManager>())
+    // .AddSingleton(InjectNodeClass<SaveManager>())
+    .AddSingleton<PlayerDataStore>()
+    .AddSingleton<ConfigStore>()
+    .AddSingleton<SettingsStore>()
     .AddSingleton(InjectInstantiatedPackedScene<SceneManager>("res://views/SceneManager.tscn"))
     ;
     ServiceProvider = Services.BuildServiceProvider();
