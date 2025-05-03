@@ -72,6 +72,16 @@ public partial class Entry : Node
         .Select(param => provider.GetService(param.ParameterType)).ToArray();
       method.Invoke(obj, args);
     }
+
+    var objFields = objType.GetFields(BindingFlags.Instance | BindingFlags.Public)
+    .Where(fieldInfo => !fieldInfo.FieldType.IsValueType && fieldInfo.FieldType.IsClass);
+
+    foreach (var fieldInfo in objFields)
+    {
+      var val = fieldInfo.GetValue(obj);
+      if (val != null)
+        InjectAttributedMethods(val, provider);
+    }
   }
   public void AddScenes(IServiceCollection collection)
   {
