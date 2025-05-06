@@ -86,3 +86,11 @@ CardRes = ExtResource("7_fxiug")
 [node name="WildCard3" parent="CenterContainer/HBoxContainer/HFlowContainer/MarginContainer/GridContainer" instance=ExtResource("5_7be7o")]
 layout_mode = 2
 CardRes = ExtResource("8_1jnxx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+ignore_time_scale = true
+
+[connection signal="timeout" from="Timer" to="." method="Timeout"]
