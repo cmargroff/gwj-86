@@ -30,11 +30,10 @@ jobs:
           mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
       - name: Windows Build
         run: |
-          echo $EXPORT_NAME
           mkdir -v -p build/windows
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/$EXPORT_NAME.exe"
+          godot --headless --verbose --export-release "Windows Desktop" "$EXPORT_DIR/windows/${EXPORT_NAME##*/}.exe"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -60,7 +59,7 @@ jobs:
           mkdir -v -p build/linux
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "Linux" "$EXPORT_DIR/linux/$EXPORT_NAME.x86_64"
+          godot --headless --verbose --export-release "Linux" "$EXPORT_DIR/linux/${EXPORT_NAME##*/}.x86_64"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -86,7 +85,7 @@ jobs:
           mkdir -v -p build/mac
           EXPORT_DIR="$(readlink -f build)"
           cd $PROJECT_PATH
-          godot --headless --verbose --export-release "macOS" "$EXPORT_DIR/mac/$EXPORT_NAME.zip"
+          godot --headless --verbose --export-release "macOS" "$EXPORT_DIR/mac/${EXPORT_NAME##*/}.zip"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
