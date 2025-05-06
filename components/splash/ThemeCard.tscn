@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnxurcn6pcbbr"]
+
+[ext_resource type="Texture2D" uid="uid://bhlppv8uccili" path="res://assets/textures/godot_theme_card.svg" id="1_r1g1y"]
+[ext_resource type="FontFile" uid="uid://0k7r5qj6wgl7" path="res://assets/fonts/Oswald-SemiBold.ttf" id="2_5va7s"]
+[ext_resource type="Script" uid="uid://dp2m0lnvpcvgr" path="res://scripts/components/splash/ThemeCard.cs" id="2_mvdgn"]
+
+[node name="ThemeCard" type="TextureRect"]
+size_flags_horizontal = 3
+texture = ExtResource("1_r1g1y")
+expand_mode = 5
+script = ExtResource("2_mvdgn")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.980392, 0.380392, 0.286275, 1)
+theme_override_fonts/font = ExtResource("2_5va7s")
+theme_override_font_sizes/font_size = 50
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

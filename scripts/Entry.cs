@@ -21,6 +21,7 @@ public partial class Entry : Node
     .AddSingleton<PlayerDataStore>()
     .AddSingleton<ConfigStore>()
     .AddSingleton<SettingsStore>()
+    .AddSingleton<ConfigManager>()
     .AddSingleton(InjectInstantiatedPackedScene<SceneManager>("res://views/SceneManager.tscn"))
     ;
     AddScenes(Services);
@@ -81,6 +82,14 @@ public partial class Entry : Node
       var val = fieldInfo.GetValue(obj);
       if (val != null)
         InjectAttributedMethods(val, provider);
+    }
+    // inject children in the scene tree
+    if (obj is Node node && node.GetChildCount() > 0)
+    {
+      foreach (var child in node.GetChildren())
+      {
+        InjectAttributedMethods(child, provider);
+      }
     }
   }
   public void AddScenes(IServiceCollection collection)
