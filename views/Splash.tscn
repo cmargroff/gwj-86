@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://b8bm76mhfmwb5"]
+
+[ext_resource type="Script" uid="uid://be81cd05cwp15" path="res://views/Splash.cs" id="1_kur6f"]
+[ext_resource type="PackedScene" uid="uid://bsibg77xt75ap" path="res://components/splash/BuildLabel.tscn" id="2_eg5kb"]
+[ext_resource type="PackedScene" uid="uid://bnxurcn6pcbbr" path="res://components/splash/ThemeCard.tscn" id="2_ftxjo"]
+[ext_resource type="Texture2D" uid="uid://7scj2udxt43l" path="res://assets/textures/GWJ-Half-Logo-Orange.svg" id="2_qwakf"]
+[ext_resource type="PackedScene" uid="uid://c3kylo33r1wos" path="res://components/splash/WildCard.tscn" id="5_7be7o"]
+[ext_resource type="Resource" uid="uid://kjvmjoju77r2" path="res://resources/splash/wildcard1.tres" id="6_bjvs7"]
+[ext_resource type="Resource" uid="uid://drmaclbkwbudr" path="res://resources/splash/wildcard2.tres" id="7_fxiug"]
+[ext_resource type="Resource" uid="uid://dc8splogd0h6v" path="res://resources/splash/wildcard3.tres" id="8_1jnxx"]
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kur6f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.941176, 0.941176, 0.941176, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(860, 640)
+layout_mode = 2
+
+[node name="Left" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/HBoxContainer/Left"]
+layout_mode = 2
+texture = ExtResource("2_qwakf")
+expand_mode = 4
+
+[node name="BuildLabel" parent="CenterContainer/HBoxContainer/Left" instance=ExtResource("2_eg5kb")]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="HFlowContainer" type="VBoxContainer" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ThemeCard" parent="CenterContainer/HBoxContainer/HFlowContainer" instance=ExtResource("2_ftxjo")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/HBoxContainer/HFlowContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/HBoxContainer/HFlowContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+columns = 3
+
+[node name="WildCard" parent="CenterContainer/HBoxContainer/HFlowContainer/MarginContainer/GridContainer" instance=ExtResource("5_7be7o")]
+layout_mode = 2
+CardRes = ExtResource("6_bjvs7")
+
+[node name="WildCard2" parent="CenterContainer/HBoxContainer/HFlowContainer/MarginContainer/GridContainer" instance=ExtResource("5_7be7o")]
+layout_mode = 2
+CardRes = ExtResource("7_fxiug")
+
+[node name="WildCard3" parent="CenterContainer/HBoxContainer/HFlowContainer/MarginContainer/GridContainer" instance=ExtResource("5_7be7o")]
+layout_mode = 2
+CardRes = ExtResource("8_1jnxx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+ignore_time_scale = true
+
+[connection signal="timeout" from="Timer" to="." method="Timeout"]
