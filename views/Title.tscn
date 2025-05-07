@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://boi3bbpwc8wvr"]
+[gd_scene load_steps=2 format=3 uid="uid://boi3bbpwc8wvr"]
+
+[ext_resource type="Script" uid="uid://c7kejhn7h1f0h" path="res://views/Title.cs" id="1_e3r8i"]
 
 [node name="Title" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_e3r8i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -35,11 +38,127 @@ text = "Game Title"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Attribution" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="Menu" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "by some people"
-horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer/Menu"]
 layout_mode = 2
 text = "Start"
+
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer/Menu"]
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer/Menu"]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/Menu"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Options" type="Control" parent="CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="CenterContainer/Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.314316, 0.314316, 0.314316, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Options"]
+layout_mode = 2
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 397.0
+offset_bottom = 297.0
+
+[node name="Label" type="Label" parent="CenterContainer/Options/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Options"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/Options/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 5
+
+[node name="Left" type="VBoxContainer" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Volume" type="Label" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left"]
+layout_mode = 2
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left"]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left/GridContainer"]
+layout_mode = 2
+text = "Main"
+
+[node name="MainVolumeSlider" type="HSlider" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Label2" type="Label" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left/GridContainer"]
+layout_mode = 2
+text = "BGM"
+
+[node name="BGMVolumeSlider" type="HSlider" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Label3" type="Label" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left/GridContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Label4" type="Label" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left/GridContainer"]
+layout_mode = 2
+text = "Voice"
+
+[node name="VoiceVolumeSlider" type="HSlider" parent="CenterContainer/Options/VBoxContainer/HBoxContainer/MarginContainer/Left/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Right" type="VBoxContainer" parent="CenterContainer/Options/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CloseOptionsButton" type="Button" parent="CenterContainer/Options/VBoxContainer"]
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Menu/StartButton" to="." method="Start"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Menu/OptionsButton" to="." method="ToggleOptions"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Menu/CreditsButton" to="." method="Credits"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Menu/QuitButton" to="." method="Quit"]
+[connection signal="pressed" from="CenterContainer/Options/VBoxContainer/CloseOptionsButton" to="." method="ToggleOptions"]
