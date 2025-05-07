@@ -4,50 +4,30 @@ namespace JamTemplate.Stores;
 
 public partial class SettingsStore : BaseSavedStore
 {
+    public float MainVol
+    {
+        get => GetValue("MainVol");
+        set => SetValue("MainVol", value);
+    }
 
-  // refactor this code to be automatic
-  public float MainVol
-  {
-    get
+    public float SFXVol
     {
-      return Mathf.Clamp((float)_configFile.GetValue("volume", "MainVol", 1f), 0f, 1f);
+        get => GetValue("SFXVol"); 
+        set => SetValue("SFXVol", value);
     }
-    set
+
+    public float BGMVol
     {
-      _configFile.SetValue("volume", "MainVol", value);
+        get => GetValue("BGMVol"); 
+        set => SetValue("BGMVol", value);
     }
-  }
-  public float SFXVol
-  {
-    get
+
+    public float VoiceVol
     {
-      return Mathf.Clamp((float)_configFile.GetValue("volume", "SFXVol", 1f), 0f, 1f);
+        get => GetValue("VoiceVol");
+        set => SetValue("VoiceVol", value);
     }
-    set
-    {
-      _configFile.SetValue("volume", "SFXVol", value);
-    }
-  }
-  public float BGMVol
-  {
-    get
-    {
-      return Mathf.Clamp((float)_configFile.GetValue("volume", "BGMVol", 1f), 0f, 1f);
-    }
-    set
-    {
-      _configFile.SetValue("volume", "BGMVol", value);
-    }
-  }
-  public float VoiceVol
-  {
-    get
-    {
-      return Mathf.Clamp((float)_configFile.GetValue("volume", "VoiceVol", 1f), 0f, 1f);
-    }
-    set
-    {
-      _configFile.SetValue("volume", "VoiceVol", value);
-    }
-  }
+    
+    private float GetValue(string key) => Mathf.Clamp((float)_configFile.GetValue("volume", key, 1f), 0f, 1f);
+    private void SetValue(string key, float value) => _configFile.SetValue("volume", key, value);
 }
