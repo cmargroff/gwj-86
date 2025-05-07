@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "template": {
+      "commandName": "Project"
+    },
+    "Run in Godot": {
+      "commandName": "Executable",
+      "executablePath": "%GODOT_HOME%\\Godot_v4.4-stable_mono_win64.exe",
+      "workingDirectory": "."
+    }
+  }
+}
