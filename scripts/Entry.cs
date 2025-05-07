@@ -22,6 +22,7 @@ public partial class Entry : Node
     .AddSingleton<ConfigStore>()
     .AddSingleton<SettingsStore>()
     .AddSingleton<ConfigManager>()
+    .AddSingleton<AudioManager>()
     .AddSingleton(InjectInstantiatedPackedScene<SceneManager>("res://views/SceneManager.tscn"))
     ;
     AddScenes(Services);
