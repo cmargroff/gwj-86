@@ -18,8 +18,8 @@ public class AudioManager
     }
     set
     {
-      AudioServer.Singleton.SetBusVolumeLinear(0, _settings.MainVol);
       _settings.MainVol = value;
+      AudioServer.Singleton.SetBusVolumeLinear(0, _settings.MainVol);
       _settings.Save();
     }
   }
