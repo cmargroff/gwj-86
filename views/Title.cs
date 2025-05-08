@@ -59,7 +59,10 @@ public partial class Title : Control
   {
     _sceneManager.ChangeScene("Credits");
   }
-  public void Quit() { }
+  public void Quit()
+  {
+    GetTree().Quit();
+  }
   private class SliderBinding
   {
     public string NodePath;
