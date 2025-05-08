@@ -1,0 +1,5 @@
+[center]
+[b]Credits[/b]
+Designer: Some Guy
+Programmer: Some Other Guy
+[/center]
