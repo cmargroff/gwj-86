@@ -10,10 +10,12 @@ public partial class Title : Control
   private Control _options;
   private bool _optionsShown = false;
   private AudioManager _audio;
+  private SceneManager _sceneManager;
   [FromServices]
-  public void Inject(AudioManager audio)
+  public void Inject(AudioManager audio, SceneManager sceneManager)
   {
     _audio = audio;
+    _sceneManager = sceneManager;
   }
   public override void _EnterTree()
   {
@@ -53,7 +55,10 @@ public partial class Title : Control
     _optionsShown = !_optionsShown;
     _options.Visible = _optionsShown;
   }
-  public void Credits() { }
+  public void Credits()
+  {
+    _sceneManager.ChangeScene("Credits");
+  }
   public void Quit() { }
   private class SliderBinding
   {
