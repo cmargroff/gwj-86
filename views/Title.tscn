@@ -60,6 +60,7 @@ text = "Quit"
 
 [node name="Options" type="Control" parent="CenterContainer"]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(400, 300)
 layout_mode = 2
 
