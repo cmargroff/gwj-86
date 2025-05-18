@@ -1,15 +1,14 @@
-using Godot;
-using JamTemplate.Util;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Godot;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate.Managers;
 
-using Preloads = Dictionary<string, Dictionary<string, string>>;
 using Preloaded = Dictionary<string, Dictionary<string, Resource>>;
+using Preloads = Dictionary<string, Dictionary<string, string>>;
 
 public partial class SceneManager : Node3D
 {
@@ -25,12 +24,6 @@ public partial class SceneManager : Node3D
   private List<Preload> _preloadQueue;
   private string _nextName;
   private bool _processing = false;
-  private IServiceProvider _serviceProvider;
-  [FromServices]
-  public void Inject(IServiceProvider serviceProvider)
-  {
-    _serviceProvider = serviceProvider;
-  }
   public override void _Ready()
   {
     GD.Print(GetType().Name, " Ready");
@@ -58,7 +51,7 @@ public partial class SceneManager : Node3D
         {
           if (!resource.Value.IsQueuedForDeletion())
           {
-            resource.Value.Free();
+            //resource.Value.Free(); //resources are automatically freed when there are 0 references to them
           }
         }
       }
@@ -73,7 +66,7 @@ public partial class SceneManager : Node3D
     {
       foreach (var resource in section.Value)
       {
-        _preloadQueue.Add(new Preload { Key = $"{section.Key}.{resource.Key}", Path = resource.Value });
+        _preloadQueue.Add(new Preload { Group = section.Key, Key = $"{resource.Key}", Path = resource.Value });
       }
     }
   }
@@ -86,14 +79,11 @@ public partial class SceneManager : Node3D
   private void MapPreloaded()
   {
     var resource = ResourceLoader.Singleton.LoadThreadedGet(_currentLoading.Path);
-    var parts = _currentLoading.Key.Split(".");
-    var section = parts[0];
-    var key = parts[1];
-    if (!PreloadedResources.ContainsKey(section))
+    if (!PreloadedResources.ContainsKey(_currentLoading.Group))
     {
-      PreloadedResources.Add(section, new());
+      PreloadedResources.Add(_currentLoading.Group, new());
     }
-    PreloadedResources[section].Add(key, resource);
+    PreloadedResources[_currentLoading.Group].Add(_currentLoading.Key, resource);
   }
   private void NextResource()
   {
@@ -148,6 +138,8 @@ public partial class SceneManager : Node3D
     if (_currentScene != null)
       _currentScene.QueueFree();
 
+    Globals.CloseSceneScope();
+
     FreePreloads();
 
     if (preloads.Count > 0)
@@ -171,7 +163,8 @@ public partial class SceneManager : Node3D
     if (_nextName != null)
     {
       // load the next scene and append it to the manager
-      var scene = _serviceProvider.GetKeyedService<Node>(_nextName);
+      Globals.CreateSceneScope();
+      var scene = Globals.ServiceProvider.GetKeyedService<Node>(_nextName);
       scene.Connect(Node.SignalName.Ready, Callable.From(SceneFinishedLoading));
       AddChild(scene);
       _currentScene = scene;
@@ -184,16 +177,21 @@ public partial class SceneManager : Node3D
   }
   private class Preload
   {
+    public string Group;
     public string Key;
     public string Path;
   }
+
   public static string[] ListAvailableScenes()
   {
     return ResourceLoader.ListDirectory("res://views")
       .Where(
-        path => Regex.Match(path, "\\.t?scn$").Success
+        path => SceneFileNameRegex().Match(path).Success
       )
       .Select(rel => $"res://views/{rel}")
       .ToArray();
   }
+
+  [GeneratedRegex("\\.t?scn$")]
+  private static partial Regex SceneFileNameRegex();
 }
