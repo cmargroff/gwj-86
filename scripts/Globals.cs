@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace JamTemplate;
 
-public partial class Entry : Node
+public partial class Globals : Node
 {
   public static ServiceProvider ServiceProvider;
 
