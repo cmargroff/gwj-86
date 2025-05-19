@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Godot;
-using Microsoft.Extensions.DependencyInjection;
 using JamTemplate.Managers;
 using JamTemplate.Services;
 using JamTemplate.Stores;
 using JamTemplate.Util;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate;
 
@@ -27,7 +27,7 @@ public partial class Globals : Node
   public override void _EnterTree()
   {
     var services = new ServiceCollection()
-    .AddScoped(InjectNodeClass<GameManager>())
+    .AddSingleton(InjectNodeClass<GameManager>(true))
     .AddScoped<PlayerDataStore>()
     .AddSingleton<ConfigStore>()
     .AddSingleton<SettingsStore>()
@@ -47,15 +47,16 @@ public partial class Globals : Node
   {
     return (serviceProvider) =>
     {
-      var obj = new T();
+      var node = new T();
+      node.Name = typeof(T).Name + "_DI_Managed";
 
-      InjectAttributedMethods(obj, serviceProvider);
+      InjectAttributedMethods(node, serviceProvider);
 
       if (autoParent)
       {
-        AddChild(obj);
+        AddChild(node);
       }
-      return obj;
+      return node;
     };
   }
   private Func<IServiceProvider, T> InjectInstantiatedPackedScene<T>(string path, bool autoParent = true) where T : Node
@@ -64,6 +65,7 @@ public partial class Globals : Node
     {
       var packed = ResourceLoader.Load<PackedScene>(path);
       var node = packed.Instantiate<T>();
+      node.Name = typeof(T).Name + "_DI_Managed";
 
       InjectAttributedMethods(node, serviceProvider);
 
