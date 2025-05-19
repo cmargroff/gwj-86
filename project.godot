@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="template"
+config/name="game jam template"
 run/main_scene="uid://bhn3okwreagx3"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/features=PackedStringArray("4.4.1", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]

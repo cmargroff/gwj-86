@@ -1,44 +1,62 @@
-using Godot;
-using JamTemplate.Managers;
-using JamTemplate.Stores;
-using JamTemplate.Util;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Godot;
+using JamTemplate.Managers;
+using JamTemplate.Services;
+using JamTemplate.Stores;
+using JamTemplate.Util;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate;
 
-public partial class Entry : Node
+public partial class Globals : Node
 {
-  public static ServiceProvider ServiceProvider;
+  private static ServiceProvider _serviceProvider;
+  private static IServiceScope _currentScope;
+  public static IServiceProvider ServiceProvider
+  {
+    get
+    {
+      if (_currentScope != null) return _currentScope.ServiceProvider;
+      return _serviceProvider;
+    }
+  }
 
   public override void _EnterTree()
   {
-    var Services = new ServiceCollection()
-    .AddSingleton(InjectNodeClass<GameManager>())
-    .AddSingleton<PlayerDataStore>()
+    var services = new ServiceCollection()
+    .AddSingleton(InjectNodeClass<GameManager>(true))
+    .AddScoped<PlayerDataStore>()
     .AddSingleton<ConfigStore>()
     .AddSingleton<SettingsStore>()
     .AddSingleton<ConfigManager>()
-    .AddSingleton<AudioManager>()
+    .AddScoped(InjectNodeClass<AudioManager>())
+    .AddSingleton<RandomNumberGeneratorService>()
     .AddSingleton(InjectInstantiatedPackedScene<SceneManager>("res://views/SceneManager.tscn"))
+    .AddScoped(InjectNodeClass<PauseManager>())
     ;
-    AddScenes(Services);
-    ServiceProvider = Services.BuildServiceProvider();
-    var gameManager = ServiceProvider.GetRequiredService<GameManager>();
-    GetTree().Root.CallDeferred("add_child", gameManager);
+
+    AddScenes(services);
+    _serviceProvider = services.BuildServiceProvider();
+    CreateSceneScope();
   }
-  private Func<IServiceProvider, T> InjectNodeClass<T>() where T : Node, new()
+
+  private Func<IServiceProvider, T> InjectNodeClass<T>(bool autoParent = false) where T : Node, new()
   {
     return (serviceProvider) =>
     {
-      var obj = new T();
+      var node = new T();
+      node.Name = typeof(T).Name + "_DI_Managed";
 
-      InjectAttributedMethods(obj, serviceProvider);
+      InjectAttributedMethods(node, serviceProvider);
 
-      return obj;
+      if (autoParent)
+      {
+        AddChild(node);
+      }
+      return node;
     };
   }
   private Func<IServiceProvider, T> InjectInstantiatedPackedScene<T>(string path, bool autoParent = true) where T : Node
@@ -47,6 +65,7 @@ public partial class Entry : Node
     {
       var packed = ResourceLoader.Load<PackedScene>(path);
       var node = packed.Instantiate<T>();
+      node.Name = typeof(T).Name + "_DI_Managed";
 
       InjectAttributedMethods(node, serviceProvider);
 
@@ -57,15 +76,12 @@ public partial class Entry : Node
       return node;
     };
   }
-  private void InjectAttributedMethods<T>(T obj, IServiceProvider provider)
+  public static void InjectAttributedMethods<T>(T obj, IServiceProvider provider)
   {
     var objType = obj.GetType();
     var methods = objType
       .GetMethods(BindingFlags.Instance | BindingFlags.Public)
-      .Where(method =>
-      {
-        return method.GetCustomAttribute<FromServicesAttribute>() != null;
-      });
+      .Where(method => method.GetCustomAttribute<FromServicesAttribute>() != null);
 
     foreach (var method in methods)
     {
@@ -93,6 +109,7 @@ public partial class Entry : Node
       }
     }
   }
+
   public void AddScenes(IServiceCollection collection)
   {
     var paths = SceneManager.ListAvailableScenes();
@@ -101,11 +118,22 @@ public partial class Entry : Node
       collection.AddKeyedTransient(Path.GetFileNameWithoutExtension(path), InjectAvailableScene(path));
     }
   }
+
   public Func<IServiceProvider, object?, Node> InjectAvailableScene(string path)
   {
-    return (ServiceProvider, serviceKey) =>
-    {
-      return InjectInstantiatedPackedScene<Node>(path, false)(ServiceProvider);
-    };
+    return (ServiceProvider, serviceKey) => InjectInstantiatedPackedScene<Node>(path, false)(ServiceProvider);
+  }
+
+  public static void CreateSceneScope()
+  {
+    if (_currentScope is not null)
+      throw new InvalidOperationException("You must close the service scope before opening a new one. Call " + nameof(CloseSceneScope) + "().");
+    _currentScope = _serviceProvider.CreateScope();
+  }
+
+  public static void CloseSceneScope()
+  {
+    _currentScope?.Dispose();
+    _currentScope = null;
   }
 }
