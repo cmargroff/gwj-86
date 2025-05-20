@@ -24,6 +24,7 @@ public partial class SceneManager : Node3D
   private List<Preload> _preloadQueue;
   private string _nextName;
   private bool _processing = false;
+  private bool _ready = false;
   public override void _Ready()
   {
     GD.Print(GetType().Name, " Ready");
@@ -35,6 +36,7 @@ public partial class SceneManager : Node3D
   }
   public void ShowLoading()
   {
+    if (!_ready) return;
     _loadingScene.Visible = true;
   }
   public void HideLoading()
