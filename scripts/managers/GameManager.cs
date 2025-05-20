@@ -18,10 +18,16 @@ public partial class GameManager : Node
   public override void _Ready()
   {
     GD.Print(GetType().Name, " Started");
-    var InitialScenePath = (string)_config.GetValue("game", "INITIAL_SCENE_NAME");
-    if (InitialScenePath != "")
+    var InitialSceneName = (string)_config.GetValue("game", "INITIAL_SCENE_NAME");
+    var currentScene = GetTree().CurrentScene;
+    if (currentScene.Name != "Entry")
     {
-      _sceneManager.ChangeScene(InitialScenePath);
+      InitialSceneName = currentScene.Name;
+      currentScene.QueueFree();
+    }
+    if (InitialSceneName != "")
+    {
+      _sceneManager.ChangeScene(InitialSceneName);
     }
   }
 }
