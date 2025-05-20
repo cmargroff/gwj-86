@@ -7,6 +7,7 @@ using JamTemplate.Managers;
 using JamTemplate.Services;
 using JamTemplate.Stores;
 using JamTemplate.Util;
+using JamTemplate.Util.PlayerInput;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate;
@@ -28,18 +29,21 @@ public partial class Globals : Node
   {
     var services = new ServiceCollection()
     .AddSingleton(InjectNodeClass<GameManager>(true))
-    .AddScoped<PlayerDataStore>()
     .AddSingleton<ConfigStore>()
     .AddSingleton<SettingsStore>()
     .AddSingleton<ConfigManager>()
-    .AddScoped(InjectNodeClass<AudioManager>())
     .AddSingleton<RandomNumberGeneratorService>()
     .AddSingleton(InjectInstantiatedPackedScene<SceneManager>("res://views/SceneManager.tscn"))
+    .AddSingleton<PlayerManager>()
+    .AddScoped<PlayerDataStore>()
+    .AddScoped(InjectNodeClass<AudioManager>())
     .AddScoped(InjectNodeClass<PauseManager>())
     ;
 
     AddScenes(services);
     _serviceProvider = services.BuildServiceProvider();
+    _serviceProvider.GetRequiredService<GameManager>();
+    _serviceProvider.GetRequiredService<PlayerManager>();
     CreateSceneScope();
   }
 
@@ -119,7 +123,7 @@ public partial class Globals : Node
     }
   }
 
-  public Func<IServiceProvider, object?, Node> InjectAvailableScene(string path)
+  public Func<IServiceProvider, object, Node> InjectAvailableScene(string path)
   {
     return (ServiceProvider, serviceKey) => InjectInstantiatedPackedScene<Node>(path, false)(ServiceProvider);
   }
