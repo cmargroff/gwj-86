@@ -74,6 +74,7 @@ public partial class SceneManager : Node3D
   }
   private void StartPreloads()
   {
+    GD.Print("Starting preloads");
     if (_preloadQueue == null) return;
     NextResource();
     _processing = true;
@@ -133,6 +134,7 @@ public partial class SceneManager : Node3D
   }
   public void ChangeScene(string name, Preloads preloads)
   {
+    GD.Print("Starting scene change to ", name);
     _nextName = name;
     EmitSignal(SignalName.LoadingShown);
     ShowLoading();
@@ -166,8 +168,10 @@ public partial class SceneManager : Node3D
     {
       // load the next scene and append it to the manager
       Globals.CreateSceneScope();
+      GD.Print("Loading scene ", _nextName);
       var scene = Globals.ServiceProvider.GetKeyedService<Node>(_nextName);
       scene.Connect(Node.SignalName.Ready, Callable.From(SceneFinishedLoading));
+      GD.Print("Runnning scene ", _nextName);
       AddChild(scene);
       _currentScene = scene;
     }
