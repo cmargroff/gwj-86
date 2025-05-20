@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Godot;
 
-namespace JamTemplate.PlayerManager;
+namespace JamTemplate.Util.PlayerInput;
 
 public partial class Player
 {

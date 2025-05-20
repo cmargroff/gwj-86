@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Godot;
 
-namespace JamTemplate.PlayerManager;
+namespace JamTemplate.Util.PlayerInput;
 
 public partial class PlayerManager
 {
