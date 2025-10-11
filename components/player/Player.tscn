@@ -10,11 +10,14 @@ height = 32.0
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kfe3d")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -16)
+zoom = Vector2(1.5, 1.5)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
 texture = ExtResource("1_t3162")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
 shape = SubResource("CapsuleShape2D_kfe3d")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)

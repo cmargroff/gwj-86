@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw1w6y3lf1fm7"]
+[gd_scene load_steps=6 format=3 uid="uid://3g6incb3tbk0"]
 
 [ext_resource type="PackedScene" uid="uid://c8en35aminwok" path="res://components/player/Player.tscn" id="1_5pph0"]
 
@@ -16,22 +16,24 @@ size = Vector2(20, 100)
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_5pph0")]
-position = Vector2(12, -67)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(0, -8)
+position = Vector2(0, 2)
 shape = SubResource("WorldBoundaryShape2D_5pph0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(0, 10)
 texture = SubResource("PlaceholderTexture2D_5pph0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(232, -60)
+position = Vector2(232, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, -50)
 texture = SubResource("PlaceholderTexture2D_j5piy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -50)
 shape = SubResource("RectangleShape2D_j5piy")
