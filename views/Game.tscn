@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://cw1w6y3lf1fm7"]
+
+[ext_resource type="PackedScene" uid="uid://c8en35aminwok" path="res://components/player/Player.tscn" id="1_5pph0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5pph0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_5pph0"]
+size = Vector2(1000, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j5piy"]
+size = Vector2(20, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5piy"]
+size = Vector2(20, 100)
+
+[node name="Game" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_5pph0")]
+position = Vector2(12, -67)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(0, -8)
+shape = SubResource("WorldBoundaryShape2D_5pph0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+texture = SubResource("PlaceholderTexture2D_5pph0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(232, -60)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+texture = SubResource("PlaceholderTexture2D_j5piy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_j5piy")

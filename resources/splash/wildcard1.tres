@@ -4,7 +4,6 @@
 
 [resource]
 script = ExtResource("1_t86q8")
-Enabled = false
 Title = "Title"
 Description = "This is the description"
 metadata/_custom_type_script = "uid://2ll2u1x47eep"
