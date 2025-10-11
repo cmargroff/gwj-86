@@ -5,5 +5,5 @@ public class StatsManager {
   public float Will { get; set; }
   public float Strength { get; set; }
   public float Speed { get; set; } = 300.0f;
-  public float JumpHeight { get; set; }
+  public float JumpVelocity { get; set; } = -300.0f;
 }

@@ -5,7 +5,6 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public const float JumpVelocity = -300.0f;
 	private StatsManager _statsManager;
 
     public override void _EnterTree()
@@ -26,7 +25,7 @@ public partial class Player : CharacterBody2D
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
 		{
-			velocity.Y = JumpVelocity;
+			velocity.Y = _statsManager.JumpVelocity;
 		}
 
 		// Get the input direction and handle the movement/deceleration.
