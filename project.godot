@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="game jam template"
+config/name="Godot Wild Jam 86 Game"
 run/main_scene="uid://bhn3okwreagx3"
-config/features=PackedStringArray("4.4.1", "C#", "Forward Plus")
+config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,7 +21,7 @@ Globals="*res://scripts/Globals.cs"
 
 [dotnet]
 
-project/assembly_name="template"
+project/assembly_name="gwj86"
 
 [rendering]
 

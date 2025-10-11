@@ -9,7 +9,7 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build",
-      "program": "${env:GODOT_HOME}/Godot_v4.4-stable_mono_win64.exe",
+      "program": "C:/Program Files/Godot/current/Godot.exe",
       "args": [],
       "cwd": "${workspaceRoot}",
       "console": "internalConsole",
