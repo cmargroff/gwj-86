@@ -2,10 +2,12 @@ using JamTemplate.Util.FSM;
 
 namespace JamTemplate.Player.States;
 
-public class EntryState() : AnimatedState
+public class LandState() : AnimatedState
 {
-  protected override void OnEnter()
+  protected override void OnExit()
   {
     Next("idle");
+
   }
+
 }
