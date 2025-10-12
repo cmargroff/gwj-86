@@ -28,19 +28,19 @@ public partial class AnimatedFiniteStateManager : FiniteStateManager
   public void Build()
   {
 
-    // foreach (var state in states)
-    // {
-    //   var stateName = state.StateName;
-    //   if (AnimationPlayer.HasAnimation(stateName))
-    //   {
-    //     var anim = AnimationPlayer.GetAnimation(stateName);
-    //     state.AnimationLength = anim.Length;
-    //     state.AnimationLoopMode = anim.LoopMode;
-    //     state.FSM = this;
-    //     state.AFSM = this;
-    //     _stateMap.Add(stateName, state);
-    //   }
-    // }
+    foreach (var state in StateProvider.GetServices<AnimatedState>())
+    {
+      var stateName = state.StateName;
+      if (AnimationPlayer.HasAnimation(stateName))
+      {
+        var anim = AnimationPlayer.GetAnimation(stateName);
+        state.AnimationLength = anim.Length;
+        state.AnimationLoopMode = anim.LoopMode;
+        state.FSM = this;
+        state.AFSM = this;
+        _stateMap.Add(stateName, state);
+      }
+    }
     AnimationPlayer.AnimationStarted += OnAnimationStarted;
     AnimationPlayer.AnimationFinished += OnAnimationFinished;
   }
