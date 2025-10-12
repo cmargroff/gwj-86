@@ -1,3 +1,4 @@
+using Godot;
 using JamTemplate.Util.FSM;
 
 namespace JamTemplate.Player.States;
@@ -14,6 +15,11 @@ public class JumpAirState(Components.Player.Player _player, StatsManager _stats)
         _player.MoveVelocity.Y = _stats.InitialJumpVelocity;
         _player.DecrementJumps();
       }
+    }
+    if (Input.IsActionJustPressed("jump") && _player.CanJump() && _player.IsOnWallOnly())
+    {
+      Next("jumpWall");
+      return;
     }
     if (_player.MoveVelocity.Y > 0) // player is falling down
     {

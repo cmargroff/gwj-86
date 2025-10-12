@@ -24,6 +24,11 @@ public class JumpState(Components.Player.Player _player, StatsManager _stats) : 
         return;
       }
     }
+    if (Input.IsActionJustPressed("jump") && _player.CanJump() && _player.IsOnWallOnly())
+    {
+      Next("jumpWall");
+      return;
+    }
     if (_player.MoveVelocity.Y > 0) // player is falling down
     {
       Next("fall");

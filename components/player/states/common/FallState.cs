@@ -15,10 +15,17 @@ public class FallState(Components.Player.Player _player, StatsManager _stats) : 
     }
     if (Input.IsActionJustPressed("jump") && _player.CanJump())
     {
-      Next("jumpAir");
-      return;
+      if (_player.IsOnWallOnly())
+      {
+        Next("jumpWall");
+        return;
+      }
+      else
+      {
+        Next("jumpAir");
+        return;
+      }
     }
-
     _player.Move(delta, _player.GetMoveVector(), _stats.AirSpeed);
   }
 }

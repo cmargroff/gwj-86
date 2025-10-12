@@ -1,12 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8en35aminwok"]
+[gd_scene load_steps=14 format=3 uid="uid://c8en35aminwok"]
 
 [ext_resource type="Script" uid="uid://ccnmr6gfuk8c5" path="res://components/player/Player.cs" id="1_kfe3d"]
 [ext_resource type="Texture2D" uid="uid://m8skfnc0km71" path="res://assets/sprites/playerPlaceholder.png" id="1_t3162"]
-[ext_resource type="AnimationLibrary" uid="uid://b0dad5m0h1s1a" path="res://components/player/animations/common.tres" id="3_lt7w0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfe3d"]
 radius = 8.0
 height = 32.0
+
+[sub_resource type="Animation" id="Animation_yxufj"]
+
+[sub_resource type="Animation" id="Animation_lt7w0"]
+
+[sub_resource type="Animation" id="Animation_xh4xr"]
+
+[sub_resource type="Animation" id="Animation_eglpv"]
+
+[sub_resource type="Animation" id="Animation_lbsqm"]
+
+[sub_resource type="Animation" id="Animation_5u2jg"]
+
+[sub_resource type="Animation" id="Animation_xnekc"]
+
+[sub_resource type="Animation" id="Animation_yngd5"]
+
+[sub_resource type="Animation" id="Animation_a5sp0"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ocmko"]
+_data = {
+&"dash": SubResource("Animation_yngd5"),
+&"entry": SubResource("Animation_yxufj"),
+&"fall": SubResource("Animation_a5sp0"),
+&"idle": SubResource("Animation_lt7w0"),
+&"jump": SubResource("Animation_xh4xr"),
+&"jumpAir": SubResource("Animation_eglpv"),
+&"jumpWall": SubResource("Animation_lbsqm"),
+&"run": SubResource("Animation_xnekc"),
+&"walk": SubResource("Animation_5u2jg")
+}
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer")]
 script = ExtResource("1_kfe3d")
@@ -27,5 +57,5 @@ shape = SubResource("CapsuleShape2D_kfe3d")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 active = false
 libraries = {
-&"": ExtResource("3_lt7w0")
+&"": SubResource("AnimationLibrary_ocmko")
 }
