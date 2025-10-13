@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciubv4t0spstu"
-path="res://.godot/imported/Golem 6.png-007241078b500aba7fa0f60e5b6183f8.ctex"
+uid="uid://cjwljam13b66q"
+path="res://.godot/imported/HandL.png-10984781c7ceeb63629b936a1449ddd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sourceAssets/golem/Golem 6.png"
-dest_files=["res://.godot/imported/Golem 6.png-007241078b500aba7fa0f60e5b6183f8.ctex"]
+source_file="res://sourceAssets/golem/HandL.png"
+dest_files=["res://.godot/imported/HandL.png-10984781c7ceeb63629b936a1449ddd8.ctex"]
 
 [params]
 

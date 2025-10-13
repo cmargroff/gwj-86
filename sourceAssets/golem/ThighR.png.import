@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gi4ycisb4htb"
-path="res://.godot/imported/Golem 2.png-8fc3a12c3dbfe20090d2b38c73de77f7.ctex"
+uid="uid://bakjvxm3208n6"
+path="res://.godot/imported/ThighR.png-d8ec9f36deb6d412a81699e929659c2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sourceAssets/golem/Golem 2.png"
-dest_files=["res://.godot/imported/Golem 2.png-8fc3a12c3dbfe20090d2b38c73de77f7.ctex"]
+source_file="res://sourceAssets/golem/ThighR.png"
+dest_files=["res://.godot/imported/ThighR.png-d8ec9f36deb6d412a81699e929659c2e.ctex"]
 
 [params]
 

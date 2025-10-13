@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dieux3idbdflh"
-path="res://.godot/imported/Golem 1.png-f9da511b1d5e615240cb2c97802ad89b.ctex"
+uid="uid://bunkyl15obfhm"
+path="res://.godot/imported/Hip.png-39e4c8464aa24239a79ec9a2cf54ea8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sourceAssets/golem/Golem 1.png"
-dest_files=["res://.godot/imported/Golem 1.png-f9da511b1d5e615240cb2c97802ad89b.ctex"]
+source_file="res://sourceAssets/golem/Hip.png"
+dest_files=["res://.godot/imported/Hip.png-39e4c8464aa24239a79ec9a2cf54ea8e.ctex"]
 
 [params]
 

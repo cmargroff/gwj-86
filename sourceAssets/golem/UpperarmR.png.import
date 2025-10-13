@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oifp6sp6ut1k"
-path="res://.godot/imported/Golem 3.png-c7e6c4ee66bfa92eac0942da991c1878.ctex"
+uid="uid://dp8xfl3gvr483"
+path="res://.godot/imported/UpperarmR.png-289e6318e3f13bdc2c33be4cf4519f69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sourceAssets/golem/Golem 3.png"
-dest_files=["res://.godot/imported/Golem 3.png-c7e6c4ee66bfa92eac0942da991c1878.ctex"]
+source_file="res://sourceAssets/golem/UpperarmR.png"
+dest_files=["res://.godot/imported/UpperarmR.png-289e6318e3f13bdc2c33be4cf4519f69.ctex"]
 
 [params]
 
