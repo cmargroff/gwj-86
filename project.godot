@@ -66,6 +66,18 @@ pause={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Floors"
+2d_physics/layer_3="Walls"
+2d_physics/layer_4="Enemy"
+2d_physics/layer_5="PlayerHurtbox"
+2d_physics/layer_6="PlayerHitbox"
+2d_physics/layer_7="EnemyHurtbox"
+2d_physics/layer_8="EnemyHitbox"
+2d_physics/layer_9="Item"
+
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
