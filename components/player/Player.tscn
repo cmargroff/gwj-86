@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://kqxb1ahenocy" path="res://assets/sprites/player/atlas.sprites/Eyes.tres" id="4_5u2jg"]
 [ext_resource type="Texture2D" uid="uid://dech0esfkeugq" path="res://assets/sprites/player/atlas.sprites/FootFront.tres" id="4_wtb5b"]
 [ext_resource type="Texture2D" uid="uid://b2id541mo37xw" path="res://assets/sprites/player/atlas.sprites/Hood1.tres" id="5_xnekc"]
-[ext_resource type="SpriteFrames" uid="uid://cmiakktha6i2y" path="res://assets/sprites/player/CloakLightFrames.tres" id="6_rvha6"]
-[ext_resource type="SpriteFrames" uid="uid://dfue5umkloyuj" path="res://assets/sprites/player/CloakFrames.tres" id="6_yngd5"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/player/CloakLightFrames.tres" id="6_rvha6"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/player/CloakFrames.tres" id="6_yngd5"]
 [ext_resource type="Texture2D" uid="uid://c8bet7o5pums8" path="res://assets/sprites/player/atlas.sprites/Sleeve.tres" id="7_hvdg6"]
 [ext_resource type="Texture2D" uid="uid://dtquteyhh8vbe" path="res://assets/sprites/player/atlas.sprites/SleeveLight.tres" id="8_x1ks5"]
 
@@ -206,16 +206,17 @@ shape = SubResource("CapsuleShape2D_yxufj")
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="FootBack" type="Sprite2D" parent="Visuals"]
-position = Vector2(-11, -14)
+position = Vector2(-7.25, -14.9)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_ocmko")
 
 [node name="FootFront" type="Sprite2D" parent="Visuals"]
-position = Vector2(1.1920929e-07, -12)
+position = Vector2(3.75, -12.9)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_wtb5b")
 
 [node name="Cloak" type="Node2D" parent="Visuals"]
+position = Vector2(3.75, -0.8999996)
 
 [node name="Cloak" type="AnimatedSprite2D" parent="Visuals/Cloak"]
 position = Vector2(-0.99999994, -39.999996)
@@ -232,9 +233,11 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Sleeve" type="Node2D" parent="Visuals"]
+position = Vector2(3.75, -0.8999996)
 
 [node name="Sleeve" type="Sprite2D" parent="Visuals/Sleeve"]
-position = Vector2(8, -47.999996)
+position = Vector2(21, -63)
+rotation = -1.5707964
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_hvdg6")
 
@@ -244,6 +247,7 @@ scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("8_x1ks5")
 
 [node name="Head" type="Node2D" parent="Visuals"]
+position = Vector2(3.75, -0.8999996)
 
 [node name="HoodShadow" type="Sprite2D" parent="Visuals/Head"]
 position = Vector2(-4.1000013, -77.15)
@@ -259,3 +263,50 @@ texture = ExtResource("4_5u2jg")
 position = Vector2(-2.0999992, -78.15)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_xnekc")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Visuals"]
+
+[node name="Root" type="Bone2D" parent="Visuals/Skeleton2D"]
+
+[node name="Hip" type="Bone2D" parent="Visuals/Skeleton2D/Root"]
+position = Vector2(0, -34)
+rotation = -1.5707964
+
+[node name="Torso" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(14, 6.119594e-07)
+
+[node name="Shoulder" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso"]
+position = Vector2(17, 7.4412674e-07)
+rotation = 1.8674667
+
+[node name="Arm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso/Shoulder"]
+position = Vector2(11.688818, 0.60954666)
+rotation = -0.38806626
+scale = Vector2(2.010428, 0.99999994)
+
+[node name="Head" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso"]
+position = Vector2(18.999998, -0.99999917)
+scale = Vector2(1.7557487, -21.011591)
+
+[node name="Eyes" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso/Head"]
+position = Vector2(5.695575, 0.047592755)
+rotation = 1.5732198
+scale = Vector2(0.04609178, 0.14633945)
+
+[node name="Thigh_R" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(-2.622341e-07, 6)
+rotation = 3.1414084
+scale = Vector2(0.6424293, 1.6083797)
+
+[node name="Foot_R" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_R"]
+position = Vector2(23.348873, 0.0017177872)
+scale = Vector2(1.7472684, 1)
+
+[node name="Thigh_L" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(-0.9999998, -4)
+rotation = 3.1414084
+scale = Vector2(0.6424293, 1.6083797)
+
+[node name="Foot_L" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_L"]
+position = Vector2(23.348873, 0.0017177872)
+scale = Vector2(1.7472684, 1)
