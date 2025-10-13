@@ -1,0 +1,22 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cmiakktha6i2y"]
+
+[ext_resource type="Texture2D" uid="uid://druny46s2l105" path="res://assets/sprites/player/atlas.sprites/CloakLight1.tres" id="1_nit5c"]
+[ext_resource type="Texture2D" uid="uid://ck6js50vcw6np" path="res://assets/sprites/player/atlas.sprites/CloakLight2.tres" id="2_8ks61"]
+[ext_resource type="Texture2D" uid="uid://dd21l0rldgujt" path="res://assets/sprites/player/atlas.sprites/CloakLight3.tres" id="3_ox45t"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nit5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8ks61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ox45t")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

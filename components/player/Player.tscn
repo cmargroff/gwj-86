@@ -1,7 +1,16 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8en35aminwok"]
+[gd_scene load_steps=29 format=3 uid="uid://c8en35aminwok"]
 
 [ext_resource type="Script" uid="uid://ccnmr6gfuk8c5" path="res://components/player/Player.cs" id="1_kfe3d"]
 [ext_resource type="Texture2D" uid="uid://m8skfnc0km71" path="res://assets/sprites/playerPlaceholder.png" id="1_t3162"]
+[ext_resource type="Texture2D" uid="uid://cavvwiogt7c0p" path="res://assets/sprites/player/atlas.sprites/HoodShadow.tres" id="3_lbsqm"]
+[ext_resource type="Texture2D" uid="uid://sg87slxyhve5" path="res://assets/sprites/player/atlas.sprites/FootBack.tres" id="3_ocmko"]
+[ext_resource type="Texture2D" uid="uid://kqxb1ahenocy" path="res://assets/sprites/player/atlas.sprites/Eyes.tres" id="4_5u2jg"]
+[ext_resource type="Texture2D" uid="uid://dech0esfkeugq" path="res://assets/sprites/player/atlas.sprites/FootFront.tres" id="4_wtb5b"]
+[ext_resource type="Texture2D" uid="uid://b2id541mo37xw" path="res://assets/sprites/player/atlas.sprites/Hood1.tres" id="5_xnekc"]
+[ext_resource type="SpriteFrames" uid="uid://cmiakktha6i2y" path="res://assets/sprites/player/CloakLightFrames.tres" id="6_rvha6"]
+[ext_resource type="SpriteFrames" uid="uid://dfue5umkloyuj" path="res://assets/sprites/player/CloakFrames.tres" id="6_yngd5"]
+[ext_resource type="Texture2D" uid="uid://c8bet7o5pums8" path="res://assets/sprites/player/atlas.sprites/Sleeve.tres" id="7_hvdg6"]
+[ext_resource type="Texture2D" uid="uid://dtquteyhh8vbe" path="res://assets/sprites/player/atlas.sprites/SleeveLight.tres" id="8_x1ks5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfe3d"]
 radius = 8.0
@@ -195,3 +204,58 @@ texture = SubResource("PlaceholderTexture2D_x1ks5")
 shape = SubResource("CapsuleShape2D_yxufj")
 
 [node name="Visuals" type="Node2D" parent="."]
+
+[node name="FootBack" type="Sprite2D" parent="Visuals"]
+position = Vector2(-11, -14)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_ocmko")
+
+[node name="FootFront" type="Sprite2D" parent="Visuals"]
+position = Vector2(1.1920929e-07, -12)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_wtb5b")
+
+[node name="Cloak" type="Node2D" parent="Visuals"]
+
+[node name="Cloak" type="AnimatedSprite2D" parent="Visuals/Cloak"]
+position = Vector2(-0.99999994, -39.999996)
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("6_yngd5")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CloakLight" type="AnimatedSprite2D" parent="Visuals/Cloak/Cloak"]
+position = Vector2(0, 10)
+scale = Vector2(0.9999998, 0.9999998)
+sprite_frames = ExtResource("6_rvha6")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Sleeve" type="Node2D" parent="Visuals"]
+
+[node name="Sleeve" type="Sprite2D" parent="Visuals/Sleeve"]
+position = Vector2(8, -47.999996)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_hvdg6")
+
+[node name="SleeveLight" type="Sprite2D" parent="Visuals/Sleeve/Sleeve"]
+position = Vector2(0, 180.00003)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("8_x1ks5")
+
+[node name="Head" type="Node2D" parent="Visuals"]
+
+[node name="HoodShadow" type="Sprite2D" parent="Visuals/Head"]
+position = Vector2(-4.1000013, -77.15)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_lbsqm")
+
+[node name="Eyes" type="Sprite2D" parent="Visuals/Head"]
+position = Vector2(-8.099999, -76.15)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_5u2jg")
+
+[node name="Hood1" type="Sprite2D" parent="Visuals/Head"]
+position = Vector2(-2.0999992, -78.15)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_xnekc")
