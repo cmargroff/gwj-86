@@ -33,40 +33,6 @@ position = Vector2(-0.7624512, 2.5140686)
 rotation = 1.4546489
 scale = Vector2(10, 10)
 
-[node name="Head" type="Node2D" parent="Visuals/Hip/Torso"]
-position = Vector2(-2.8994122, -65.17097)
-scale = Vector2(0.9999999, 0.9999999)
-
-[node name="Head2" type="Sprite2D" parent="Visuals/Hip/Torso/Head"]
-position = Vector2(-2.240879, -4.1048737)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_o4qpa")
-
-[node name="MaskSlot" type="Node2D" parent="Visuals/Hip/Torso/Head"]
-
-[node name="Spine" type="Sprite2D" parent="Visuals/Hip/Torso"]
-position = Vector2(2.000002, -30.000015)
-rotation = 0.42615727
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_mrfiv")
-
-[node name="SoulGlow" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
-self_modulate = Color(1, 0.7882353, 0.28235295, 1)
-position = Vector2(-39.999977, -40)
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("4_tltlb")
-
-[node name="SoulGlow2" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
-self_modulate = Color(1, 0.7882353, 0.28235295, 0.5176471)
-position = Vector2(-39.999977, -40)
-scale = Vector2(1.4999999, 1.4999999)
-texture = ExtResource("4_tltlb")
-
-[node name="Ribcage" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
-position = Vector2(-30.000023, -40)
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("5_w1sq0")
-
 [node name="ArmRight" type="Node2D" parent="Visuals/Hip/Torso"]
 position = Vector2(-11.999998, -52.000008)
 
@@ -101,6 +67,40 @@ visible = false
 position = Vector2(-6, 0.99999994)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("9_ilc23")
+
+[node name="Head" type="Node2D" parent="Visuals/Hip/Torso"]
+position = Vector2(-2.8994122, -65.17097)
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="Head2" type="Sprite2D" parent="Visuals/Hip/Torso/Head"]
+position = Vector2(-2.240879, -4.1048737)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_o4qpa")
+
+[node name="MaskSlot" type="Node2D" parent="Visuals/Hip/Torso/Head"]
+
+[node name="Spine" type="Sprite2D" parent="Visuals/Hip/Torso"]
+position = Vector2(2.000002, -30.000015)
+rotation = 0.42615727
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_mrfiv")
+
+[node name="SoulGlow" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
+self_modulate = Color(1, 0.7882353, 0.28235295, 1)
+position = Vector2(-39.999977, -40)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_tltlb")
+
+[node name="SoulGlow2" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
+self_modulate = Color(1, 0.7882353, 0.28235295, 0.5176471)
+position = Vector2(-39.999977, -40)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("4_tltlb")
+
+[node name="Ribcage" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
+position = Vector2(-30.000023, -40)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_w1sq0")
 
 [node name="ArmLeft" type="Node2D" parent="Visuals/Hip/Torso"]
 position = Vector2(14.000002, -50.000008)
@@ -165,3 +165,60 @@ texture = ExtResource("16_21smu")
 position = Vector2(608.7252, -71.78883)
 rotation = -0.019345522
 texture = ExtResource("17_8qf4q")
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="Hip" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(1.0000001, -122)
+rotation = -1.5713197
+
+[node name="Torso" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(11.999998, 0.0062804697)
+rotation = -0.007482635
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Upperarm_Left" type="Bone2D" parent="Skeleton2D/Hip/Torso"]
+position = Vector2(37.886703, 14.303777)
+rotation = 1.8011491
+
+[node name="Forearm_Left" type="Bone2D" parent="Skeleton2D/Hip/Torso/Upperarm_Left"]
+position = Vector2(62.42449, -14.113234)
+
+[node name="Hand_Left" type="Bone2D" parent="Skeleton2D/Hip/Torso/Upperarm_Left/Forearm_Left"]
+position = Vector2(49.96504, -10.2711)
+rotation = -0.23109542
+
+[node name="Upperarm_Right" type="Bone2D" parent="Skeleton2D/Hip/Torso"]
+position = Vector2(40.1028, -12.679346)
+rotation = -1.7679087
+
+[node name="Forearm_Right" type="Bone2D" parent="Skeleton2D/Hip/Torso/Upperarm_Right"]
+position = Vector2(56.21247, 9.651856)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Hand_Right" type="Bone2D" parent="Skeleton2D/Hip/Torso/Upperarm_Right/Forearm_Right"]
+position = Vector2(39.733147, 10.30908)
+rotation = 0.19247429
+
+[node name="Head" type="Bone2D" parent="Skeleton2D/Hip/Torso"]
+position = Vector2(54.014286, -1.5676162)
+rotation = -2.2421215
+
+[node name="Thigh_Right" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(0.0041868687, -7.9999986)
+rotation = -0.03844937
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Shin_right" type="Bone2D" parent="Skeleton2D/Hip/Thigh_Right"]
+position = Vector2(-37.932182, -2.4798307)
+rotation = -3.0966754
+scale = Vector2(5.3, 0.99999994)
+
+[node name="Thigh_Left" type="Bone2D" parent="Skeleton2D/Hip"]
+position = Vector2(0.9958129, 8.000523)
+rotation = 3.1069162
+
+[node name="Shin_left" type="Bone2D" parent="Skeleton2D/Hip/Thigh_Left"]
+position = Vector2(38.08204, -1.6608231)
+rotation = 0.031642012
+scale = Vector2(5.3, 1)
