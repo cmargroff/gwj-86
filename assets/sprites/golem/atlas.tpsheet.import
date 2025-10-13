@@ -1,0 +1,16 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+uid="uid://cdp4r7ikool5d"
+path="res://.godot/imported/atlas.tpsheet-c0f1e69fe09ae2da02ee56a32d05aa68.res"
+
+[deps]
+
+files=["res://assets/sprites/golem/atlas.sprites/Spine.tres", "res://assets/sprites/golem/atlas.sprites/SoulGlow.tres", "res://assets/sprites/golem/atlas.sprites/Ribcage.tres", "res://assets/sprites/golem/atlas.sprites/ShinL.tres", "res://assets/sprites/golem/atlas.sprites/ShinR.tres", "res://assets/sprites/golem/atlas.sprites/UpperarmL.tres", "res://assets/sprites/golem/atlas.sprites/UpperarmR.tres", "res://assets/sprites/golem/atlas.sprites/ThighR.tres", "res://assets/sprites/golem/atlas.sprites/ThighL.tres", "res://assets/sprites/golem/atlas.sprites/ForearmL.tres", "res://assets/sprites/golem/atlas.sprites/HandL.tres", "res://assets/sprites/golem/atlas.sprites/HandR.tres", "res://assets/sprites/golem/atlas.sprites/Head.tres", "res://assets/sprites/golem/atlas.sprites/ForearmR.tres", "res://assets/sprites/golem/atlas.sprites/HandWeaponR.tres", "res://assets/sprites/golem/atlas.sprites/HandWeaponL.tres", "res://assets/sprites/golem/atlas.sprites/Hip.tres", "res://assets/sprites/golem/atlas.sprites/WeaponColor.tres", "res://assets/sprites/golem/atlas.sprites/WeaponGray.tres"]
+
+source_file="res://assets/sprites/golem/atlas.tpsheet"
+dest_files=["res://.godot/imported/atlas.tpsheet-c0f1e69fe09ae2da02ee56a32d05aa68.res", "res://assets/sprites/golem/atlas.sprites/Spine.tres", "res://assets/sprites/golem/atlas.sprites/SoulGlow.tres", "res://assets/sprites/golem/atlas.sprites/Ribcage.tres", "res://assets/sprites/golem/atlas.sprites/ShinL.tres", "res://assets/sprites/golem/atlas.sprites/ShinR.tres", "res://assets/sprites/golem/atlas.sprites/UpperarmL.tres", "res://assets/sprites/golem/atlas.sprites/UpperarmR.tres", "res://assets/sprites/golem/atlas.sprites/ThighR.tres", "res://assets/sprites/golem/atlas.sprites/ThighL.tres", "res://assets/sprites/golem/atlas.sprites/ForearmL.tres", "res://assets/sprites/golem/atlas.sprites/HandL.tres", "res://assets/sprites/golem/atlas.sprites/HandR.tres", "res://assets/sprites/golem/atlas.sprites/Head.tres", "res://assets/sprites/golem/atlas.sprites/ForearmR.tres", "res://assets/sprites/golem/atlas.sprites/HandWeaponR.tres", "res://assets/sprites/golem/atlas.sprites/HandWeaponL.tres", "res://assets/sprites/golem/atlas.sprites/Hip.tres", "res://assets/sprites/golem/atlas.sprites/WeaponColor.tres", "res://assets/sprites/golem/atlas.sprites/WeaponGray.tres"]
+
+[params]
+

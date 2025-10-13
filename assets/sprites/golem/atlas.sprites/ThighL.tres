@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7l4brj7t5ri1"]
+
+[ext_resource type="Texture2D" uid="uid://4mcfen1lbsud" path="res://assets/sprites/golem/atlas.png" id="1_eo613"]
+
+[resource]
+atlas = ExtResource("1_eo613")
+region = Rect2(395, 777, 446, 158)

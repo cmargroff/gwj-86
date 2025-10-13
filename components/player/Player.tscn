@@ -7,7 +7,87 @@
 radius = 8.0
 height = 32.0
 
+[sub_resource type="Animation" id="Animation_hvdg6"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponRoot/Dagger:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponRoot/Dagger:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponRoot/Dagger:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.32218286, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ocmko"]
+length = 0.43333668
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WeaponRoot/Dagger:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
+"points": PackedFloat32Array(3, -0.25, 0, 0.033333335, -1.8360881, -1, -0.033333335, 1, 0.033333335, -1, 27.306372, -0.025000002, -4, 0.025000002, 4, 18.60377, -0.007407412, 11.337658, 0.007407412, -11.337658, 3, -0.06666667, 2.4999998, 0.06666667, -2.4999998),
+"times": PackedFloat32Array(0, 0.048148148, 0.16851853, 0.24074075, 0.43333334)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WeaponRoot/Dagger:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
+"points": PackedFloat32Array(8, -0.25, 0, 0.06666667, -0.2831583, 5, -0.033333335, 0.75, 0.033333335, -0.75, 2.0000002, -0.025000002, 0.74999994, 0.025000002, -0.74999994, -0.9999995, -0.034540087, -7.2667794, 0.034540087, 7.2667794, 8, -0.100000024, 0.61831665, 0.100000024, -0.61831665),
+"times": PackedFloat32Array(0, 0.048148148, 0.16851853, 0.24074075, 0.43333334)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponRoot/Dagger:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
+"points": PackedFloat32Array(-0.32218286, -0.25, 0, 0.12804766, -0.063146174, -1.4436238, -0.033333335, 0.28036022, 0.033333335, -0.28036022, -1.6259913, -0.025000002, 0.04559189, 0.025000002, -0.04559189, -1.8709475, -0.024999999, 0.061239038, 0.024999999, -0.061239038, -0.322, -0.06666666, -0.13371015, 0.06666666, 0.13371015),
+"times": PackedFloat32Array(0, 0.096296296, 0.16851853, 0.24074075, 0.43333334)
+}
+
+[sub_resource type="Animation" id="Animation_wtb5b"]
+
+[sub_resource type="Animation" id="Animation_rvha6"]
+
+[sub_resource type="Animation" id="Animation_yngd5"]
+
 [sub_resource type="Animation" id="Animation_yxufj"]
+
+[sub_resource type="Animation" id="Animation_a5sp0"]
 
 [sub_resource type="Animation" id="Animation_lt7w0"]
 length = 2.0
@@ -52,89 +132,9 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_lbsqm"]
 
-[sub_resource type="Animation" id="Animation_5u2jg"]
-
 [sub_resource type="Animation" id="Animation_xnekc"]
 
-[sub_resource type="Animation" id="Animation_yngd5"]
-
-[sub_resource type="Animation" id="Animation_a5sp0"]
-
-[sub_resource type="Animation" id="Animation_ocmko"]
-length = 0.43333668
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponRoot/Dagger:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
-"points": PackedFloat32Array(3, -0.25, 0, 0.033333335, -1.8360881, -1, -0.033333335, 1, 0.033333335, -1, 27.306372, -0.025000002, -4, 0.025000002, 4, 18.60377, -0.007407412, 11.337658, 0.007407412, -11.337658, 3, -0.06666667, 2.4999998, 0.06666667, -2.4999998),
-"times": PackedFloat32Array(0, 0.048148148, 0.16851853, 0.24074075, 0.43333334)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponRoot/Dagger:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
-"points": PackedFloat32Array(8, -0.25, 0, 0.06666667, -0.2831583, 5, -0.033333335, 0.75, 0.033333335, -0.75, 2.0000002, -0.025000002, 0.74999994, 0.025000002, -0.74999994, -0.9999995, -0.034540087, -7.2667794, 0.034540087, 7.2667794, 8, -0.100000024, 0.61831665, 0.100000024, -0.61831665),
-"times": PackedFloat32Array(0, 0.048148148, 0.16851853, 0.24074075, 0.43333334)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponRoot/Dagger:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
-"points": PackedFloat32Array(-0.32218286, -0.25, 0, 0.12804766, -0.063146174, -1.4436238, -0.033333335, 0.28036022, 0.033333335, -0.28036022, -1.6259913, -0.025000002, 0.04559189, 0.025000002, -0.04559189, -1.8709475, -0.024999999, 0.061239038, 0.024999999, -0.061239038, -0.322, -0.06666666, -0.13371015, 0.06666666, 0.13371015),
-"times": PackedFloat32Array(0, 0.096296296, 0.16851853, 0.24074075, 0.43333334)
-}
-
-[sub_resource type="Animation" id="Animation_wtb5b"]
-
-[sub_resource type="Animation" id="Animation_rvha6"]
-
-[sub_resource type="Animation" id="Animation_hvdg6"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponRoot/Dagger:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponRoot/Dagger:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponRoot/Dagger:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.32218286, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
+[sub_resource type="Animation" id="Animation_5u2jg"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ocmko"]
 _data = {
@@ -193,3 +193,5 @@ texture = SubResource("PlaceholderTexture2D_x1ks5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponRoot/Dagger/Area2D"]
 shape = SubResource("CapsuleShape2D_yxufj")
+
+[node name="Visuals" type="Node2D" parent="."]
