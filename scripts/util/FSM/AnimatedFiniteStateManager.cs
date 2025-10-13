@@ -7,7 +7,6 @@ public partial class AnimatedFiniteStateManager : FiniteStateManager
 {
   [Export]
   public AnimationPlayer AnimationPlayer;
-  private AnimationNodeStateMachinePlayback _stateMachine;
 
   public bool Playing
   {
@@ -16,15 +15,20 @@ public partial class AnimatedFiniteStateManager : FiniteStateManager
       return AnimationPlayer.SpeedScale != 0f;
     }
   }
-  public override void _Ready()
+  public void Start()
   {
     Next(InitialStateName);
   }
-  public override void _EnterTree()
+
+  public void AddStates(ServiceProvider statesProvider)
   {
-    base._EnterTree();
-    var states = StateProvider.GetServices<AnimatedState>();
-    foreach (var state in states)
+    StateProvider = statesProvider;
+    Build();
+  }
+  public void Build()
+  {
+
+    foreach (var state in StateProvider.GetServices<AnimatedState>())
     {
       var stateName = state.StateName;
       if (AnimationPlayer.HasAnimation(stateName))
@@ -32,15 +36,16 @@ public partial class AnimatedFiniteStateManager : FiniteStateManager
         var anim = AnimationPlayer.GetAnimation(stateName);
         state.AnimationLength = anim.Length;
         state.AnimationLoopMode = anim.LoopMode;
+        state.FSM = this;
+        state.AFSM = this;
         _stateMap.Add(stateName, state);
       }
     }
-    _stateMachine = (AnimationNodeStateMachinePlayback)Get("parameters/playback");
     AnimationPlayer.AnimationStarted += OnAnimationStarted;
     AnimationPlayer.AnimationFinished += OnAnimationFinished;
   }
 
-  public override void _ExitTree()
+  public void Dispose()
   {
     AnimationPlayer.AnimationStarted -= OnAnimationStarted;
     AnimationPlayer.AnimationFinished -= OnAnimationFinished;
@@ -96,6 +101,10 @@ public partial class AnimatedFiniteStateManager : FiniteStateManager
   }
   public override void PhysicsProcess(double delta)
   {
-    _currentState?.PhysicsProcess(delta);
+    _currentState?.PhysicsProcess(delta, AnimationPlayer.GetPlayingSpeed());
+  }
+  public void SetSpeedScale(float scale)
+  {
+    AnimationPlayer.SpeedScale = scale;
   }
 }

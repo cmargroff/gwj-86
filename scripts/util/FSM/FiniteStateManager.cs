@@ -1,48 +1,21 @@
 using System.Collections.Generic;
-using Godot;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate.Util.FSM;
 
-public partial class FiniteStateManager : Node
+public partial class FiniteStateManager
 {
   public ServiceProvider StateProvider;
   public string InitialStateName = "entry";
-  protected Dictionary<string, State> _stateMap;
-
+  protected Dictionary<string, State> _stateMap = new();
   protected State _currentState;
   protected bool _skipExit = false;
-  private bool _paused = false;
   private string _queuedState;
-
-  public override void _Ready()
-  {
-    Next(InitialStateName);
-  }
-  public override void _EnterTree()
-  {
-    _stateMap = new();
-  }
 
   private State GetFiniteState(string stateName)
   {
     _stateMap.TryGetValue(stateName, out State state);
     return state;
-  }
-
-  private void OnAnimationStarted(StringName stateName)
-  {
-    if (_skipExit) _skipExit = false;
-    var nextState = GetFiniteState(stateName);
-    _currentState = nextState;
-    if (nextState != null)
-    {
-      nextState.Enter();
-    }
-    else
-    {
-      throw new System.Exception($"Next State {stateName} was not found");
-    }
   }
   public void Interrupt(string name)
   {
@@ -65,8 +38,6 @@ public partial class FiniteStateManager : Node
       throw new System.Exception($"Next State {name} was not found");
     }
   }
-  private void DefaultStateProcess(double delta) { }
-  private void DefaultStatePhysicsProcess(double delta) { }
 
   public virtual void Process(double delta)
   {
@@ -79,6 +50,6 @@ public partial class FiniteStateManager : Node
       _currentState.Enter();
       _queuedState = null;
     }
-    _currentState?.PhysicsProcess(delta);
+    _currentState?.PhysicsProcess(delta, 1f);
   }
 }

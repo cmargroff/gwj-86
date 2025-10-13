@@ -1,0 +1,41 @@
+[gd_resource type="AnimationLibrary" load_steps=11 format=3 uid="uid://bqkj1w2wx80e"]
+
+[sub_resource type="Animation" id="Animation_i016s"]
+resource_name = "dash"
+
+[sub_resource type="Animation" id="Animation_k1im7"]
+
+[sub_resource type="Animation" id="Animation_7f70b"]
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_oj00a"]
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_oukeh"]
+length = 0.16
+
+[sub_resource type="Animation" id="Animation_f0ea1"]
+
+[sub_resource type="Animation" id="Animation_k5uem"]
+
+[sub_resource type="Animation" id="Animation_dbco3"]
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_p2g5i"]
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_8ntxj"]
+
+[resource]
+_data = {
+&"dash": SubResource("Animation_i016s"),
+&"entry": SubResource("Animation_k1im7"),
+&"fall": SubResource("Animation_7f70b"),
+&"idle": SubResource("Animation_oj00a"),
+&"jump": SubResource("Animation_oukeh"),
+&"jumpAir": SubResource("Animation_f0ea1"),
+&"jumpWall": SubResource("Animation_8ntxj"),
+&"land": SubResource("Animation_k5uem"),
+&"run": SubResource("Animation_dbco3"),
+&"walk": SubResource("Animation_p2g5i")
+}
