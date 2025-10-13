@@ -23,6 +23,10 @@ Globals="*res://scripts/Globals.cs"
 
 project/assembly_name="gwj86"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/codeandweb.texturepacker/plugin.cfg")
+
 [input]
 
 move_left={
