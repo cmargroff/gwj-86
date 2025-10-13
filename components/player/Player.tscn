@@ -279,10 +279,15 @@ position = Vector2(14, 6.119594e-07)
 position = Vector2(17, 7.4412674e-07)
 rotation = 1.8674667
 
-[node name="Arm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso/Shoulder"]
-position = Vector2(11.688818, 0.60954666)
+[node name="UpperArm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso/Shoulder"]
+position = Vector2(8.819871, 1.4865601)
 rotation = -0.38806626
-scale = Vector2(2.010428, 0.99999994)
+scale = Vector2(2.010428, 0.9999999)
+
+[node name="ForeArm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso/Shoulder/UpperArm"]
+position = Vector2(8.9613495, 0.6470115)
+rotation = -0.013603909
+scale = Vector2(0.5184798, 0.32845792)
 
 [node name="Head" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso"]
 position = Vector2(18.999998, -0.99999917)
@@ -298,15 +303,25 @@ position = Vector2(-2.622341e-07, 6)
 rotation = 3.1414084
 scale = Vector2(0.6424293, 1.6083797)
 
-[node name="Foot_R" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_R"]
+[node name="Shin_R" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_R"]
 position = Vector2(23.348873, 0.0017177872)
 scale = Vector2(1.7472684, 1)
+
+[node name="Foot_R" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_R/Shin_R"]
+position = Vector2(12.4723625, -0.6201405)
+rotation = 0.68265224
+scale = Vector2(0.51645595, -14.620172)
 
 [node name="Thigh_L" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(-0.9999998, -4)
 rotation = 3.1414084
 scale = Vector2(0.6424293, 1.6083797)
 
-[node name="Foot_L" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_L"]
+[node name="Shin_L" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_L"]
 position = Vector2(23.348873, 0.0017177872)
 scale = Vector2(1.7472684, 1)
+
+[node name="Bone2D" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_L/Shin_L"]
+position = Vector2(11.5814905, -0.62025476)
+rotation = 1.0661211
+scale = Vector2(0.45530888, 3.910118)

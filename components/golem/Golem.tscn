@@ -1,0 +1,167 @@
+[gd_scene load_steps=18 format=3 uid="uid://dl5pcbu1moxwl"]
+
+[ext_resource type="Texture2D" uid="uid://bdx3vhdu5ckkd" path="res://assets/sprites/golem/atlas.sprites/Hip.tres" id="1_tt27j"]
+[ext_resource type="Texture2D" uid="uid://dm6c54pdtv6b7" path="res://assets/sprites/golem/atlas.sprites/Head.tres" id="2_o4qpa"]
+[ext_resource type="Texture2D" uid="uid://bc6oodjw1rwkw" path="res://assets/sprites/golem/atlas.sprites/Spine.tres" id="3_mrfiv"]
+[ext_resource type="Texture2D" uid="uid://cyxxwj317ah2h" path="res://assets/sprites/golem/atlas.sprites/SoulGlow.tres" id="4_tltlb"]
+[ext_resource type="Texture2D" uid="uid://do2bf2rmadgct" path="res://assets/sprites/golem/atlas.sprites/Ribcage.tres" id="5_w1sq0"]
+[ext_resource type="Texture2D" uid="uid://dqxo1ost74umw" path="res://assets/sprites/golem/atlas.sprites/UpperarmR.tres" id="6_kiuyf"]
+[ext_resource type="Texture2D" uid="uid://jld0anblxsov" path="res://assets/sprites/golem/atlas.sprites/ForearmR.tres" id="7_6cvli"]
+[ext_resource type="Texture2D" uid="uid://boftla3aap2uh" path="res://assets/sprites/golem/atlas.sprites/HandR.tres" id="8_ifwaw"]
+[ext_resource type="Texture2D" uid="uid://bl17mt7mfhnr6" path="res://assets/sprites/golem/atlas.sprites/HandWeaponR.tres" id="9_ilc23"]
+[ext_resource type="Texture2D" uid="uid://ce0w4lwfrxfkj" path="res://assets/sprites/golem/atlas.sprites/UpperarmL.tres" id="10_t41kn"]
+[ext_resource type="Texture2D" uid="uid://uai1rphv8uss" path="res://assets/sprites/golem/atlas.sprites/ForearmL.tres" id="11_kxo2u"]
+[ext_resource type="Texture2D" uid="uid://bsowpp3dtjkjy" path="res://assets/sprites/golem/atlas.sprites/HandL.tres" id="12_03ylk"]
+[ext_resource type="Texture2D" uid="uid://bsnbebfhcix1k" path="res://assets/sprites/golem/atlas.sprites/HandWeaponL.tres" id="13_b8qti"]
+[ext_resource type="Texture2D" uid="uid://dg0pw64arstuc" path="res://assets/sprites/golem/atlas.sprites/ThighR.tres" id="14_3plb0"]
+[ext_resource type="Texture2D" uid="uid://b0aonb0b8p233" path="res://assets/sprites/golem/atlas.sprites/ShinR.tres" id="15_at4dh"]
+[ext_resource type="Texture2D" uid="uid://b7l4brj7t5ri1" path="res://assets/sprites/golem/atlas.sprites/ThighL.tres" id="16_21smu"]
+[ext_resource type="Texture2D" uid="uid://bre6npnw3b33w" path="res://assets/sprites/golem/atlas.sprites/ShinL.tres" id="17_8qf4q"]
+
+[node name="Golem" type="CharacterBody2D"]
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Hip" type="Sprite2D" parent="Visuals"]
+position = Vector2(0.75912094, -122.10486)
+rotation = -1.4546489
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_tt27j")
+
+[node name="Torso" type="Node2D" parent="Visuals/Hip"]
+position = Vector2(-0.7624512, 2.5140686)
+rotation = 1.4546489
+scale = Vector2(10, 10)
+
+[node name="Head" type="Node2D" parent="Visuals/Hip/Torso"]
+position = Vector2(-2.8994122, -65.17097)
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="Head2" type="Sprite2D" parent="Visuals/Hip/Torso/Head"]
+position = Vector2(-2.240879, -4.1048737)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_o4qpa")
+
+[node name="MaskSlot" type="Node2D" parent="Visuals/Hip/Torso/Head"]
+
+[node name="Spine" type="Sprite2D" parent="Visuals/Hip/Torso"]
+position = Vector2(2.000002, -30.000015)
+rotation = 0.42615727
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_mrfiv")
+
+[node name="SoulGlow" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
+self_modulate = Color(1, 0.7882353, 0.28235295, 1)
+position = Vector2(-39.999977, -40)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_tltlb")
+
+[node name="SoulGlow2" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
+self_modulate = Color(1, 0.7882353, 0.28235295, 0.5176471)
+position = Vector2(-39.999977, -40)
+scale = Vector2(1.4999999, 1.4999999)
+texture = ExtResource("4_tltlb")
+
+[node name="Ribcage" type="Sprite2D" parent="Visuals/Hip/Torso/Spine"]
+position = Vector2(-30.000023, -40)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("5_w1sq0")
+
+[node name="ArmRight" type="Node2D" parent="Visuals/Hip/Torso"]
+position = Vector2(-11.999998, -52.000008)
+
+[node name="UpperArm" type="Node2D" parent="Visuals/Hip/Torso/ArmRight"]
+
+[node name="UpperarmR" type="Sprite2D" parent="Visuals/Hip/Torso/ArmRight/UpperArm"]
+position = Vector2(-29, 0)
+rotation = -3.1415925
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_kiuyf")
+
+[node name="ForearmR" type="Node2D" parent="Visuals/Hip/Torso/ArmRight/UpperArm"]
+position = Vector2(-58, 2)
+
+[node name="ForearmR" type="Sprite2D" parent="Visuals/Hip/Torso/ArmRight/UpperArm/ForearmR"]
+position = Vector2(-20, -0.99998474)
+rotation = 3.1415927
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_6cvli")
+
+[node name="HandR" type="Node2D" parent="Visuals/Hip/Torso/ArmRight/UpperArm/ForearmR"]
+position = Vector2(-39, -2)
+
+[node name="HandR" type="Sprite2D" parent="Visuals/Hip/Torso/ArmRight/UpperArm/ForearmR/HandR"]
+position = Vector2(-13, -1)
+rotation = -0.0007567547
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_ifwaw")
+
+[node name="HandWeaponR" type="Sprite2D" parent="Visuals/Hip/Torso/ArmRight/UpperArm/ForearmR/HandR"]
+visible = false
+position = Vector2(-6, 0.99999994)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("9_ilc23")
+
+[node name="ArmLeft" type="Node2D" parent="Visuals/Hip/Torso"]
+position = Vector2(14.000002, -50.000008)
+
+[node name="UpperarmL" type="Sprite2D" parent="Visuals/Hip/Torso/ArmLeft"]
+position = Vector2(32.999996, 1.9073486e-06)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_t41kn")
+
+[node name="ForearmL" type="Node2D" parent="Visuals/Hip/Torso/ArmLeft"]
+position = Vector2(65, 0)
+
+[node name="ForearmL" type="Sprite2D" parent="Visuals/Hip/Torso/ArmLeft/ForearmL"]
+position = Vector2(24.999998, 1.0000019)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("11_kxo2u")
+
+[node name="Hand" type="Node2D" parent="Visuals/Hip/Torso/ArmLeft/ForearmL"]
+position = Vector2(50, 1)
+
+[node name="HandL" type="Sprite2D" parent="Visuals/Hip/Torso/ArmLeft/ForearmL/Hand"]
+position = Vector2(11.999999, 1.0000019)
+rotation = -3.1415927
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("12_03ylk")
+
+[node name="HandWeaponL" type="Sprite2D" parent="Visuals/Hip/Torso/ArmLeft/ForearmL/Hand"]
+visible = false
+position = Vector2(5, 4.7683716e-07)
+rotation = 3.1415927
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("13_b8qti")
+
+[node name="LegRight" type="Node2D" parent="Visuals/Hip"]
+position = Vector2(-8.874512, -67.01431)
+rotation = 1.4546489
+scale = Vector2(10, 10)
+
+[node name="ThighR" type="Sprite2D" parent="Visuals/Hip/LegRight"]
+position = Vector2(-2, 19)
+rotation = 1.7147993
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("14_3plb0")
+
+[node name="ShinR" type="Sprite2D" parent="Visuals/Hip/LegRight/ThighR"]
+position = Vector2(585.32825, -74.77191)
+rotation = -0.14745162
+texture = ExtResource("15_at4dh")
+
+[node name="LegLeft" type="Node2D" parent="Visuals/Hip"]
+position = Vector2(16.123413, 60.95095)
+rotation = 1.4546489
+scale = Vector2(10, 10)
+
+[node name="ThighL" type="Sprite2D" parent="Visuals/Hip/LegLeft"]
+position = Vector2(-1.0000005, 19)
+rotation = 1.5901419
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("16_21smu")
+
+[node name="ShinL" type="Sprite2D" parent="Visuals/Hip/LegLeft/ThighL"]
+position = Vector2(608.7252, -71.78883)
+rotation = -0.019345522
+texture = ExtResource("17_8qf4q")
