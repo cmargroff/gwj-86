@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bka0y60xe6hyn"
-path="res://.godot/imported/grass2.png-d91659d6f4c97de352c63fc2c38b61c3.ctex"
+uid="uid://cgbxwfe862ksb"
+path="res://.godot/imported/fog_top.png-99172b8355cb73a51e1f1abeb2cebc25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/grass/grass2.png"
-dest_files=["res://.godot/imported/grass2.png-d91659d6f4c97de352c63fc2c38b61c3.ctex"]
+source_file="res://assets/background/fog/fog_top.png"
+dest_files=["res://.godot/imported/fog_top.png-99172b8355cb73a51e1f1abeb2cebc25.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

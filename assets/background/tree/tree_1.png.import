@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1t3vgkn0ou2a"
-path="res://.godot/imported/fog1.png-3bcf935a3ce0452116d246f077637f82.ctex"
+uid="uid://bkiq2l21oi7vv"
+path="res://.godot/imported/tree_1.png-afb1e20e9fddd0fca789ee8a5445860e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/fog/fog1.png"
-dest_files=["res://.godot/imported/fog1.png-3bcf935a3ce0452116d246f077637f82.ctex"]
+source_file="res://assets/background/tree/tree_1.png"
+dest_files=["res://.godot/imported/tree_1.png-afb1e20e9fddd0fca789ee8a5445860e.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duptrmt0hwj3m"
-path="res://.godot/imported/bush3.png-e7519b5a11ed9e80d549d7e6b6dd4b34.ctex"
+uid="uid://cvs1rp6rvr7e0"
+path="res://.godot/imported/tree_3.png-adefb386e2e778f73cc464bb288baeef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background/bush/bush3.png"
-dest_files=["res://.godot/imported/bush3.png-e7519b5a11ed9e80d549d7e6b6dd4b34.ctex"]
+source_file="res://assets/background/tree/tree_3.png"
+dest_files=["res://.godot/imported/tree_3.png-adefb386e2e778f73cc464bb288baeef.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
