@@ -19,7 +19,9 @@ public partial class SkillResource : Resource
     [Export]
     public int ExpCost { get; set; }
     [Export]
-    public bool IsUnlocked { get; set; }
+    public bool Unlocked { get; set; }
     [Export]
-    public Array<SkillResource> UnlockSkills { get; set; }
+    public bool Activated { get; set; }
+    [Export]
+    public Array<SkillResource> ActivateSkills { get; set; }
 }

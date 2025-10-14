@@ -38,9 +38,9 @@ public partial class Globals : Node
     .AddScoped<PlayerDataStore>()
     .AddScoped(InjectNodeClass<AudioManager>())
     .AddScoped(InjectNodeClass<PauseManager>())
-    .AddScoped<StatsManager>()
-    .AddScoped<SkillsManager>()
-    .AddScoped<SkillTreeManager>()
+    .AddSingleton<StatsManager>()
+    .AddSingleton<SkillsManager>()
+    .AddSingleton<SkillTreeManager>()
     ;
 
     AddScenes(services);

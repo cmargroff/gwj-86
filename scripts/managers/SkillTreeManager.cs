@@ -16,7 +16,9 @@ public partial class SkillTreeManager
     }
 	public bool CheckExp(int exp)
 	{
-		bool check = (_statsManager.Exp >= exp) ? true : false;
+		
+		var check = (_statsManager.Exp >= exp) ? true : false;
 		return check;
+		
     }
 }
