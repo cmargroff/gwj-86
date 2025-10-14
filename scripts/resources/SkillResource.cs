@@ -23,5 +23,5 @@ public partial class SkillResource : Resource
     [Export]
     public bool Activated { get; set; }
     [Export]
-    public Array<SkillResource> ActivateSkills { get; set; }
+    public Array<SkillResource> UnlockSkills { get; set; }
 }

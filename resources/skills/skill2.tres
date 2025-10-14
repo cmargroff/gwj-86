@@ -11,5 +11,5 @@ SkillName = "skill 2"
 BorderTexture = ExtResource("1_qjamj")
 IconTexture = ExtResource("2_yqiq7")
 ExpCost = 2
-ActivateSkills = Array[Object]([ExtResource("3_scsi4")])
+UnlockSkills = Array[Object]([ExtResource("3_scsi4")])
 metadata/_custom_type_script = "uid://jfvhoncsydvq"

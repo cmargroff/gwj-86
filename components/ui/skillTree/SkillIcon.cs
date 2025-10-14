@@ -25,6 +25,8 @@ public partial class SkillIcon : PanelContainer
         _button = GetNode<Button>("%Button");
         _border = GetNode<TextureRect>("%Border");
         _icon = GetNode<TextureRect>("%Icon");
+
+        _skillTreeManager.SkillTreeUpdated += SetStyle;
     }
 
     public override void _Ready()
@@ -58,7 +60,7 @@ public partial class SkillIcon : PanelContainer
     public void UnlockSkill(SkillResource skillResource)
     {
         skillResource.Unlocked = true;
-        SetStyle(); //doesn't work
+        _skillTreeManager.UpdateTree();
     }
 
     public void ActivateSkill()
@@ -67,9 +69,9 @@ public partial class SkillIcon : PanelContainer
         {
             SkillResource.Activated = true;
         }
-        if (SkillResource.ActivateSkills != null)
+        if (SkillResource.UnlockSkills != null)
         {
-            foreach (var skill in SkillResource.ActivateSkills)
+            foreach (var skill in SkillResource.UnlockSkills)
             {
                 UnlockSkill(skill);
             }

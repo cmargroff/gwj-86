@@ -12,5 +12,5 @@ BorderTexture = ExtResource("1_e86wt")
 IconTexture = ExtResource("2_jny5w")
 Unlocked = true
 Activated = true
-ActivateSkills = Array[Object]([ExtResource("1_jny5w")])
+UnlockSkills = Array[Object]([ExtResource("1_jny5w")])
 metadata/_custom_type_script = "uid://jfvhoncsydvq"
