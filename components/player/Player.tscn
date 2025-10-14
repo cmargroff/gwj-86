@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c8en35aminwok"]
+[gd_scene load_steps=34 format=3 uid="uid://c8en35aminwok"]
 
 [ext_resource type="Script" uid="uid://ccnmr6gfuk8c5" path="res://components/player/Player.cs" id="1_kfe3d"]
 [ext_resource type="Texture2D" uid="uid://cavvwiogt7c0p" path="res://assets/sprites/player/atlas.sprites/HoodShadow.tres" id="3_lbsqm"]
@@ -167,6 +167,45 @@ _data = {
 radius = 0.6384946
 height = 1.5749639
 
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_a5sp0"]
+target_nodepath = NodePath("../FootL_IK")
+flip_bend_direction = true
+joint_one_bone_idx = 2
+joint_one_bone2d_node = NodePath("Root/Hip/LegL")
+joint_two_bone_idx = 3
+joint_two_bone2d_node = NodePath("Root/Hip/LegL/ShinL")
+
+[sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_ocmko"]
+target_nodepath = NodePath("../FootR_IK")
+joint_one_bone_idx = 4
+joint_one_bone2d_node = NodePath("Root/Hip/LegR")
+joint_two_bone_idx = 5
+joint_two_bone2d_node = NodePath("Root/Hip/LegR/ShinR")
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_wtb5b"]
+bone_index = 6
+bone2d_node = NodePath("Root/Hip/Head")
+target_nodepath = NodePath("../HeadLook")
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_rvha6"]
+bone_index = 7
+bone2d_node = NodePath("Root/Hip/Head/Eyes")
+target_nodepath = NodePath("../HeadLook")
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_a5sp0"]
+bone_index = 8
+bone2d_node = NodePath("Root/Hip/Arm")
+target_nodepath = NodePath("../Arm_IK")
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_hvdg6"]
+enabled = true
+modification_count = 5
+modifications/0 = SubResource("SkeletonModification2DTwoBoneIK_a5sp0")
+modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_ocmko")
+modifications/2 = SubResource("SkeletonModification2DLookAt_wtb5b")
+modifications/3 = SubResource("SkeletonModification2DLookAt_rvha6")
+modifications/4 = SubResource("SkeletonModification2DLookAt_a5sp0")
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer")]
 script = ExtResource("1_kfe3d")
 AnimationPlayer = NodePath("AnimationPlayer")
@@ -201,7 +240,20 @@ shape = SubResource("CapsuleShape2D_yxufj")
 [node name="Visuals" type="Node2D" parent="."]
 scale = Vector2(0.25, 0.25)
 
+[node name="FootL_IK" type="Marker2D" parent="Visuals"]
+position = Vector2(-40, 0)
+
+[node name="FootR_IK" type="Marker2D" parent="Visuals"]
+position = Vector2(40, 0)
+
+[node name="HeadLook" type="Marker2D" parent="Visuals"]
+position = Vector2(-584, -700)
+
+[node name="Arm_IK" type="Marker2D" parent="Visuals"]
+position = Vector2(100, -196)
+
 [node name="Skeleton2D" type="Skeleton2D" parent="Visuals"]
+modification_stack = SubResource("SkeletonModificationStack2D_hvdg6")
 
 [node name="Root" type="Bone2D" parent="Visuals/Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
@@ -212,32 +264,32 @@ rest = Transform2D(1, 0, 0, 1, 0, -376)
 
 [node name="LegL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(-44, 13)
-rest = Transform2D(1, 0, 0, 1, -44, 13)
+rest = Transform2D(0.99989206, -0.011018129, 0.011018129, 0.99989206, -44, 13)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ShinL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/LegL"]
 position = Vector2(0, 162)
-rest = Transform2D(1, 0, 0, 1, 0, 162)
-auto_calculate_length_and_angle = false
-length = 155.0
-bone_angle = 90.0
+rotation = 0.84026784
+scale = Vector2(0.9999971, 0.9999971)
+rest = Transform2D(0.9999756, 0, 0, 0.9999756, 0, 162)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="FootBack" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/ShinL"]
-position = Vector2(-32.75, 49.5)
+position = Vector2(-40, 53)
 texture = ExtResource("3_ocmko")
 
 [node name="LegR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(41, 13)
-rest = Transform2D(1, 0, 0, 1, 41, 13)
+rest = Transform2D(0.9998269, 0.0027543376, -0.0027543376, 0.9998269, 41, 13)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="ShinR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/LegR"]
 position = Vector2(0, 164)
-rest = Transform2D(1, 0, 0, 1, 0, 164)
-auto_calculate_length_and_angle = false
-length = 155.0
-bone_angle = 90.0
+rest = Transform2D(0.99999917, 4.6566123e-10, -4.6566123e-10, 0.99999917, 0, 164)
+metadata/_local_pose_override_enabled_ = true
 
 [node name="FootFront" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR"]
-position = Vector2(-13.75, 64.5)
+position = Vector2(-25, 63)
 texture = ExtResource("4_wtb5b")
 
 [node name="Cloak2" type="AnimatedSprite2D" parent="Visuals/Skeleton2D/Root/Hip"]
@@ -255,23 +307,31 @@ autoplay = "idle"
 
 [node name="Head" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(24, -276)
-rest = Transform2D(1, 0, 0, 1, 24, -276)
+scale = Vector2(0.9999755, 0.9999755)
+rest = Transform2D(0.9999755, 0, 0, 0.9999755, 24, -276)
 auto_calculate_length_and_angle = false
 length = 100.0
 bone_angle = 180.0
+metadata/_local_pose_override_enabled_ = true
+
+[node name="HoodShadow" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
+show_behind_parent = true
+position = Vector2(-29, -85.00006)
+texture = ExtResource("3_lbsqm")
+
+[node name="Eyes" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
+position = Vector2(-40.000977, -84.00208)
+rest = Transform2D(1, 0, 0, 1, -40.000977, -84.00208)
+metadata/_local_pose_override_enabled_ = true
+
+[node name="Eyes2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head/Eyes"]
+position = Vector2(-8.0002, 1.21593475e-05)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("4_5u2jg")
 
 [node name="Hood1" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
 position = Vector2(-8, -99)
 texture = ExtResource("5_xnekc")
-
-[node name="HoodShadow" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head/Hood1"]
-show_behind_parent = true
-position = Vector2(-21, 14)
-texture = ExtResource("3_lbsqm")
-
-[node name="Eyes" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head/Hood1"]
-position = Vector2(-34, 17)
-texture = ExtResource("4_5u2jg")
 
 [node name="Arm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(91, -209)
@@ -279,6 +339,7 @@ rest = Transform2D(1, 0, 0, 1, 91, -209)
 auto_calculate_length_and_angle = false
 length = 355.213
 bone_angle = -4.4859996
+metadata/_local_pose_override_enabled_ = true
 
 [node name="Sleeve2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Arm"]
 position = Vector2(161, -28)
