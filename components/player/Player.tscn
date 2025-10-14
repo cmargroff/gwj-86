@@ -1,7 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://c8en35aminwok"]
+[gd_scene load_steps=28 format=3 uid="uid://c8en35aminwok"]
 
 [ext_resource type="Script" uid="uid://ccnmr6gfuk8c5" path="res://components/player/Player.cs" id="1_kfe3d"]
-[ext_resource type="Texture2D" uid="uid://m8skfnc0km71" path="res://assets/sprites/playerPlaceholder.png" id="1_t3162"]
 [ext_resource type="Texture2D" uid="uid://cavvwiogt7c0p" path="res://assets/sprites/player/atlas.sprites/HoodShadow.tres" id="3_lbsqm"]
 [ext_resource type="Texture2D" uid="uid://sg87slxyhve5" path="res://assets/sprites/player/atlas.sprites/FootBack.tres" id="3_ocmko"]
 [ext_resource type="Texture2D" uid="uid://kqxb1ahenocy" path="res://assets/sprites/player/atlas.sprites/Eyes.tres" id="4_5u2jg"]
@@ -176,10 +175,6 @@ AnimationPlayer = NodePath("AnimationPlayer")
 position = Vector2(0, -16)
 zoom = Vector2(1.5, 1.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -16)
-texture = ExtResource("1_t3162")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
 shape = SubResource("CapsuleShape2D_kfe3d")
@@ -204,124 +199,93 @@ texture = SubResource("PlaceholderTexture2D_x1ks5")
 shape = SubResource("CapsuleShape2D_yxufj")
 
 [node name="Visuals" type="Node2D" parent="."]
+scale = Vector2(0.25, 0.25)
 
-[node name="FootBack" type="Sprite2D" parent="Visuals"]
-position = Vector2(-7.25, -14.9)
-scale = Vector2(0.1, 0.1)
+[node name="Skeleton2D" type="Skeleton2D" parent="Visuals"]
+
+[node name="Root" type="Bone2D" parent="Visuals/Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Hip" type="Bone2D" parent="Visuals/Skeleton2D/Root"]
+position = Vector2(0, -376)
+rest = Transform2D(1, 0, 0, 1, 0, -376)
+
+[node name="LegL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(-44, 13)
+rest = Transform2D(1, 0, 0, 1, -44, 13)
+
+[node name="ShinL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/LegL"]
+position = Vector2(0, 162)
+rest = Transform2D(1, 0, 0, 1, 0, 162)
+auto_calculate_length_and_angle = false
+length = 155.0
+bone_angle = 90.0
+
+[node name="FootBack" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/ShinL"]
+position = Vector2(-32.75, 49.5)
 texture = ExtResource("3_ocmko")
 
-[node name="FootFront" type="Sprite2D" parent="Visuals"]
-position = Vector2(3.75, -12.9)
-scale = Vector2(0.1, 0.1)
+[node name="LegR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(41, 13)
+rest = Transform2D(1, 0, 0, 1, 41, 13)
+
+[node name="ShinR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/LegR"]
+position = Vector2(0, 164)
+rest = Transform2D(1, 0, 0, 1, 0, 164)
+auto_calculate_length_and_angle = false
+length = 155.0
+bone_angle = 90.0
+
+[node name="FootFront" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR"]
+position = Vector2(-13.75, 64.5)
 texture = ExtResource("4_wtb5b")
 
-[node name="Cloak" type="Node2D" parent="Visuals"]
-position = Vector2(3.75, -0.8999996)
-
-[node name="Cloak" type="AnimatedSprite2D" parent="Visuals/Cloak"]
-position = Vector2(-0.99999994, -39.999996)
-scale = Vector2(0.1, 0.1)
+[node name="Cloak2" type="AnimatedSprite2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(31, -8.399994)
 sprite_frames = ExtResource("6_yngd5")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="CloakLight" type="AnimatedSprite2D" parent="Visuals/Cloak/Cloak"]
+[node name="CloakLight" type="AnimatedSprite2D" parent="Visuals/Skeleton2D/Root/Hip/Cloak2"]
 position = Vector2(0, 10)
 scale = Vector2(0.9999998, 0.9999998)
 sprite_frames = ExtResource("6_rvha6")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="Sleeve" type="Node2D" parent="Visuals"]
-position = Vector2(3.75, -0.8999996)
+[node name="Head" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(24, -276)
+rest = Transform2D(1, 0, 0, 1, 24, -276)
+auto_calculate_length_and_angle = false
+length = 100.0
+bone_angle = 180.0
 
-[node name="Sleeve" type="Sprite2D" parent="Visuals/Sleeve"]
-position = Vector2(21, -63)
+[node name="Hood1" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
+position = Vector2(-8, -99)
+texture = ExtResource("5_xnekc")
+
+[node name="HoodShadow" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head/Hood1"]
+show_behind_parent = true
+position = Vector2(-21, 14)
+texture = ExtResource("3_lbsqm")
+
+[node name="Eyes" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head/Hood1"]
+position = Vector2(-34, 17)
+texture = ExtResource("4_5u2jg")
+
+[node name="Arm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(91, -209)
+rest = Transform2D(1, 0, 0, 1, 91, -209)
+auto_calculate_length_and_angle = false
+length = 355.213
+bone_angle = -4.4859996
+
+[node name="Sleeve2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Arm"]
+position = Vector2(161, -28)
 rotation = -1.5707964
-scale = Vector2(0.1, 0.1)
 texture = ExtResource("7_hvdg6")
 
-[node name="SleeveLight" type="Sprite2D" parent="Visuals/Sleeve/Sleeve"]
+[node name="SleeveLight" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Arm/Sleeve2"]
 position = Vector2(0, 180.00003)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("8_x1ks5")
-
-[node name="Head" type="Node2D" parent="Visuals"]
-position = Vector2(3.75, -0.8999996)
-
-[node name="HoodShadow" type="Sprite2D" parent="Visuals/Head"]
-position = Vector2(-4.1000013, -77.15)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_lbsqm")
-
-[node name="Eyes" type="Sprite2D" parent="Visuals/Head"]
-position = Vector2(-8.099999, -76.15)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("4_5u2jg")
-
-[node name="Hood1" type="Sprite2D" parent="Visuals/Head"]
-position = Vector2(-2.0999992, -78.15)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_xnekc")
-
-[node name="Skeleton2D" type="Skeleton2D" parent="Visuals"]
-
-[node name="Root" type="Bone2D" parent="Visuals/Skeleton2D"]
-
-[node name="Hip" type="Bone2D" parent="Visuals/Skeleton2D/Root"]
-position = Vector2(0, -34)
-rotation = -1.5707964
-
-[node name="Torso" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
-position = Vector2(14, 6.119594e-07)
-
-[node name="Shoulder" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso"]
-position = Vector2(17, 7.4412674e-07)
-rotation = 1.8674667
-
-[node name="UpperArm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso/Shoulder"]
-position = Vector2(8.819871, 1.4865601)
-rotation = -0.38806626
-scale = Vector2(2.010428, 0.9999999)
-
-[node name="ForeArm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso/Shoulder/UpperArm"]
-position = Vector2(8.9613495, 0.6470115)
-rotation = -0.013603909
-scale = Vector2(0.5184798, 0.32845792)
-
-[node name="Head" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso"]
-position = Vector2(18.999998, -0.99999917)
-scale = Vector2(1.7557487, -21.011591)
-
-[node name="Eyes" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Torso/Head"]
-position = Vector2(5.695575, 0.047592755)
-rotation = 1.5732198
-scale = Vector2(0.04609178, 0.14633945)
-
-[node name="Thigh_R" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
-position = Vector2(-2.622341e-07, 6)
-rotation = 3.1414084
-scale = Vector2(0.6424293, 1.6083797)
-
-[node name="Shin_R" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_R"]
-position = Vector2(23.348873, 0.0017177872)
-scale = Vector2(1.7472684, 1)
-
-[node name="Foot_R" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_R/Shin_R"]
-position = Vector2(12.4723625, -0.6201405)
-rotation = 0.68265224
-scale = Vector2(0.51645595, -14.620172)
-
-[node name="Thigh_L" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
-position = Vector2(-0.9999998, -4)
-rotation = 3.1414084
-scale = Vector2(0.6424293, 1.6083797)
-
-[node name="Shin_L" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_L"]
-position = Vector2(23.348873, 0.0017177872)
-scale = Vector2(1.7472684, 1)
-
-[node name="Bone2D" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Thigh_L/Shin_L"]
-position = Vector2(11.5814905, -0.62025476)
-rotation = 1.0661211
-scale = Vector2(0.45530888, 3.910118)
