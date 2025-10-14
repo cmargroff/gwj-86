@@ -4,4 +4,4 @@
 
 [resource]
 atlas = ExtResource("1_hyeom")
-region = Rect2(0, 1201, 411, 425)
+region = Rect2(950, 446, 411, 425)
