@@ -1,8 +1,9 @@
-namespace JamTemplate;
+namespace JamTemplate.Managers;
 
 public class StatsManager
 {
   public float Health { get; set; }
+  public int Exp { get; set; } = 0; 
   public float Will { get; set; }
   public float Strength { get; set; }
   public float WalkSpeed { get; set; } = 120.0f;

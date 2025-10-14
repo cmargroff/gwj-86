@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=2 format=3 uid="uid://dkauuaxn50okw"]
+
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_on3gn"]
+
+[resource]
+script = ExtResource("1_on3gn")
+UnlockSkills = null
+metadata/_custom_type_script = "uid://jfvhoncsydvq"

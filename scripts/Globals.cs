@@ -40,6 +40,7 @@ public partial class Globals : Node
     .AddScoped(InjectNodeClass<PauseManager>())
     .AddScoped<StatsManager>()
     .AddScoped<SkillsManager>()
+    .AddScoped<SkillTreeManager>()
     ;
 
     AddScenes(services);
