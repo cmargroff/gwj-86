@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dl5pcbu1moxwl"]
+[gd_scene load_steps=26 format=3 uid="uid://dl5pcbu1moxwl"]
 
 [ext_resource type="Texture2D" uid="uid://bdx3vhdu5ckkd" path="res://assets/sprites/golem/atlas.sprites/Hip.tres" id="1_tt27j"]
 [ext_resource type="Texture2D" uid="uid://b3bgf35uv7to7" path="res://assets/sprites/golem/atlas.sprites/Pelvis.tres" id="2_mrfiv"]
@@ -55,17 +55,14 @@ bone_index = 8
 bone2d_node = NodePath("Root/Hip/Pelvis/Torso/Head")
 target_nodepath = NodePath("../HeadLook")
 
-[sub_resource type="SkeletonModification2D" id="SkeletonModification2D_o4qpa"]
-
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_o4qpa"]
 enabled = true
-modification_count = 6
+modification_count = 5
 modifications/0 = SubResource("SkeletonModification2DTwoBoneIK_o4qpa")
 modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_mrfiv")
 modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_tltlb")
 modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_w1sq0")
 modifications/4 = SubResource("SkeletonModification2DLookAt_o4qpa")
-modifications/5 = SubResource("SkeletonModification2D_o4qpa")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mrfiv"]
 radius = 54.0
@@ -264,7 +261,6 @@ metadata/_edit_lock_ = true
 
 [node name="HandR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR/ForearmR"]
 position = Vector2(-474.02332, -11.99707)
-rotation = 0.021061184
 scale = Vector2(1.0002183, 1.0002183)
 rest = Transform2D(1, 0, 0, 1, -388.00006, -12.000023)
 auto_calculate_length_and_angle = false
@@ -324,7 +320,7 @@ rotation = -3.1415925
 texture = ExtResource("13_b8qti")
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -283)
 shape = SubResource("CapsuleShape2D_mrfiv")
 metadata/_edit_lock_ = true
