@@ -1,0 +1,128 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0a6pb8y7jq4j"]
+
+[ext_resource type="Texture2D" uid="uid://bxjhi3woibgi" path="res://assets/background/fog/fog_1.png" id="1_c4e1x"]
+[ext_resource type="Texture2D" uid="uid://dq5vevttiwesp" path="res://assets/background/grass/grass_main.png" id="1_dw3nk"]
+[ext_resource type="Texture2D" uid="uid://bkiq2l21oi7vv" path="res://assets/background/tree/tree_1.png" id="1_y3xn2"]
+[ext_resource type="Texture2D" uid="uid://cvs1rp6rvr7e0" path="res://assets/background/tree/tree_3.png" id="3_0qhxx"]
+[ext_resource type="PackedScene" uid="uid://c8sgxvtlot12" path="res://components/level/base_floor.tscn" id="3_mag1r"]
+[ext_resource type="Texture2D" uid="uid://svkh0m0vb3ta" path="res://assets/background/bush/bush_1.png" id="4_2abar"]
+[ext_resource type="Texture2D" uid="uid://cneypwdqjqh7q" path="res://assets/background/tree/tree_2.png" id="4_xay8o"]
+[ext_resource type="Texture2D" uid="uid://chxk5bf76p46j" path="res://assets/background/grass/grass_1.png" id="8_ca6g2"]
+[ext_resource type="Texture2D" uid="uid://b7fuianb6tcft" path="res://assets/background/grass/grass_2.png" id="9_xbgro"]
+[ext_resource type="Texture2D" uid="uid://cgbxwfe862ksb" path="res://assets/background/fog/fog_top.png" id="10_ewqpv"]
+
+[node name="ForestStarting" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Farground" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0)
+
+[node name="Background" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 0)
+
+[node name="Fog" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0)
+
+[node name="Fog1" type="Sprite2D" parent="Fog"]
+position = Vector2(342, 645)
+texture = ExtResource("1_c4e1x")
+
+[node name="Midground" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.8, 0)
+
+[node name="Trees" type="Node2D" parent="Midground"]
+modulate = Color(0, 0.28096718, 0.3074984, 1)
+
+[node name="Tree3" type="Sprite2D" parent="Midground/Trees"]
+position = Vector2(610, 455)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_xay8o")
+
+[node name="Tree4" type="Sprite2D" parent="Midground/Trees"]
+position = Vector2(1641, 459)
+scale = Vector2(-0.25, 0.25)
+texture = ExtResource("4_xay8o")
+
+[node name="Tree5" type="Sprite2D" parent="Midground/Trees"]
+position = Vector2(37, 483)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_0qhxx")
+
+[node name="Foreground" type="Parallax2D" parent="."]
+
+[node name="Floor" type="Node2D" parent="Foreground"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, 1057)
+
+[node name="Bush1" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(1022, -217)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_2abar")
+
+[node name="BaseFloor" parent="Foreground/Floor" instance=ExtResource("3_mag1r")]
+position = Vector2(1, -82)
+
+[node name="Tree2" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(1497, -576)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_xay8o")
+
+[node name="Tree1" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(243, -577)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_y3xn2")
+
+[node name="GrassMain" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(256, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_dw3nk")
+
+[node name="GrassMain2" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(767, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_dw3nk")
+
+[node name="GrassMain3" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(1279, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_dw3nk")
+
+[node name="GrassMain4" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(1785, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_dw3nk")
+
+[node name="Grass1" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(1272, -127)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_ca6g2")
+
+[node name="Grass2" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(545, -126)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_xbgro")
+
+[node name="Grass3" type="Sprite2D" parent="Foreground/Floor"]
+position = Vector2(271, -152)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_xbgro")
+
+[node name="FogTop" type="Sprite2D" parent="Foreground"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(514, 72)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_ewqpv")
+
+[node name="FogTop2" type="Sprite2D" parent="Foreground"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1538, 72)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_ewqpv")
