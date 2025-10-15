@@ -19,7 +19,7 @@ public class StatsManager
   //   public uint MaxJumps { get; set; } = 2;
   // 
   public event Action<Stat, float> StatChanged;
-  public Dictionary<Stat, float> Stats;
+  public Dictionary<Stat, float> Stats = new();
   public StatsManager()
   {
     Stats[Stat.Health] = 100f;

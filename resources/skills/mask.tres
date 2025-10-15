@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_h2i5y")
-SkillName = "Rabbit"
+SkillName = "Rabbit mask"
 BorderTexture = ExtResource("1_e86wt")
 IconTexture = ExtResource("2_jny5w")
 Unlocked = true

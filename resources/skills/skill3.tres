@@ -7,6 +7,7 @@
 [resource]
 script = ExtResource("1_on3gn")
 SkillName = "skill 3"
+Description = "skill3"
 BorderTexture = ExtResource("1_n6fne")
 IconTexture = ExtResource("2_txjvh")
 UnlockSkills = null

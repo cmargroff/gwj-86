@@ -17,10 +17,8 @@ size = Vector2(20, 100)
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_5pph0")]
-visible = false
 
 [node name="Floor" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(0, 2)
@@ -31,7 +29,6 @@ position = Vector2(0, 10)
 texture = SubResource("PlaceholderTexture2D_5pph0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(232, 0)
 
 [node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
@@ -43,6 +40,7 @@ position = Vector2(0, -50)
 shape = SubResource("RectangleShape2D_j5piy")
 
 [node name="SkillTree" parent="." instance=ExtResource("2_j5piy")]
+visible = false
 offset_top = 0.0
 offset_bottom = 0.0
 
