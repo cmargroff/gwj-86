@@ -272,6 +272,9 @@ position = Vector2(0, 162)
 rotation = 0.84026784
 scale = Vector2(0.9999971, 0.9999971)
 rest = Transform2D(0.9999756, 0, 0, 0.9999756, 0, 162)
+auto_calculate_length_and_angle = false
+length = 155.0
+bone_angle = 90.0
 metadata/_local_pose_override_enabled_ = true
 
 [node name="FootBack" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/ShinL"]
@@ -286,6 +289,9 @@ metadata/_local_pose_override_enabled_ = true
 [node name="ShinR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/LegR"]
 position = Vector2(0, 164)
 rest = Transform2D(0.99999917, 4.6566123e-10, -4.6566123e-10, 0.99999917, 0, 164)
+auto_calculate_length_and_angle = false
+length = 155.0
+bone_angle = 90.0
 metadata/_local_pose_override_enabled_ = true
 
 [node name="FootFront" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR"]
@@ -338,7 +344,7 @@ position = Vector2(91, -209)
 rest = Transform2D(1, 0, 0, 1, 91, -209)
 auto_calculate_length_and_angle = false
 length = 355.213
-bone_angle = -4.4859996
+bone_angle = -4.485999
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Sleeve2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Arm"]
