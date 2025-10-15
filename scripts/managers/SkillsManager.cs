@@ -1,4 +1,4 @@
-namespace JamTemplate;
+namespace JamTemplate.Managers;
 
 public class SkillsManager {
 

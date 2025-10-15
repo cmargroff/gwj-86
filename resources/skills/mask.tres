@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=5 format=3 uid="uid://t7yqxx82cwks"]
+
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_e86wt"]
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_h2i5y"]
+[ext_resource type="Resource" uid="uid://y3phkr6utmoe" path="res://resources/skills/skill1.tres" id="1_jny5w"]
+[ext_resource type="Texture2D" uid="uid://drke8lboegisr" path="res://sourceAssets/player/MaskRabbit.png" id="2_jny5w"]
+
+[resource]
+script = ExtResource("1_h2i5y")
+SkillName = "Rabbit"
+BorderTexture = ExtResource("1_e86wt")
+IconTexture = ExtResource("2_jny5w")
+Unlocked = true
+Activated = true
+UnlockSkills = Array[Object]([ExtResource("1_jny5w")])
+metadata/_custom_type_script = "uid://jfvhoncsydvq"
