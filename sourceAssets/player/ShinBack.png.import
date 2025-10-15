@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df7if8le5bw8l"
-path="res://.godot/imported/FootBack.png-dbd3763e2113aa755dbcf2dca2007950.ctex"
+uid="uid://xgypv7fbmwy6"
+path="res://.godot/imported/ShinBack.png-2dc0dac2f0ceb16cf045bd8c049632de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sourceAssets/player/FootBack.png"
-dest_files=["res://.godot/imported/FootBack.png-dbd3763e2113aa755dbcf2dca2007950.ctex"]
+source_file="res://sourceAssets/player/ShinBack.png"
+dest_files=["res://.godot/imported/ShinBack.png-2dc0dac2f0ceb16cf045bd8c049632de.ctex"]
 
 [params]
 

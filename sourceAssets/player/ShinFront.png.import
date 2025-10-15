@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df7if8le5bw8l"
-path="res://.godot/imported/FootBack.png-dbd3763e2113aa755dbcf2dca2007950.ctex"
+uid="uid://bjcx1irvk26pa"
+path="res://.godot/imported/ShinFront.png-81559f8b00ec3fe74ef8ed90b81f8858.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sourceAssets/player/FootBack.png"
-dest_files=["res://.godot/imported/FootBack.png-dbd3763e2113aa755dbcf2dca2007950.ctex"]
+source_file="res://sourceAssets/player/ShinFront.png"
+dest_files=["res://.godot/imported/ShinFront.png-81559f8b00ec3fe74ef8ed90b81f8858.ctex"]
 
 [params]
 
