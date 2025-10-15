@@ -30,14 +30,21 @@ public class StatsManager
     Stats[Stat.WalkSpeed] = 120f;
     Stats[Stat.RunSpeed] = 300f;
     Stats[Stat.AirSpeed] = 200f;
+    Stats[Stat.SpeedMuliplier] = 1;
     Stats[Stat.InitialJumpVelocity] = -300f;
     Stats[Stat.AirJumpVelocity] = -150f;
     Stats[Stat.MaxJumps] = 2;
     Stats[Stat.FrictionCoefficient] = 0.15f;
 
+    Stats[Stat.DashDistance] = 50f;
+    Stats[Stat.InvulnWindow] = 0.5f;
+
     Stats[Stat.AttackSpeed] = 1;
     Stats[Stat.CritChance] = 0;
     Stats[Stat.WeaponThrow] = 0;
+
+    Stats[Stat.HealthRegen] = 0;
+    Stats[Stat.DashDamage] = 0;
   }
   public void ChangeStat(StatChange statChange)
   {

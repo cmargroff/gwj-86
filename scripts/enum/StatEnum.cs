@@ -10,14 +10,20 @@ public enum Stat
   WalkSpeed,
   RunSpeed,
   AirSpeed,
+  SpeedMuliplier,
   InitialJumpVelocity,
   AirJumpVelocity,
   MaxJumps,
-  DashDistance,
   FrictionCoefficient,
+
+  DashDistance,
+  InvulnWindow,
 
   AttackSpeed,
   CritChance,
   WeaponThrow,
+
+  HealthRegen,
+  DashDamage,
 
 }

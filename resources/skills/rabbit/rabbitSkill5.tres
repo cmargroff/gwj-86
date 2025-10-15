@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=4 format=3 uid="uid://c2ljhccgicrwf"]
+
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_6bjiw"]
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_ooh14"]
+[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_ihyel"]
+
+[resource]
+script = ExtResource("1_ooh14")
+SkillName = "skill 5"
+Description = "Larger invulnerability window"
+BorderTexture = ExtResource("1_6bjiw")
+IconTexture = ExtResource("2_ihyel")
+StatName = 13
+Value = 0.5
+Mode = 1
+UnlockSkills = null
+metadata/_custom_type_script = "uid://jfvhoncsydvq"

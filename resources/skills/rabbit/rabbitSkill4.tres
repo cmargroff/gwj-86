@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=5 format=3 uid="uid://csbf58dknyy53"]
+
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_g0g0r"]
+[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_7h17v"]
+[ext_resource type="Resource" uid="uid://c2ljhccgicrwf" path="res://resources/skills/rabbit/rabbitSkill5.tres" id="3_7h17v"]
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="3_ramm1"]
+
+[resource]
+script = ExtResource("3_ramm1")
+SkillName = "skill 4"
+Description = "Dash dictance increase"
+BorderTexture = ExtResource("1_g0g0r")
+IconTexture = ExtResource("2_7h17v")
+ExpCost = 1
+Unlocked = true
+StatName = 12
+Value = 10.0
+Mode = 1
+UnlockSkills = Array[Object]([ExtResource("3_7h17v")])
+metadata/_custom_type_script = "uid://jfvhoncsydvq"

@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8a1wyw5ac7hq"]
+[gd_scene load_steps=15 format=3 uid="uid://c8a1wyw5ac7hq"]
 
 [ext_resource type="Script" uid="uid://c73gqfqvi1ide" path="res://components/ui/skillTree/SkillTree.cs" id="1_oup23"]
 [ext_resource type="PackedScene" uid="uid://cpa1uy70vulch" path="res://components/ui/skillTree/SkillNode.tscn" id="2_q5c43"]
-[ext_resource type="Resource" uid="uid://t7yqxx82cwks" path="res://resources/skills/mask.tres" id="3_q85d6"]
-[ext_resource type="Resource" uid="uid://y3phkr6utmoe" path="res://resources/skills/skill1.tres" id="4_ilbes"]
-[ext_resource type="Resource" uid="uid://0r4mvqs87lxx" path="res://resources/skills/skill2.tres" id="5_iiaeu"]
-[ext_resource type="Resource" uid="uid://dkauuaxn50okw" path="res://resources/skills/skill3.tres" id="6_glf01"]
-[ext_resource type="Resource" uid="uid://csbf58dknyy53" path="res://resources/skills/skill4.tres" id="7_rw3cr"]
+[ext_resource type="Resource" uid="uid://t7yqxx82cwks" path="res://resources/skills/rabbit/rabbit.tres" id="3_iiaeu"]
+[ext_resource type="Resource" uid="uid://y3phkr6utmoe" path="res://resources/skills/rabbit/rabbitSkill1.tres" id="4_ilbes"]
+[ext_resource type="Resource" uid="uid://0r4mvqs87lxx" path="res://resources/skills/rabbit/rabbitSkill2.tres" id="5_iiaeu"]
+[ext_resource type="Resource" uid="uid://dkauuaxn50okw" path="res://resources/skills/rabbit/rabbitSkill3.tres" id="6_glf01"]
+[ext_resource type="Resource" uid="uid://c2ljhccgicrwf" path="res://resources/skills/rabbit/rabbitSkill5.tres" id="7_glf01"]
+[ext_resource type="Resource" uid="uid://csbf58dknyy53" path="res://resources/skills/rabbit/rabbitSkill4.tres" id="7_rw3cr"]
+[ext_resource type="Resource" uid="uid://d0wkmac4vbrpo" path="res://resources/skills/stag/stag.tres" id="9_glf01"]
+[ext_resource type="Resource" uid="uid://cnwp636472x5k" path="res://resources/skills/stag/stagSkill1.tres" id="10_tydyj"]
+[ext_resource type="Resource" uid="uid://bu3yrmgwefjbh" path="res://resources/skills/stag/stagSkill4.tres" id="11_o5bxh"]
+[ext_resource type="Resource" uid="uid://b3f8826x00ce1" path="res://resources/skills/stag/stagSkill2.tres" id="12_webxd"]
+[ext_resource type="Resource" uid="uid://cnf5av0veel4w" path="res://resources/skills/stag/stagSkill5.tres" id="13_21030"]
+[ext_resource type="Resource" uid="uid://dccb3ioqbaf1i" path="res://resources/skills/stag/stagSkill3.tres" id="14_kjrya"]
 
 [node name="SkillTree" type="Control"]
 layout_mode = 3
@@ -47,46 +54,102 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Rabbit" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 70
 
-[node name="HBoxContainer1" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer1" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Rabbit"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 50
 
-[node name="SkillIcon" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer1" instance=ExtResource("2_q5c43")]
+[node name="Root" parent="Panel/MarginContainer/HBoxContainer/Rabbit/HBoxContainer1" instance=ExtResource("2_q5c43")]
 layout_mode = 2
-SkillResource = ExtResource("3_q85d6")
+SkillResource = ExtResource("3_iiaeu")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Rabbit"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 50
 
-[node name="SkillIcon" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_q5c43")]
+[node name="Skill1" parent="Panel/MarginContainer/HBoxContainer/Rabbit/HBoxContainer2" instance=ExtResource("2_q5c43")]
 layout_mode = 2
 SkillResource = ExtResource("4_ilbes")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="Skill4" parent="Panel/MarginContainer/HBoxContainer/Rabbit/HBoxContainer2" instance=ExtResource("2_q5c43")]
+layout_mode = 2
+SkillResource = ExtResource("7_rw3cr")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Rabbit"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="SkillIcon" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_q5c43")]
+[node name="Skill2" parent="Panel/MarginContainer/HBoxContainer/Rabbit/HBoxContainer3" instance=ExtResource("2_q5c43")]
 layout_mode = 2
 SkillResource = ExtResource("5_iiaeu")
 
-[node name="SkillIcon2" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource("2_q5c43")]
+[node name="Skill5" parent="Panel/MarginContainer/HBoxContainer/Rabbit/HBoxContainer3" instance=ExtResource("2_q5c43")]
 layout_mode = 2
-SkillResource = ExtResource("6_glf01")
+SkillResource = ExtResource("7_glf01")
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Rabbit"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="SkillIcon" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer4" instance=ExtResource("2_q5c43")]
+[node name="Skill3" parent="Panel/MarginContainer/HBoxContainer/Rabbit/HBoxContainer4" instance=ExtResource("2_q5c43")]
 layout_mode = 2
-SkillResource = ExtResource("7_rw3cr")
+SkillResource = ExtResource("6_glf01")
+
+[node name="Stag" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 70
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Stag"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Root" parent="Panel/MarginContainer/HBoxContainer/Stag/HBoxContainer1" instance=ExtResource("2_q5c43")]
+layout_mode = 2
+SkillResource = ExtResource("9_glf01")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Stag"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+
+[node name="Skill1" parent="Panel/MarginContainer/HBoxContainer/Stag/HBoxContainer2" instance=ExtResource("2_q5c43")]
+layout_mode = 2
+SkillResource = ExtResource("10_tydyj")
+
+[node name="Skill4" parent="Panel/MarginContainer/HBoxContainer/Stag/HBoxContainer2" instance=ExtResource("2_q5c43")]
+layout_mode = 2
+SkillResource = ExtResource("11_o5bxh")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Stag"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Skill2" parent="Panel/MarginContainer/HBoxContainer/Stag/HBoxContainer3" instance=ExtResource("2_q5c43")]
+layout_mode = 2
+SkillResource = ExtResource("12_webxd")
+
+[node name="Skill5" parent="Panel/MarginContainer/HBoxContainer/Stag/HBoxContainer3" instance=ExtResource("2_q5c43")]
+layout_mode = 2
+SkillResource = ExtResource("13_21030")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Stag"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Skill3" parent="Panel/MarginContainer/HBoxContainer/Stag/HBoxContainer4" instance=ExtResource("2_q5c43")]
+layout_mode = 2
+SkillResource = ExtResource("14_kjrya")

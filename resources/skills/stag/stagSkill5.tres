@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=4 format=3 uid="uid://cnf5av0veel4w"]
+
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_g73rj"]
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_qagog"]
+[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_i1bg3"]
+
+[resource]
+script = ExtResource("1_qagog")
+SkillName = "skill 5"
+Description = "Passive HP regeneration"
+BorderTexture = ExtResource("1_g73rj")
+IconTexture = ExtResource("2_i1bg3")
+StatName = 17
+Value = 5.0
+Mode = 1
+UnlockSkills = null
+metadata/_custom_type_script = "uid://jfvhoncsydvq"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=5 format=3 uid="uid://bu3yrmgwefjbh"]
+
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_g40n8"]
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_gknrv"]
+[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_u3t5b"]
+[ext_resource type="Resource" uid="uid://cnf5av0veel4w" path="res://resources/skills/stag/stagSkill5.tres" id="3_u3t5b"]
+
+[resource]
+script = ExtResource("1_g40n8")
+SkillName = "skill 4"
+Description = "Damage on dash"
+BorderTexture = ExtResource("1_gknrv")
+IconTexture = ExtResource("2_u3t5b")
+Unlocked = true
+StatName = 18
+Value = 10.0
+Mode = 1
+UnlockSkills = Array[Object]([ExtResource("3_u3t5b")])
+metadata/_custom_type_script = "uid://jfvhoncsydvq"

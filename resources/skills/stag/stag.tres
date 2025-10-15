@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SkillResource" load_steps=6 format=3 uid="uid://d0wkmac4vbrpo"]
+
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_qtdfr"]
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_vcds7"]
+[ext_resource type="Texture2D" uid="uid://b7ruiw0bsolpt" path="res://sourceAssets/player/MaskDeer.png" id="2_lnrsg"]
+[ext_resource type="Resource" uid="uid://cnwp636472x5k" path="res://resources/skills/stag/stagSkill1.tres" id="3_4fsmj"]
+[ext_resource type="Resource" uid="uid://bu3yrmgwefjbh" path="res://resources/skills/stag/stagSkill4.tres" id="4_qw6s0"]
+
+[resource]
+script = ExtResource("1_vcds7")
+SkillName = "stag"
+BorderTexture = ExtResource("1_qtdfr")
+IconTexture = ExtResource("2_lnrsg")
+Unlocked = true
+Activated = true
+Mode = 1
+UnlockSkills = Array[Object]([ExtResource("3_4fsmj"), ExtResource("4_qw6s0")])
+metadata/_custom_type_script = "uid://jfvhoncsydvq"
