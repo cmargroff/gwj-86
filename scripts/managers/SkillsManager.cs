@@ -13,8 +13,9 @@ public class SkillsManager
     {
         foreach (var skill in skillsSet.Skills)
         {
-            if (skill.Activated)
+            if (skill.Activated && !skill.Enabled)
             {
+                skill.Enabled = true;
                 _statsManager.ChangeStat(new()
                 {
                     Stat = skill.StatName,
@@ -29,8 +30,9 @@ public class SkillsManager
     {
         foreach (var skill in skillsSet.Skills)
         {
-            if (skill.Activated)
+            if (skill.Activated && skill.Enabled)
             {
+                skill.Enabled = false;
                 _statsManager.ChangeStat(new()
                 {
                     Stat = skill.StatName,

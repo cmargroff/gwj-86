@@ -24,6 +24,8 @@ public partial class SkillResource : Resource
     [Export]
     public bool Activated { get; set; }
     [Export]
+    public bool Enabled { get; set; }
+    [Export]
     public Stat StatName;
     [Export]
     public float Value;
