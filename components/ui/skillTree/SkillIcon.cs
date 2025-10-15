@@ -27,7 +27,7 @@ public partial class SkillIcon : PanelContainer
         _border = GetNode<TextureRect>("%Border");
         _icon = GetNode<TextureRect>("%Icon");
         _text = GetNode<Label>("%Text");
-        _text.Visible = false;
+        _text.SelfModulate = new Color(1,1,1,0);
 
         _skillTreeManager.SkillTreeUpdated += SetStyle;
     }
@@ -87,12 +87,12 @@ public partial class SkillIcon : PanelContainer
 
     public void ShowText()
     {
-        _text.Visible = true;
+        _text.SelfModulate = new Color(1,1,1,1);
     }
     
     public void HideText()
     {
-        _text.Visible = false;
+        _text.SelfModulate = new Color(1,1,1,0);
     }
     
     public Vector2 GetCenter()
