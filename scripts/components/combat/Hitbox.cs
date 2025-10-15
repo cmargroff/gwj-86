@@ -12,6 +12,8 @@ public partial class Hitbox : Area2D
   /// How hard the BKB is
   /// </summary>
   public float Knockback { get; set; } = 1f;
+  public float Scaling { get; set; } = 100f;
+  public bool FixedKnockback { get; set; } = false;
   /// <summary>
   /// A global angle relative to right facing
   /// </summary>
