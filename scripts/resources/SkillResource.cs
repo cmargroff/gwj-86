@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using JamTemplate.Enum;
 using System;
 using System.ComponentModel;
 
@@ -22,6 +23,12 @@ public partial class SkillResource : Resource
     public bool Unlocked { get; set; }
     [Export]
     public bool Activated { get; set; }
+    [Export]
+    public Stat StatName;
+    [Export]
+    public float Value;
+    [Export]
+    public StatChangeMode Mode;
     [Export]
     public Array<SkillResource> UnlockSkills { get; set; }
 }

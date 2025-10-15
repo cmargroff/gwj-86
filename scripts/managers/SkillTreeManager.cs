@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.CompilerServices;
+using JamTemplate.Enum;
 
 namespace JamTemplate.Managers;
 
@@ -14,13 +15,13 @@ public class SkillTreeManager
 		_statsManager = statsManager;
 		_skillsManager = skillsManager;
 	}
-	public bool CheckExp(int exp)
+	public bool CheckExp(float exp)
 	{
-		var check = (_statsManager.Exp >= exp) ? true : false;
+		var check = (_statsManager.Stats[Stat.Exp] >= exp) ? true : false;
 
 		if (check)
 		{
-			_statsManager.Exp -= exp;
+			_statsManager.Stats[Stat.Exp] -= exp;
 			
 			//call function to apply skill 
 		}

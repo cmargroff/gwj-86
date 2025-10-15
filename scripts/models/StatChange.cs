@@ -1,5 +1,4 @@
 using JamTemplate.Enum;
-using ShipOfTheseus2025.Enum;
 
 namespace ShipOfTheseus2025.Models;
 
