@@ -1,6 +1,7 @@
-[gd_scene load_steps=34 format=3 uid="uid://c8en35aminwok"]
+[gd_scene load_steps=42 format=3 uid="uid://c8en35aminwok"]
 
 [ext_resource type="Script" uid="uid://ccnmr6gfuk8c5" path="res://components/player/Player.cs" id="1_kfe3d"]
+[ext_resource type="Script" uid="uid://cvy1h1nsiklsp" path="res://scripts/components/combat/Hurtbox.cs" id="2_ocmko"]
 [ext_resource type="Texture2D" uid="uid://cavvwiogt7c0p" path="res://assets/sprites/player/atlas.sprites/HoodShadow.tres" id="3_lbsqm"]
 [ext_resource type="Texture2D" uid="uid://sg87slxyhve5" path="res://assets/sprites/player/atlas.sprites/FootBack.tres" id="3_ocmko"]
 [ext_resource type="Texture2D" uid="uid://kqxb1ahenocy" path="res://assets/sprites/player/atlas.sprites/Eyes.tres" id="4_5u2jg"]
@@ -12,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dtquteyhh8vbe" path="res://assets/sprites/player/atlas.sprites/SleeveLight.tres" id="8_x1ks5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfe3d"]
-radius = 8.0
-height = 32.0
+radius = 34.83
+height = 225.0
 
 [sub_resource type="Animation" id="Animation_hvdg6"]
 length = 0.001
@@ -206,6 +207,33 @@ modifications/2 = SubResource("SkeletonModification2DLookAt_wtb5b")
 modifications/3 = SubResource("SkeletonModification2DLookAt_rvha6")
 modifications/4 = SubResource("SkeletonModification2DLookAt_a5sp0")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5sp0"]
+radius = 75.0
+height = 350.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wtb5b"]
+radius = 38.0
+height = 155.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ocmko"]
+radius = 36.12
+height = 175.81
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hvdg6"]
+radius = 38.0
+height = 155.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvha6"]
+radius = 36.12
+height = 175.81
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1ks5"]
+radius = 94.55
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_op7db"]
+radius = 38.0
+height = 390.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer")]
 script = ExtResource("1_kfe3d")
 AnimationPlayer = NodePath("AnimationPlayer")
@@ -215,7 +243,7 @@ position = Vector2(0, -16)
 zoom = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -112)
 shape = SubResource("CapsuleShape2D_kfe3d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -233,6 +261,11 @@ scale = Vector2(2.53375, 14.858126)
 texture = SubResource("PlaceholderTexture2D_x1ks5")
 
 [node name="Area2D" type="Area2D" parent="WeaponRoot/Dagger"]
+collision_layer = 16
+collision_mask = 128
+input_pickable = false
+monitorable = false
+script = ExtResource("2_ocmko")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponRoot/Dagger/Area2D"]
 shape = SubResource("CapsuleShape2D_yxufj")
@@ -250,7 +283,7 @@ position = Vector2(40, 0)
 position = Vector2(-584, -700)
 
 [node name="Arm_IK" type="Marker2D" parent="Visuals"]
-position = Vector2(100, -196)
+position = Vector2(664, -616)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="Visuals"]
 modification_stack = SubResource("SkeletonModificationStack2D_hvdg6")
@@ -261,6 +294,19 @@ rest = Transform2D(1, 0, 0, 1, 0, 0)
 [node name="Hip" type="Bone2D" parent="Visuals/Skeleton2D/Root"]
 position = Vector2(0, -376)
 rest = Transform2D(1, 0, 0, 1, 0, -376)
+
+[node name="Area2D" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip"]
+rotation = 0.07853982
+collision_layer = 16
+collision_mask = 128
+input_pickable = false
+monitorable = false
+script = ExtResource("2_ocmko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Area2D"]
+position = Vector2(0, -146.12)
+shape = SubResource("CapsuleShape2D_a5sp0")
+metadata/_edit_lock_ = true
 
 [node name="LegL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(-44, 13)
@@ -281,6 +327,29 @@ metadata/_local_pose_override_enabled_ = true
 position = Vector2(-40, 53)
 texture = ExtResource("3_ocmko")
 
+[node name="Area2D" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/ShinL"]
+collision_layer = 16
+collision_mask = 128
+input_pickable = false
+monitorable = false
+script = ExtResource("2_ocmko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/ShinL/Area2D"]
+position = Vector2(0, 77.5)
+shape = SubResource("CapsuleShape2D_wtb5b")
+
+[node name="Area2D" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/LegL"]
+position = Vector2(0, 80)
+scale = Vector2(0.99999654, 0.99999654)
+collision_layer = 16
+collision_mask = 128
+input_pickable = false
+monitorable = false
+script = ExtResource("2_ocmko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/Area2D"]
+shape = SubResource("CapsuleShape2D_ocmko")
+
 [node name="LegR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(41, 13)
 rest = Transform2D(0.9998269, 0.0027543376, -0.0027543376, 0.9998269, 41, 13)
@@ -297,6 +366,29 @@ metadata/_local_pose_override_enabled_ = true
 [node name="FootFront" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR"]
 position = Vector2(-25, 63)
 texture = ExtResource("4_wtb5b")
+
+[node name="Area2D" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR"]
+collision_layer = 16
+collision_mask = 128
+input_pickable = false
+monitorable = false
+script = ExtResource("2_ocmko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR/Area2D"]
+position = Vector2(0, 77.5)
+shape = SubResource("CapsuleShape2D_hvdg6")
+
+[node name="Area2D" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/LegR"]
+position = Vector2(0, 80)
+scale = Vector2(0.9999965, 0.9999965)
+collision_layer = 16
+collision_mask = 128
+input_pickable = false
+monitorable = false
+script = ExtResource("2_ocmko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/Area2D"]
+shape = SubResource("CapsuleShape2D_rvha6")
 
 [node name="Cloak2" type="AnimatedSprite2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(31, -8.399994)
@@ -339,12 +431,23 @@ texture = ExtResource("4_5u2jg")
 position = Vector2(-8, -99)
 texture = ExtResource("5_xnekc")
 
+[node name="Area2D" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
+collision_layer = 16
+collision_mask = 128
+input_pickable = false
+monitorable = false
+script = ExtResource("2_ocmko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Head/Area2D"]
+position = Vector2(0, -79.175)
+shape = SubResource("CircleShape2D_x1ks5")
+
 [node name="Arm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(91, -209)
 rest = Transform2D(1, 0, 0, 1, 91, -209)
 auto_calculate_length_and_angle = false
 length = 355.213
-bone_angle = -4.485999
+bone_angle = -3.9999998
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Sleeve2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Arm"]
@@ -356,3 +459,15 @@ texture = ExtResource("7_hvdg6")
 position = Vector2(0, 180.00003)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("8_x1ks5")
+
+[node name="Area2D" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Arm"]
+rotation = 1.5009831
+collision_layer = 16
+collision_mask = 128
+input_pickable = false
+monitorable = false
+script = ExtResource("2_ocmko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Arm/Area2D"]
+position = Vector2(0, -165)
+shape = SubResource("CapsuleShape2D_op7db")
