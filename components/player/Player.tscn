@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c8en35aminwok"]
+[gd_scene load_steps=43 format=3 uid="uid://c8en35aminwok"]
 
 [ext_resource type="Script" uid="uid://ccnmr6gfuk8c5" path="res://components/player/Player.cs" id="1_kfe3d"]
 [ext_resource type="Script" uid="uid://cvy1h1nsiklsp" path="res://scripts/components/combat/Hurtbox.cs" id="2_ocmko"]
@@ -11,6 +11,7 @@
 [ext_resource type="SpriteFrames" path="res://assets/sprites/player/CloakFrames.tres" id="6_yngd5"]
 [ext_resource type="Texture2D" uid="uid://c8bet7o5pums8" path="res://assets/sprites/player/atlas.sprites/Sleeve.tres" id="7_hvdg6"]
 [ext_resource type="Texture2D" uid="uid://dtquteyhh8vbe" path="res://assets/sprites/player/atlas.sprites/SleeveLight.tres" id="8_x1ks5"]
+[ext_resource type="Script" uid="uid://cbiudxqyhryc8" path="res://scripts/components/combat/Damageable.cs" id="12_wtb5b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfe3d"]
 radius = 34.83
@@ -391,6 +392,7 @@ script = ExtResource("2_ocmko")
 shape = SubResource("CapsuleShape2D_rvha6")
 
 [node name="Cloak2" type="AnimatedSprite2D" parent="Visuals/Skeleton2D/Root/Hip"]
+visible = false
 position = Vector2(31, -8.399994)
 sprite_frames = ExtResource("6_yngd5")
 animation = &"idle"
@@ -447,10 +449,11 @@ position = Vector2(91, -209)
 rest = Transform2D(1, 0, 0, 1, 91, -209)
 auto_calculate_length_and_angle = false
 length = 355.213
-bone_angle = -3.9999998
+bone_angle = -3.9999993
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Sleeve2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Arm"]
+visible = false
 position = Vector2(161, -28)
 rotation = -1.5707964
 texture = ExtResource("7_hvdg6")
@@ -471,3 +474,7 @@ script = ExtResource("2_ocmko")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Arm/Area2D"]
 position = Vector2(0, -165)
 shape = SubResource("CapsuleShape2D_op7db")
+
+[node name="Damageable" type="Node" parent="."]
+script = ExtResource("12_wtb5b")
+metadata/_custom_type_script = "uid://cbiudxqyhryc8"
