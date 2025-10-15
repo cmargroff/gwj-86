@@ -1,5 +1,26 @@
 [center]
 [b]Credits[/b]
-Designer: Some Guy
-Programmer: Some Other Guy
+Designers
+Milana, Chris
+
+Artwork
+Milana
+
+Systems Programmer
+Chris
+
+Skill System Programmer
+Milana
+
+Combat System Programmer
+Chris
+
+Level Designer
+Milana
+
+Rigger
+Chris
+
+Animator
+Chris
 [/center]
