@@ -1,19 +1,20 @@
 using Godot;
+using JamTemplate.Managers;
 using JamTemplate.Player.States;
 using JamTemplate.Util.FSM;
+using JamTemplate.Enum;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate.Components.Player;
 
 public partial class Player : CharacterBody2D
 {
-	public float FrictionCoefficient { get; set; } = 0.15f; // TODO: move to stats
 	public Vector2 MoveVelocity = Vector2.Zero;
 	[Export]
 	public AnimationPlayer AnimationPlayer;
 	private StatsManager _statsManager;
 	private AnimatedFiniteStateManager _fsm;
-	private uint _jumpsLeft = 0;
+	private float _jumpsLeft = 0;
 
 	public override void _EnterTree()
 	{
@@ -57,7 +58,7 @@ public partial class Player : CharacterBody2D
 
 	public void ResetJumps()
 	{
-		_jumpsLeft = _statsManager.MaxJumps;
+		_jumpsLeft = _statsManager.Stats[Stat.MaxJumps];
 	}
 	public void DecrementJumps()
 	{
@@ -82,7 +83,7 @@ public partial class Player : CharacterBody2D
 	{
 		if (IsOnFloor())
 		{
-			MoveVelocity.X = MoveVelocity.X * (1f - FrictionCoefficient);
+			MoveVelocity.X = MoveVelocity.X * (1f - _statsManager.Stats[Stat.FrictionCoefficient]);
 		}
 	}
 

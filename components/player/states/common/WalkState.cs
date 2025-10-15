@@ -1,4 +1,6 @@
 using Godot;
+using JamTemplate.Enum;
+using JamTemplate.Managers;
 using JamTemplate.Util.FSM;
 
 namespace JamTemplate.Player.States;
@@ -27,6 +29,6 @@ public class WalkState(Components.Player.Player _player, StatsManager _stats) : 
       return;
     }
 
-    _player.Move(delta, vector, _stats.WalkSpeed);
+    _player.Move(delta, vector, _stats.Stats[Stat.WalkSpeed]);
   }
 }

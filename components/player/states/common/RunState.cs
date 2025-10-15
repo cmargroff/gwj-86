@@ -1,4 +1,6 @@
 using Godot;
+using JamTemplate.Enum;
+using JamTemplate.Managers;
 using JamTemplate.Util.FSM;
 
 namespace JamTemplate.Player.States;
@@ -25,6 +27,6 @@ public class RunState(Components.Player.Player _player, StatsManager _stats) : A
       return;
     }
 
-    _player.Move(delta, vector, _stats.RunSpeed);
+    _player.Move(delta, vector, _stats.Stats[Stat.RunSpeed]);
   }
 }
