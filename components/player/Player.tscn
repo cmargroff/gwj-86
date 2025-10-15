@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c8en35aminwok"]
+[gd_scene load_steps=42 format=3 uid="uid://c8en35aminwok"]
 
 [ext_resource type="Script" uid="uid://ccnmr6gfuk8c5" path="res://components/player/Player.cs" id="1_kfe3d"]
 [ext_resource type="Script" uid="uid://cvy1h1nsiklsp" path="res://scripts/components/combat/Hurtbox.cs" id="2_ocmko"]
@@ -11,6 +11,7 @@
 [ext_resource type="SpriteFrames" path="res://assets/sprites/player/CloakFrames.tres" id="6_yngd5"]
 [ext_resource type="Texture2D" uid="uid://c8bet7o5pums8" path="res://assets/sprites/player/atlas.sprites/Sleeve.tres" id="7_hvdg6"]
 [ext_resource type="Texture2D" uid="uid://dtquteyhh8vbe" path="res://assets/sprites/player/atlas.sprites/SleeveLight.tres" id="8_x1ks5"]
+[ext_resource type="Texture2D" uid="uid://tnsn212ilcap" path="res://assets/sprites/player/atlas.sprites/DaggerColor.tres" id="12_rvha6"]
 [ext_resource type="Script" uid="uid://cbiudxqyhryc8" path="res://scripts/components/combat/Damageable.cs" id="12_wtb5b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfe3d"]
@@ -19,75 +20,249 @@ height = 225.0
 
 [sub_resource type="Animation" id="Animation_hvdg6"]
 length = 0.001
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponRoot/Dagger:position:x")
+tracks/0/path = NodePath("Visuals/Skeleton2D/Root:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
-tracks/1/type = "bezier"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponRoot/Dagger:position:y")
+tracks/1/path = NodePath("Visuals/Skeleton2D/Root/Hip:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -376)]
 }
-tracks/2/type = "bezier"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponRoot/Dagger:rotation")
+tracks/2/path = NodePath("Visuals/Skeleton2D/Root/Hip:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-0.32218286, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals/Skeleton2D/Root/Hip/LegL:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-44, 13)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visuals/Skeleton2D/Root/Hip/LegL:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.011018872]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visuals/Skeleton2D/Root/Hip/LegL/ShinL:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 162)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visuals/Skeleton2D/Root/Hip/LegL/ShinL:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visuals/Skeleton2D/Root/Hip/LegR:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(41, 13)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visuals/Skeleton2D/Root/Hip/LegR:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0027548075]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visuals/Skeleton2D/Root/Hip/LegR/ShinR:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 164)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Visuals/Skeleton2D/Root/Hip/LegR/ShinR:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Visuals/Skeleton2D/Root/Hip/Head:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.07878381]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Visuals/Skeleton2D/Root/Hip/Head:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(24, -276)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Visuals/Skeleton2D/Root/Hip/Head/Eyes:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.9952528]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Visuals/Skeleton2D/Root/Hip/Head/Eyes:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-40.001526, -84.00043)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Visuals/Skeleton2D/Root/Hip/Arm:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(91, -209)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Visuals/Skeleton2D/Root/Hip/Arm:rotation")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.01576454]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Visuals/Skeleton2D/Root/Hip/Weapon:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 28)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Visuals/Skeleton2D/Root/Hip/Weapon:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.1415925]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Visuals/Skeleton2D/Root/Hip/Cloak2:animation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
 }
 
 [sub_resource type="Animation" id="Animation_ocmko"]
 length = 0.43333668
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponRoot/Dagger:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
-"points": PackedFloat32Array(3, -0.25, 0, 0.033333335, -1.8360881, -1, -0.033333335, 1, 0.033333335, -1, 27.306372, -0.025000002, -4, 0.025000002, 4, 18.60377, -0.007407412, 11.337658, 0.007407412, -11.337658, 3, -0.06666667, 2.4999998, 0.06666667, -2.4999998),
-"times": PackedFloat32Array(0, 0.048148148, 0.16851853, 0.24074075, 0.43333334)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponRoot/Dagger:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
-"points": PackedFloat32Array(8, -0.25, 0, 0.06666667, -0.2831583, 5, -0.033333335, 0.75, 0.033333335, -0.75, 2.0000002, -0.025000002, 0.74999994, 0.025000002, -0.74999994, -0.9999995, -0.034540087, -7.2667794, 0.034540087, 7.2667794, 8, -0.100000024, 0.61831665, 0.100000024, -0.61831665),
-"times": PackedFloat32Array(0, 0.048148148, 0.16851853, 0.24074075, 0.43333334)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponRoot/Dagger:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 3, 3, 3, 3),
-"points": PackedFloat32Array(-0.32218286, -0.25, 0, 0.12804766, -0.063146174, -1.4436238, -0.033333335, 0.28036022, 0.033333335, -0.28036022, -1.6259913, -0.025000002, 0.04559189, 0.025000002, -0.04559189, -1.8709475, -0.024999999, 0.061239038, 0.024999999, -0.061239038, -0.322, -0.06666666, -0.13371015, 0.06666666, 0.13371015),
-"times": PackedFloat32Array(0, 0.096296296, 0.16851853, 0.24074075, 0.43333334)
-}
 
 [sub_resource type="Animation" id="Animation_wtb5b"]
 
@@ -102,38 +277,17 @@ tracks/2/keys = {
 [sub_resource type="Animation" id="Animation_lt7w0"]
 length = 2.0
 loop_mode = 1
-tracks/0/type = "bezier"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("WeaponRoot/Dagger:position:x")
+tracks/0/path = NodePath("Visuals/Skeleton2D/Root/Hip/Cloak2:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(2, 0, 2),
-"points": PackedFloat32Array(3, -0.25, 0, 0.25, 0, 3, -0.083333336, 0, 0, 0, 3, -0.16111112, 0, 0, 0),
-"times": PackedFloat32Array(0, 1.0333333, 2)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("WeaponRoot/Dagger:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(2, 3, 2),
-"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0, 4.439764, -0.28614938, -0.026734829, 0.28614938, 0.026734829, 8, -0.26734102, -0.031236649, 0, 0),
-"times": PackedFloat32Array(0, 1.0333333, 2)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponRoot/Dagger:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(3, 3, 3),
-"points": PackedFloat32Array(-0.32218286, -0.4, -0.08110851, 0.4, 0.08110851, -0.5033559, -0.36666667, -0.048084944, 0.36666667, 0.048084944, -0.322, -0.33333325, -0.07655428, 0.33333325, 0.07655428),
-"times": PackedFloat32Array(0, 1.2666667, 2.0333333)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
 }
 
 [sub_resource type="Animation" id="Animation_xh4xr"]
@@ -162,12 +316,6 @@ _data = {
 &"run": SubResource("Animation_xnekc"),
 &"walk": SubResource("Animation_5u2jg")
 }
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x1ks5"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yxufj"]
-radius = 0.6384946
-height = 1.5749639
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_a5sp0"]
 target_nodepath = NodePath("../FootL_IK")
@@ -253,24 +401,6 @@ libraries = {
 }
 playback_default_blend_time = 0.1
 
-[node name="WeaponRoot" type="Node2D" parent="."]
-position = Vector2(0, -16)
-
-[node name="Dagger" type="Sprite2D" parent="WeaponRoot"]
-rotation = -0.32218286
-scale = Vector2(2.53375, 14.858126)
-texture = SubResource("PlaceholderTexture2D_x1ks5")
-
-[node name="Area2D" type="Area2D" parent="WeaponRoot/Dagger"]
-collision_layer = 16
-collision_mask = 128
-input_pickable = false
-monitorable = false
-script = ExtResource("2_ocmko")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponRoot/Dagger/Area2D"]
-shape = SubResource("CapsuleShape2D_yxufj")
-
 [node name="Visuals" type="Node2D" parent="."]
 scale = Vector2(0.25, 0.25)
 
@@ -291,10 +421,12 @@ modification_stack = SubResource("SkeletonModificationStack2D_hvdg6")
 
 [node name="Root" type="Bone2D" parent="Visuals/Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
+editor_settings/show_bone_gizmo = false
 
 [node name="Hip" type="Bone2D" parent="Visuals/Skeleton2D/Root"]
 position = Vector2(0, -376)
 rest = Transform2D(1, 0, 0, 1, 0, -376)
+editor_settings/show_bone_gizmo = false
 
 [node name="Area2D" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip"]
 rotation = 0.07853982
@@ -311,17 +443,19 @@ metadata/_edit_lock_ = true
 
 [node name="LegL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(-44, 13)
-rest = Transform2D(0.99989206, -0.011018129, 0.011018129, 0.99989206, -44, 13)
+rotation = -0.011018872
+rest = Transform2D(0.9999393, -0.01101865, 0.01101865, 0.9999393, -44, 13)
+editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
 
 [node name="ShinL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/LegL"]
 position = Vector2(0, 162)
-rotation = 0.84026784
 scale = Vector2(0.9999971, 0.9999971)
-rest = Transform2D(0.9999756, 0, 0, 0.9999756, 0, 162)
+rest = Transform2D(0.9999971, 0, 0, 0.9999971, 0, 162)
 auto_calculate_length_and_angle = false
 length = 155.0
 bone_angle = 90.0
+editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
 
 [node name="FootBack" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/ShinL"]
@@ -353,15 +487,18 @@ shape = SubResource("CapsuleShape2D_ocmko")
 
 [node name="LegR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(41, 13)
-rest = Transform2D(0.9998269, 0.0027543376, -0.0027543376, 0.9998269, 41, 13)
+rotation = 0.0027548075
+rest = Transform2D(0.9998273, 0.0027543388, -0.0027543388, 0.9998273, 41, 13)
+editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
 
 [node name="ShinR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/LegR"]
 position = Vector2(0, 164)
-rest = Transform2D(0.99999917, 4.6566123e-10, -4.6566123e-10, 0.99999917, 0, 164)
+rest = Transform2D(1, 0, 0, 1, 0, 164)
 auto_calculate_length_and_angle = false
 length = 155.0
 bone_angle = 90.0
+editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
 
 [node name="FootFront" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR"]
@@ -406,11 +543,13 @@ autoplay = "idle"
 
 [node name="Head" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(24, -276)
+rotation = 0.07878381
 scale = Vector2(0.9999755, 0.9999755)
-rest = Transform2D(0.9999755, 0, 0, 0.9999755, 24, -276)
+rest = Transform2D(0.99687374, 0.07870041, -0.07870041, 0.99687374, 24, -276)
 auto_calculate_length_and_angle = false
 length = 100.0
 bone_angle = 180.0
+editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
 
 [node name="HoodShadow" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
@@ -419,8 +558,10 @@ position = Vector2(-29, -85.00006)
 texture = ExtResource("3_lbsqm")
 
 [node name="Eyes" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
-position = Vector2(-40.000977, -84.00208)
-rest = Transform2D(1, 0, 0, 1, -40.000977, -84.00208)
+position = Vector2(-40.001526, -84.00043)
+rotation = 2.9952528
+rest = Transform2D(-0.9893143, 0.14581871, -0.14581871, -0.9893143, -40.001526, -84.00043)
+editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Eyes2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head/Eyes"]
@@ -444,11 +585,14 @@ position = Vector2(0, -79.175)
 shape = SubResource("CircleShape2D_x1ks5")
 
 [node name="Arm" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+visible = false
 position = Vector2(91, -209)
-rest = Transform2D(1, 0, 0, 1, 91, -209)
+rotation = 0.01576454
+rest = Transform2D(0.99985534, 0.015763566, -0.015763566, 0.99985534, 91, -209)
 auto_calculate_length_and_angle = false
 length = 355.213
-bone_angle = -3.9999993
+bone_angle = -3.9999988
+editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Sleeve2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Arm"]
@@ -472,6 +616,20 @@ script = ExtResource("2_ocmko")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Arm/Area2D"]
 position = Vector2(0, -165)
 shape = SubResource("CapsuleShape2D_op7db")
+
+[node name="Weapon" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
+position = Vector2(80, 28)
+rotation = 3.1415925
+rest = Transform2D(1, 0, 0, 1, 56, -128)
+auto_calculate_length_and_angle = false
+length = 200.0
+bone_angle = -90.0
+editor_settings/show_bone_gizmo = false
+
+[node name="DaggerColor" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Weapon"]
+position = Vector2(0, -60)
+texture = ExtResource("12_rvha6")
+metadata/_edit_lock_ = true
 
 [node name="Damageable" type="Node" parent="."]
 script = ExtResource("12_wtb5b")
