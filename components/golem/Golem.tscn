@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=3 uid="uid://dl5pcbu1moxwl"]
+[gd_scene load_steps=41 format=3 uid="uid://dl5pcbu1moxwl"]
 
 [ext_resource type="Texture2D" uid="uid://bdx3vhdu5ckkd" path="res://assets/sprites/golem/atlas.sprites/Hip.tres" id="1_tt27j"]
-[ext_resource type="Texture2D" uid="uid://b3bgf35uv7to7" path="res://assets/sprites/golem/atlas.sprites/Pelvis.tres" id="2_mrfiv"]
+[ext_resource type="Texture2D" uid="uid://mjbg843chvdq" path="res://assets/sprites/golem/atlas.sprites/Pelvis.tres" id="2_mrfiv"]
 [ext_resource type="Texture2D" uid="uid://dm6c54pdtv6b7" path="res://assets/sprites/golem/atlas.sprites/Head.tres" id="2_o4qpa"]
 [ext_resource type="Texture2D" uid="uid://bc6oodjw1rwkw" path="res://assets/sprites/golem/atlas.sprites/Spine.tres" id="3_mrfiv"]
+[ext_resource type="Script" uid="uid://cvy1h1nsiklsp" path="res://scripts/components/combat/Hurtbox.cs" id="3_tltlb"]
 [ext_resource type="Texture2D" uid="uid://cyxxwj317ah2h" path="res://assets/sprites/golem/atlas.sprites/SoulGlow.tres" id="4_tltlb"]
 [ext_resource type="Texture2D" uid="uid://do2bf2rmadgct" path="res://assets/sprites/golem/atlas.sprites/Ribcage.tres" id="5_w1sq0"]
 [ext_resource type="Texture2D" uid="uid://dqxo1ost74umw" path="res://assets/sprites/golem/atlas.sprites/UpperarmR.tres" id="6_kiuyf"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b0aonb0b8p233" path="res://assets/sprites/golem/atlas.sprites/ShinR.tres" id="15_at4dh"]
 [ext_resource type="Texture2D" uid="uid://b7l4brj7t5ri1" path="res://assets/sprites/golem/atlas.sprites/ThighL.tres" id="16_21smu"]
 [ext_resource type="Texture2D" uid="uid://bre6npnw3b33w" path="res://assets/sprites/golem/atlas.sprites/ShinL.tres" id="17_8qf4q"]
+[ext_resource type="Script" uid="uid://cbiudxqyhryc8" path="res://scripts/components/combat/Damageable.cs" id="19_mrfiv"]
 
 [sub_resource type="SkeletonModification2DTwoBoneIK" id="SkeletonModification2DTwoBoneIK_o4qpa"]
 target_nodepath = NodePath("../FootL_IK")
@@ -63,6 +65,55 @@ modifications/1 = SubResource("SkeletonModification2DTwoBoneIK_mrfiv")
 modifications/2 = SubResource("SkeletonModification2DTwoBoneIK_tltlb")
 modifications/3 = SubResource("SkeletonModification2DTwoBoneIK_w1sq0")
 modifications/4 = SubResource("SkeletonModification2DLookAt_o4qpa")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o4qpa"]
+radius = 70.0
+height = 875.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tltlb"]
+radius = 70.0
+height = 500.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w1sq0"]
+radius = 70.0
+height = 900.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kiuyf"]
+radius = 70.0
+height = 500.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6cvli"]
+radius = 137.2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifwaw"]
+radius = 51.0
+height = 600.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ilc23"]
+radius = 135.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t41kn"]
+radius = 50.0
+height = 482.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kxo2u"]
+radius = 135.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_03ylk"]
+radius = 50.0
+height = 550.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b8qti"]
+radius = 50.0
+height = 700.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3plb0"]
+radius = 174.65
+height = 487.55
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_at4dh"]
+radius = 70.0
+height = 300.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mrfiv"]
 radius = 54.0
@@ -147,6 +198,32 @@ position = Vector2(424.00003, -4.000019)
 texture = ExtResource("17_8qf4q")
 metadata/_edit_lock_ = true
 
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/ShinL"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/ShinL/Hurtbox"]
+position = Vector2(437, 0)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_o4qpa")
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/LegL"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/LegL/Hurtbox"]
+position = Vector2(32.065, 200)
+rotation = -0.17627823
+shape = SubResource("CapsuleShape2D_tltlb")
+
 [node name="LegR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(-49, 0)
 rest = Transform2D(1, 0, 0, 1, -49, 0)
@@ -174,6 +251,32 @@ scale = Vector2(1.0000001, 1.0000001)
 texture = ExtResource("15_at4dh")
 metadata/_edit_lock_ = true
 
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR/Hurtbox"]
+position = Vector2(-450, 0)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_w1sq0")
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/LegR"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/Hurtbox"]
+position = Vector2(0, 250)
+rotation = -0.013962634
+shape = SubResource("CapsuleShape2D_kiuyf")
+
 [node name="Pelvis" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
@@ -182,13 +285,14 @@ position = Vector2(0, -146)
 texture = ExtResource("2_mrfiv")
 metadata/_edit_lock_ = true
 
-[node name="Hip2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis"]
+[node name="Hip" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis"]
 rotation = -1.5707964
 texture = ExtResource("1_tt27j")
 metadata/_edit_lock_ = true
 
 [node name="Torso" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis"]
 position = Vector2(-62.69934, -290.72116)
+scale = Vector2(0.99999976, 0.99999976)
 rest = Transform2D(1, 0, 0, 1, -62.69934, -290.72116)
 
 [node name="Spine" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso"]
@@ -222,8 +326,8 @@ metadata/_edit_lock_ = true
 
 [node name="Head" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso"]
 position = Vector2(-54.574463, -395.41223)
-rotation = -0.005367281
-scale = Vector2(0.9999999, 0.9999999)
+rotation = -0.005367282
+scale = Vector2(0.99999976, 0.99999976)
 rest = Transform2D(1, 0, 0, 1, -54.577126, -395.40656)
 auto_calculate_length_and_angle = false
 length = 0.0
@@ -240,10 +344,36 @@ metadata/_edit_lock_ = true
 unique_name_in_owner = true
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/Head"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/Head/Hurtbox"]
+position = Vector2(0, -31.55)
+shape = SubResource("CircleShape2D_6cvli")
+
 [node name="ArmR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso"]
 position = Vector2(-146.14682, -288.16852)
 rest = Transform2D(1, 0, 0, 1, -146.14682, -288.16852)
 metadata/_local_pose_override_enabled_ = true
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR"]
+scale = Vector2(0.99999416, 0.99999416)
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR/Hurtbox"]
+position = Vector2(-300, -15)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ifwaw")
 
 [node name="UpperarmR" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR"]
 position = Vector2(-293.15384, -20.110352)
@@ -263,7 +393,7 @@ texture = ExtResource("7_6cvli")
 metadata/_edit_lock_ = true
 
 [node name="HandR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR/ForearmR"]
-position = Vector2(-474.02332, -11.99707)
+position = Vector2(-474.0232, -11.99707)
 scale = Vector2(1.0002183, 1.0002183)
 rest = Transform2D(1, 0, 0, 1, -388.00006, -12.000023)
 auto_calculate_length_and_angle = false
@@ -280,6 +410,31 @@ visible = false
 position = Vector2(-57, 11)
 texture = ExtResource("9_ilc23")
 metadata/_edit_lock_ = true
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR/ForearmR/HandR"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR/ForearmR/HandR/Hurtbox"]
+position = Vector2(-125, 0)
+shape = SubResource("CircleShape2D_ilc23")
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR/ForearmR"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmR/ForearmR/Hurtbox"]
+position = Vector2(-243.125, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_t41kn")
 
 [node name="ArmL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso"]
 position = Vector2(107.69934, -235.27881)
@@ -302,13 +457,13 @@ texture = ExtResource("11_kxo2u")
 metadata/_edit_lock_ = true
 
 [node name="HandL" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmL/ForearmL"]
-position = Vector2(561.0127, 5.9821777)
-rotation = 0.06775983
-scale = Vector2(1.0000185, 1.0000185)
+position = Vector2(505.02234, 4.9438477)
+rotation = 0.06775982
+scale = Vector2(1.0000179, 1.0000179)
 rest = Transform2D(1, 0, 0, 1, 504, 6)
 auto_calculate_length_and_angle = false
 length = 185.281
-bone_angle = 0.0
+bone_angle = 3.8823524
 
 [node name="HandL" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmL/ForearmL/HandL"]
 position = Vector2(139.99756, 8.002441)
@@ -323,7 +478,75 @@ rotation = -3.1415925
 texture = ExtResource("13_b8qti")
 metadata/_edit_lock_ = true
 
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmL/ForearmL/HandL"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmL/ForearmL/HandL/Hurtbox"]
+position = Vector2(135, 0)
+shape = SubResource("CircleShape2D_kxo2u")
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmL/ForearmL"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmL/ForearmL/Hurtbox"]
+position = Vector2(275, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_03ylk")
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmL"]
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/ArmL/Hurtbox"]
+position = Vector2(350, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_b8qti")
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso"]
+position = Vector2(-36.405, -93.68)
+rotation = 0.1134464
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Pelvis/Torso/Hurtbox"]
+shape = SubResource("CapsuleShape2D_3plb0")
+
+[node name="Hurtbox" type="Area2D" parent="Visuals/Skeleton2D/Root/Hip"]
+rotation = -0.20594884
+collision_layer = 64
+collision_mask = 32
+input_pickable = false
+monitorable = false
+script = ExtResource("3_tltlb")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/Skeleton2D/Root/Hip/Hurtbox"]
+position = Vector2(0, -150)
+shape = SubResource("CapsuleShape2D_at4dh")
+
 [node name="WorldCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -283)
 shape = SubResource("CapsuleShape2D_mrfiv")
 metadata/_edit_lock_ = true
+
+[node name="Damageable" type="Node" parent="."]
+script = ExtResource("19_mrfiv")
+metadata/_custom_type_script = "uid://cbiudxqyhryc8"
