@@ -1,3 +1,4 @@
+using JamTemplate.Enum;
 using JamTemplate.Managers;
 using JamTemplate.Util.FSM;
 
@@ -9,9 +10,9 @@ public class JumpWallState(Components.Player.Player _player, StatsManager _stats
   {
     if (frame == 1)
     {
-      _player.MoveVelocity.Y = _stats.AirJumpVelocity;
+      _player.MoveVelocity.Y = _stats.Stats[Stat.AirJumpVelocity];
       var normal = _player.GetWallNormal();
-      _player.MoveVelocity.X = normal.X * _stats.AirSpeed;
+      _player.MoveVelocity.X = normal.X * _stats.Stats[Stat.AirSpeed];
     }
     if (_player.MoveVelocity.Y > 0) // player is falling down
     {
