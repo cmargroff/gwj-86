@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://c8en35aminwok"]
+[gd_scene load_steps=45 format=3 uid="uid://c8en35aminwok"]
 
 [ext_resource type="Script" uid="uid://ccnmr6gfuk8c5" path="res://components/player/Player.cs" id="1_kfe3d"]
 [ext_resource type="Script" uid="uid://cvy1h1nsiklsp" path="res://scripts/components/combat/Hurtbox.cs" id="2_ocmko"]
@@ -13,6 +13,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dfue5umkloyuj" path="res://assets/sprites/player/CloakFrames.tres" id="6_yngd5"]
 [ext_resource type="Texture2D" uid="uid://c8bet7o5pums8" path="res://assets/sprites/player/atlas.sprites/Sleeve.tres" id="7_hvdg6"]
 [ext_resource type="Texture2D" uid="uid://dtquteyhh8vbe" path="res://assets/sprites/player/atlas.sprites/SleeveLight.tres" id="8_x1ks5"]
+[ext_resource type="Script" uid="uid://b0xljugu36hnp" path="res://scripts/components/player/Eyes.cs" id="11_op7db"]
 [ext_resource type="Texture2D" uid="uid://tnsn212ilcap" path="res://assets/sprites/player/atlas.sprites/DaggerColor.tres" id="12_rvha6"]
 [ext_resource type="Script" uid="uid://cbiudxqyhryc8" path="res://scripts/components/combat/Damageable.cs" id="12_wtb5b"]
 
@@ -1116,7 +1117,7 @@ shape = SubResource("CapsuleShape2D_ocmko")
 [node name="LegR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(41, 13)
 rotation = 0.0027548075
-scale = Vector2(0.99985427, 0.99985427)
+scale = Vector2(0.9998542, 0.9998542)
 rest = Transform2D(0.9999246, 0.0027547264, -0.0027547264, 0.9999246, 41, 13)
 metadata/_local_pose_override_enabled_ = true
 
@@ -1146,11 +1147,11 @@ shape = SubResource("CapsuleShape2D_hvdg6")
 
 [node name="FootR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR"]
 position = Vector2(7.9130554, 167.03482)
-scale = Vector2(1.0002624, 1.0002624)
+scale = Vector2(1.0002625, 1.0002625)
 rest = Transform2D(1.0002955, 0, 0, 1.0002955, 7.913172, 167.03537)
 auto_calculate_length_and_angle = false
 length = 136.353
-bone_angle = 145.18399
+bone_angle = 145.18398
 
 [node name="FootFront" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/LegR/ShinR/FootR"]
 position = Vector2(-27.963295, 12.0755625)
@@ -1203,7 +1204,7 @@ texture = ExtResource("3_lbsqm")
 [node name="Eyes" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
 position = Vector2(-40.001526, -84.00043)
 rotation = 2.9952528
-scale = Vector2(0.9999946, 0.9999946)
+scale = Vector2(0.9999945, 0.9999945)
 rest = Transform2D(0.99842656, 0.05597828, -0.05597828, 0.99842656, -40.002007, -83.996826)
 editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
@@ -1212,6 +1213,7 @@ metadata/_local_pose_override_enabled_ = true
 position = Vector2(-8.0002, 1.21593475e-05)
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_5u2jg")
+script = ExtResource("11_op7db")
 
 [node name="Hood1" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
 position = Vector2(-8, -99)
@@ -1232,7 +1234,7 @@ shape = SubResource("CircleShape2D_x1ks5")
 visible = false
 position = Vector2(91, -209)
 rotation = 0.01576454
-scale = Vector2(0.99997896, 0.99997896)
+scale = Vector2(0.9999789, 0.9999789)
 rest = Transform2D(0.99985504, 0.015763618, -0.015763618, 0.99985504, 91, -209)
 auto_calculate_length_and_angle = false
 length = 355.213
