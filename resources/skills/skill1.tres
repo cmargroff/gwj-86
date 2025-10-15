@@ -9,8 +9,10 @@
 [resource]
 script = ExtResource("1_74vh5")
 SkillName = "skill 1"
+Description = "skill1 "
 BorderTexture = ExtResource("1_h0qnp")
 IconTexture = ExtResource("2_grv5k")
 Unlocked = true
+Value = 20.0
 UnlockSkills = Array[Object]([ExtResource("1_sn35e"), ExtResource("2_qly6s")])
 metadata/_custom_type_script = "uid://jfvhoncsydvq"

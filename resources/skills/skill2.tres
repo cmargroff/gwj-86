@@ -8,6 +8,7 @@
 [resource]
 script = ExtResource("1_rohkt")
 SkillName = "skill 2"
+Description = "skill2"
 BorderTexture = ExtResource("1_qjamj")
 IconTexture = ExtResource("2_yqiq7")
 ExpCost = 2

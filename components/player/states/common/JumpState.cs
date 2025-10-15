@@ -1,4 +1,5 @@
 using Godot;
+using JamTemplate.Enum;
 using JamTemplate.Managers;
 using JamTemplate.Util.FSM;
 
@@ -12,7 +13,7 @@ public class JumpState(Components.Player.Player _player, StatsManager _stats) : 
     {
       if (playSpeed > 0) // to determine if animation is playing forward
       {
-        _player.MoveVelocity.Y = _stats.InitialJumpVelocity;
+        _player.MoveVelocity.Y = _stats.Stats[Stat.InitialJumpVelocity];
         _player.DecrementJumps();
       }
     }

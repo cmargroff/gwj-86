@@ -1,4 +1,5 @@
 using Godot;
+using JamTemplate.Enum;
 using JamTemplate.Managers;
 using JamTemplate.Util.FSM;
 
@@ -27,6 +28,6 @@ public class FallState(Components.Player.Player _player, StatsManager _stats) : 
         return;
       }
     }
-    _player.Move(delta, _player.GetMoveVector(), _stats.AirSpeed);
+    _player.Move(delta, _player.GetMoveVector(), _stats.Stats[Stat.AirSpeed]);
   }
 }

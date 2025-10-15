@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillsSet" load_steps=6 format=3 uid="uid://bkjv26jiu2pdf"]
+
+[ext_resource type="Resource" uid="uid://y3phkr6utmoe" path="res://resources/skills/skill1.tres" id="1_0uymy"]
+[ext_resource type="Script" uid="uid://6d5kkdekdloc" path="res://scripts/resources/SkillsSet.cs" id="1_2lmcf"]
+[ext_resource type="Resource" uid="uid://0r4mvqs87lxx" path="res://resources/skills/skill2.tres" id="2_12cw0"]
+[ext_resource type="Resource" uid="uid://dkauuaxn50okw" path="res://resources/skills/skill3.tres" id="3_8wp0p"]
+[ext_resource type="Resource" uid="uid://csbf58dknyy53" path="res://resources/skills/skill4.tres" id="4_faj0a"]
+
+[resource]
+script = ExtResource("1_2lmcf")
+Skills = Array[Object]([ExtResource("1_0uymy"), ExtResource("2_12cw0"), ExtResource("3_8wp0p"), ExtResource("4_faj0a")])
+metadata/_custom_type_script = "uid://6d5kkdekdloc"
