@@ -392,7 +392,6 @@ script = ExtResource("2_ocmko")
 shape = SubResource("CapsuleShape2D_rvha6")
 
 [node name="Cloak2" type="AnimatedSprite2D" parent="Visuals/Skeleton2D/Root/Hip"]
-visible = false
 position = Vector2(31, -8.399994)
 sprite_frames = ExtResource("6_yngd5")
 animation = &"idle"
@@ -453,7 +452,6 @@ bone_angle = -3.9999993
 metadata/_local_pose_override_enabled_ = true
 
 [node name="Sleeve2" type="Sprite2D" parent="Visuals/Skeleton2D/Root/Hip/Arm"]
-visible = false
 position = Vector2(161, -28)
 rotation = -1.5707964
 texture = ExtResource("7_hvdg6")
