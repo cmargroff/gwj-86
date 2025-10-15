@@ -20,7 +20,7 @@ public partial class SkillTree : Control
     }
     public override void _Draw()
     {
-        foreach (SkillIcon skillNode in GetTree().GetNodesInGroup("skills"))
+        foreach (SkillNode skillNode in GetTree().GetNodesInGroup("skills"))
         {
             if (skillNode.SkillResource.UnlockSkills != null)
             {
@@ -47,9 +47,9 @@ public partial class SkillTree : Control
     }
 
 
-    private SkillIcon GetSkillNode(SkillResource resource)
+    private SkillNode GetSkillNode(SkillResource resource)
     {
-        foreach (SkillIcon skillNode in GetTree().GetNodesInGroup("skills"))
+        foreach (SkillNode skillNode in GetTree().GetNodesInGroup("skills"))
         {
         if (skillNode.SkillResource == resource)
         {

@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://cpa1uy70vulch"]
 
-[ext_resource type="Script" uid="uid://cby2743m1eil0" path="res://components/ui/skillTree/SkillIcon.cs" id="1_h56qy"]
-[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="2_h56qy"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="3_po2ym"]
+[ext_resource type="Script" uid="uid://cby2743m1eil0" path="res://components/ui/skillTree/SkillNode.cs" id="1_w6hlc"]
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="2_p41ky"]
+[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="3_adr5a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h56qy"]
 
@@ -28,12 +28,12 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l6c4n"]
 
-[node name="SkillIcon" type="PanelContainer"]
+[node name="SkillNode" type="PanelContainer"]
 custom_minimum_size = Vector2(80, 80)
 offset_right = 80.0
 offset_bottom = 70.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_h56qy")
-script = ExtResource("1_h56qy")
+script = ExtResource("1_w6hlc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(80, 80)
@@ -61,7 +61,7 @@ custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 80.0
-texture = ExtResource("2_h56qy")
+texture = ExtResource("2_p41ky")
 expand_mode = 5
 
 [node name="Icon" type="TextureRect" parent="VBoxContainer/Control"]
@@ -74,7 +74,7 @@ offset_right = 65.0
 offset_bottom = 65.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("3_po2ym")
+texture = ExtResource("3_adr5a")
 expand_mode = 1
 stretch_mode = 5
 

@@ -5,7 +5,7 @@ using JamTemplate.Resources;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
-public partial class SkillIcon : PanelContainer
+public partial class SkillNode : PanelContainer
 {
     private Button _button;
     private TextureRect _border;

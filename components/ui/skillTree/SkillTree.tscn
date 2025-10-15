@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8a1wyw5ac7hq"]
 
 [ext_resource type="Script" uid="uid://c73gqfqvi1ide" path="res://components/ui/skillTree/SkillTree.cs" id="1_oup23"]
-[ext_resource type="PackedScene" uid="uid://cpa1uy70vulch" path="res://components/ui/skillTree/SkillIcon.tscn" id="2_q5c43"]
+[ext_resource type="PackedScene" uid="uid://cpa1uy70vulch" path="res://components/ui/skillTree/SkillNode.tscn" id="2_q5c43"]
 [ext_resource type="Resource" uid="uid://t7yqxx82cwks" path="res://resources/skills/mask.tres" id="3_q85d6"]
 [ext_resource type="Resource" uid="uid://y3phkr6utmoe" path="res://resources/skills/skill1.tres" id="4_ilbes"]
 [ext_resource type="Resource" uid="uid://0r4mvqs87lxx" path="res://resources/skills/skill2.tres" id="5_iiaeu"]
