@@ -1,5 +1,6 @@
 using Godot;
 using Godot.Collections;
+using JamTemplate.Util;
 
 namespace JamTemplate.Components.Combat;
 
@@ -15,7 +16,7 @@ public partial class Damageable : Node
     var parent = GetParent();
     if (parent is not null)
     {
-      foreach (var hurtbox in parent.FindChildren("*", nameof(Hurtbox), true))
+      foreach (var hurtbox in parent.FindChildren<Hurtbox>(typeof(Hurtbox), true))
       {
         if (hurtbox is Hurtbox hb)
         {
