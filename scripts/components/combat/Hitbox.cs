@@ -28,7 +28,7 @@ public partial class Hitbox : Area2D
   /// The length of the hitbox
   /// 0 will be a circle
   /// </summary>
-  public float Length { get; set; } = 0f;
+  public float Height { get; set; } = 0f;
   /// <summary>
   /// The bone id this hitbox is attached to
   /// </summary>
@@ -52,13 +52,13 @@ public partial class Hitbox : Area2D
   }
   public static CollisionShape2D CreateShape(Hitbox hitbox)
   {
-    if (hitbox.Length > 0)
+    if (hitbox.Height > 0)
     {
       // Create a capsule shape
       var capsule = new CapsuleShape2D
       {
         Radius = hitbox.Radius,
-        Height = hitbox.Length
+        Height = hitbox.Height
       };
       return new CollisionShape2D { Shape = capsule };
     }
