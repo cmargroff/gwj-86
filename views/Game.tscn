@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://chdpsg75xvmwq"]
+[gd_scene load_steps=8 format=3 uid="uid://chdpsg75xvmwq"]
 
 [ext_resource type="PackedScene" uid="uid://c8en35aminwok" path="res://components/player/Player.tscn" id="1_5pph0"]
 [ext_resource type="PackedScene" uid="uid://c8a1wyw5ac7hq" path="res://components/ui/skillTree/SkillTree.tscn" id="2_j5piy"]
+[ext_resource type="PackedScene" uid="uid://dxxjhkg6kei5p" path="res://components/ui/HUD.tscn" id="3_leryn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5pph0"]
 
@@ -44,6 +45,9 @@ shape = SubResource("RectangleShape2D_j5piy")
 
 [node name="SkillTree" parent="." instance=ExtResource("2_j5piy")]
 offset_top = 0.0
+
+[node name="HUD" parent="." instance=ExtResource("3_leryn")]
+offset_right = 0.0
 offset_bottom = 0.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
