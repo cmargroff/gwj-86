@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7tpea1cely5u"]
+
+[ext_resource type="Script" uid="uid://4euoectan4p1" path="res://scripts/components/ui/HudStat.cs" id="1_3oigu"]
+
+[node name="HudStat" type="HBoxContainer"]
+offset_left = 25.0
+offset_top = 20.0
+offset_right = 320.0
+offset_bottom = 60.0
+theme_override_constants/separation = 11
+script = ExtResource("1_3oigu")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Text"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+show_percentage = false
