@@ -1,61 +1,72 @@
 using System;
 using System.Collections.Generic;
 using JamTemplate.Enum;
-using ShipOfTheseus2025.Models;
+using JamTemplate.Models;
 
 namespace JamTemplate.Managers;
 
 public class StatsManager
 {
-  //   public float Health { get; set; }
-  //   public int Exp { get; set; } = 5; 
-  //   public float Will { get; set; }
-  //   public float Strength { get; set; }
-  //   public float WalkSpeed { get; set; } = 120.0f;
-  //   public float RunSpeed { get; set; } = 300.0f;
-  //   public float AirSpeed { get; set; } = 200.0f;
-  //   public float InitialJumpVelocity { get; set; } = -300.0f;
-  //   public float AirJumpVelocity { get; set; } = -150.0f;
-  //   public uint MaxJumps { get; set; } = 2;
-  // 
-  public event Action<Stat, float> StatChanged;
-  public Dictionary<Stat, float> Stats = new();
+  public event Action<StatType, float> StatChanged;
+  public Dictionary<StatType, Stat> Stats = new();
   public StatsManager()
   {
-    Stats[Stat.Health] = 100f;
-    Stats[Stat.Exp] = 0;
-    Stats[Stat.Will] = 0;
-    Stats[Stat.Strength] = 0;
+    Stats[StatType.Health] = new Stat(100f);
+    Stats[StatType.Exp] = new Stat(0);
+    Stats[StatType.Will] = new Stat(0);
+    Stats[StatType.Strength] = new Stat(0);
 
-    Stats[Stat.WalkSpeed] = 120f;
-    Stats[Stat.RunSpeed] = 300f;
-    Stats[Stat.AirSpeed] = 200f;
-    Stats[Stat.InitialJumpVelocity] = -300f;
-    Stats[Stat.AirJumpVelocity] = -150f;
-    Stats[Stat.MaxJumps] = 2;
-    Stats[Stat.FrictionCoefficient] = 0.15f;
+    Stats[StatType.WalkSpeed] = new Stat(120f);
+    Stats[StatType.RunSpeed] = new Stat(300f);
+    Stats[StatType.AirSpeed] = new Stat(200f);
+    Stats[StatType.InitialJumpVelocity] = new Stat(-300f);
+    Stats[StatType.AirJumpVelocity] = new Stat(-150f);
+    Stats[StatType.MaxJumps] = new Stat(2);
+    Stats[StatType.FrictionCoefficient] = new Stat(0.15f);
 
-    Stats[Stat.AttackSpeed] = 1;
-    Stats[Stat.CritChance] = 0;
-    Stats[Stat.WeaponThrow] = 0;
+    Stats[StatType.AttackSpeed] = new Stat(1);
+    Stats[StatType.CritChance] = new Stat(0);
+    Stats[StatType.WeaponThrow] = new Stat(0);
   }
   public void ChangeStat(StatChange statChange)
   {
     // TODO: maybe change this to a switch
     if (statChange.Mode == StatChangeMode.Absolute)
     {
-      Stats[statChange.Stat] = statChange.Amount;
+      Stats[statChange.Stat].Value = statChange.Amount;
     }
     else
     {
-      Stats[statChange.Stat] += statChange.Amount;
+      Stats[statChange.Stat].Value += statChange.Amount;
     }
     // some logic to limit the individual stats like cap water level at 100;
-    StatChanged?.Invoke(statChange.Stat, Stats[statChange.Stat]);
+    StatChanged?.Invoke(statChange.Stat, Stats[statChange.Stat].Value);
   }
 
-  public float GetStats(Stat stat)
+  public float GetStats(StatType stat)
   {
-    return Stats[stat];
+    return Stats[stat].Value;
+  }
+  public void BindToStatConfigChange(Action<Stat> action)
+  {
+    foreach (var stat in Stats.Values)
+    {
+      stat.OnConfigChange += action;
+    }
+  }
+  public void UnbindFromStatConfigChange(Action<Stat> action)
+  {
+    foreach (var stat in Stats.Values)
+    {
+      stat.OnConfigChange -= action;
+    }
+  }
+  public void BindToStatChange(StatType stat, Action<float> action)
+  {
+    Stats[stat].OnChange += action;
+  }
+  public void UnbindFromStatChange(StatType stat, Action<float> action)
+  {
+    Stats[stat].OnChange -= action;
   }
 }

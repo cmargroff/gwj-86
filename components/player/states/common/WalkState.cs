@@ -29,6 +29,6 @@ public class WalkState(Components.Player.Player _player, StatsManager _stats) : 
       return;
     }
 
-    _player.Move(delta, vector, _stats.Stats[Stat.WalkSpeed]);
+    _player.Move(delta, vector, _stats.Stats[StatType.WalkSpeed].Value);
   }
 }

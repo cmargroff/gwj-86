@@ -1,12 +1,11 @@
 namespace JamTemplate.Enum;
 
-public enum Stat
+public enum StatType
 {
   Health,
   Exp,
   Will,
   Strength,
-
   WalkSpeed,
   RunSpeed,
   AirSpeed,
@@ -15,9 +14,7 @@ public enum Stat
   MaxJumps,
   DashDistance,
   FrictionCoefficient,
-
   AttackSpeed,
   CritChance,
   WeaponThrow,
-
 }

@@ -1,8 +1,6 @@
 using Godot;
 using Godot.Collections;
 using JamTemplate.Enum;
-using System;
-using System.ComponentModel;
 
 namespace JamTemplate.Resources;
 
@@ -24,7 +22,7 @@ public partial class SkillResource : Resource
     [Export]
     public bool Activated { get; set; }
     [Export]
-    public Stat StatName;
+    public StatType StatName;
     [Export]
     public float Value;
     [Export]
