@@ -1,0 +1,16 @@
+key,en
+Stat/Health,HP
+Stat/Exp,XP
+Stat/Will,Will
+Stat/Strength,Str
+Stat/WalkSpeed,WlkSpd
+Stat/RunSpeed,RunSpd
+Stat/AirSpeed,AirSpd
+Stat/AttackSpeed,AtkSpd
+Stat/InitialJumpVelocity,Jump
+Stat/MaxJumps,MaxJumps
+Stat/CritChance,Crit
+Stat/AirJumpVelocity,
+Stat/DashDistance,
+Stat/FrictionCoefficient,
+Stat/WeaponThrow,
