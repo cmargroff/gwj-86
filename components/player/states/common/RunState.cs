@@ -27,6 +27,6 @@ public class RunState(Components.Player.Player _player, StatsManager _stats) : A
       return;
     }
 
-    _player.Move(delta, vector, _stats.Stats[StatType.RunSpeed].Value);
+    _player.Move(delta, vector, _stats._stats[StatType.RunSpeed].Value);
   }
 }

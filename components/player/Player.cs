@@ -58,7 +58,7 @@ public partial class Player : CharacterBody2D
 
 	public void ResetJumps()
 	{
-		_jumpsLeft = _statsManager.Stats[StatType.MaxJumps].Value;
+		_jumpsLeft = _statsManager._stats[StatType.MaxJumps].Value;
 	}
 	public void DecrementJumps()
 	{
@@ -83,7 +83,7 @@ public partial class Player : CharacterBody2D
 	{
 		if (IsOnFloor())
 		{
-			MoveVelocity.X = MoveVelocity.X * (1f - _statsManager.Stats[StatType.FrictionCoefficient].Value);
+			MoveVelocity.X = MoveVelocity.X * (1f - _statsManager._stats[StatType.FrictionCoefficient].Value);
 		}
 	}
 

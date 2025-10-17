@@ -20,4 +20,9 @@ public class Stat
     _startingValue = startingValue;
     _value = startingValue;
   }
+
+  public void Reset()
+  {
+    Value = _startingValue;
+  }
 }

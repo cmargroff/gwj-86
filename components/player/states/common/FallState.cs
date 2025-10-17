@@ -28,6 +28,6 @@ public class FallState(Components.Player.Player _player, StatsManager _stats) : 
         return;
       }
     }
-    _player.Move(delta, _player.GetMoveVector(), _stats.Stats[StatType.AirSpeed].Value);
+    _player.Move(delta, _player.GetMoveVector(), _stats._stats[StatType.AirSpeed].Value);
   }
 }

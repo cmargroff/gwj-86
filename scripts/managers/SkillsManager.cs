@@ -30,17 +30,11 @@ public class SkillsManager
     {
         foreach (var skill in skillsSet.Skills)
         {
-            if (skill.Activated && skill.Enabled)
-            {
-                skill.Enabled = false;
-                _statsManager.ChangeStat(new()
-                {
-                    Stat = skill.StatName,
-                    Amount = -skill.Value,
-                    Mode = skill.Mode
-                });
-            }
+            skill.Enabled = false;
+            var stat = _statsManager.GetStat(skill.StatName);
+            stat.Reset();
         }
+        
     }
 
 
