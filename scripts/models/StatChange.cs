@@ -1,10 +1,10 @@
 using JamTemplate.Enum;
 
-namespace ShipOfTheseus2025.Models;
+namespace JamTemplate.Models;
 
 public struct StatChange
 {
   public StatChangeMode Mode;
-  public Stat Stat;
+  public StatType Stat;
   public float Amount;
 }

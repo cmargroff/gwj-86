@@ -10,9 +10,9 @@ public class JumpWallState(Components.Player.Player _player, StatsManager _stats
   {
     if (frame == 1)
     {
-      _player.MoveVelocity.Y = _stats.Stats[Stat.AirJumpVelocity];
+      _player.MoveVelocity.Y = _stats.Stats[StatType.AirJumpVelocity].Value;
       var normal = _player.GetWallNormal();
-      _player.MoveVelocity.X = normal.X * _stats.Stats[Stat.AirSpeed];
+      _player.MoveVelocity.X = normal.X * _stats.Stats[StatType.AirSpeed].Value;
     }
     if (_player.MoveVelocity.Y > 0) // player is falling down
     {

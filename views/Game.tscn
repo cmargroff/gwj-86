@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://chdpsg75xvmwq"]
+[gd_scene load_steps=8 format=3 uid="uid://chdpsg75xvmwq"]
 
 [ext_resource type="PackedScene" uid="uid://c8en35aminwok" path="res://components/player/Player.tscn" id="1_5pph0"]
 [ext_resource type="PackedScene" uid="uid://c8a1wyw5ac7hq" path="res://components/ui/skillTree/SkillTree.tscn" id="2_j5piy"]
+[ext_resource type="PackedScene" uid="uid://dxxjhkg6kei5p" path="res://components/ui/HUD.tscn" id="3_leryn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5pph0"]
 
@@ -17,10 +18,8 @@ size = Vector2(20, 100)
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_5pph0")]
-visible = false
 
 [node name="Floor" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(0, 2)
@@ -42,8 +41,17 @@ texture = SubResource("PlaceholderTexture2D_j5piy")
 position = Vector2(0, -50)
 shape = SubResource("RectangleShape2D_j5piy")
 
-[node name="SkillTree" parent="." instance=ExtResource("2_j5piy")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SkillTree" parent="CanvasLayer" instance=ExtResource("2_j5piy")]
+visible = false
+offset_left = 0.0
 offset_top = 0.0
+offset_right = 0.0
 offset_bottom = 0.0
 
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_leryn")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+editor_draw_limits = true

@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxxjhkg6kei5p"]
+
+[ext_resource type="PackedScene" uid="uid://b7tpea1cely5u" path="res://components/ui/HUDStat.tscn" id="1_4sm8l"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+offset_right = 86.0
+offset_bottom = 91.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HP" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_4sm8l")]
+layout_mode = 2
+BarColor = Color(5.679429e-06, 0.7877017, 0.09831569, 1)
+
+[node name="Will" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_4sm8l")]
+layout_mode = 2
+StatType = 2
+BarColor = Color(0, 0.4167979, 0.9053828, 1)

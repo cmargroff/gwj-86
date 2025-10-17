@@ -17,19 +17,19 @@ public class SkillTreeManager
 	}
 	public bool CheckExp(float exp)
 	{
-		var check = (_statsManager.Stats[Stat.Exp] >= exp) ? true : false;
+		var check = (_statsManager.Stats[StatType.Exp].Value >= exp) ? true : false;
 
 		if (check)
 		{
-			_statsManager.Stats[Stat.Exp] -= exp;
-			
+			_statsManager.Stats[StatType.Exp].Value -= exp;
+
 			//call function to apply skill 
 		}
 		return check;
 	}
-	
+
 	public void UpdateTree()
-    {
-        SkillTreeUpdated?.Invoke();
-    }
+	{
+		SkillTreeUpdated?.Invoke();
+	}
 }

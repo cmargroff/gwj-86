@@ -1,8 +1,8 @@
 using Godot;
+using JamTemplate.Enum;
 using JamTemplate.Managers;
 using JamTemplate.Player.States;
 using JamTemplate.Util.FSM;
-using JamTemplate.Enum;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate.Components.Player;
@@ -58,7 +58,7 @@ public partial class Player : CharacterBody2D
 
 	public void ResetJumps()
 	{
-		_jumpsLeft = _statsManager.Stats[Stat.MaxJumps];
+		_jumpsLeft = _statsManager.Stats[StatType.MaxJumps].Value;
 	}
 	public void DecrementJumps()
 	{
@@ -83,7 +83,7 @@ public partial class Player : CharacterBody2D
 	{
 		if (IsOnFloor())
 		{
-			MoveVelocity.X = MoveVelocity.X * (1f - _statsManager.Stats[Stat.FrictionCoefficient]);
+			MoveVelocity.X = MoveVelocity.X * (1f - _statsManager.Stats[StatType.FrictionCoefficient].Value);
 		}
 	}
 
