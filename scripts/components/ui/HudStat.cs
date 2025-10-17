@@ -22,7 +22,7 @@ public partial class HudStat : HBoxContainer
     ProgressBar = GetNode<ProgressBar>("%ProgressBar");
     ProgressBar.AddThemeColorOverride("bg_color", BarColor);
     _statsManager = Globals.ServiceProvider.GetRequiredService<StatsManager>();
-    var stat = _statsManager._stats[StatType];
+    var stat = _statsManager.GetStat(StatType);
     ProgressBar.MinValue = stat.MinValue;
     ProgressBar.MaxValue = stat.MaxValue;
     ProgressBar.Value = stat.Value;

@@ -38,6 +38,7 @@ script = ExtResource("1_w6hlc")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 custom_minimum_size = Vector2(80, 80)
@@ -101,6 +102,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 10
 text = "Description"
+
+[node name="Cost" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 11
+text = "Exp: 0/3"
 
 [connection signal="mouse_entered" from="VBoxContainer/Control/Button" to="." method="ShowText"]
 [connection signal="mouse_exited" from="VBoxContainer/Control/Button" to="." method="HideText"]

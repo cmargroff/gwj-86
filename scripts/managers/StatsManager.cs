@@ -12,7 +12,7 @@ public class StatsManager
   public StatsManager()
   {
     _stats[StatType.Health] = new Stat(100f);
-    _stats[StatType.Exp] = new Stat(0);
+    _stats[StatType.Exp] = new Stat(5);
     _stats[StatType.Will] = new Stat(0);
     _stats[StatType.Strength] = new Stat(0);
 
