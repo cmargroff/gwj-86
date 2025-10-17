@@ -18,10 +18,8 @@ size = Vector2(20, 100)
 [node name="Game" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_5pph0")]
-visible = false
 
 [node name="Floor" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(0, 2)
@@ -43,11 +41,17 @@ texture = SubResource("PlaceholderTexture2D_j5piy")
 position = Vector2(0, -50)
 shape = SubResource("RectangleShape2D_j5piy")
 
-[node name="SkillTree" parent="." instance=ExtResource("2_j5piy")]
-offset_top = 0.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="HUD" parent="." instance=ExtResource("3_leryn")]
+[node name="SkillTree" parent="CanvasLayer" instance=ExtResource("2_j5piy")]
+visible = false
+offset_left = 0.0
+offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
 
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_leryn")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+editor_draw_limits = true
