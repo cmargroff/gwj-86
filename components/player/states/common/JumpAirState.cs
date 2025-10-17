@@ -14,7 +14,7 @@ public class JumpAirState(Components.Player.Player _player, StatsManager _stats)
     {
       if (playSpeed > 0) // to determine if animation is playing forward
       {
-        _player.MoveVelocity.Y = _stats._stats[StatType.InitialJumpVelocity].Value;
+        _player.MoveVelocity.Y = _stats.GetStat(StatType.InitialJumpVelocity).Value;
         _player.DecrementJumps();
       }
     }

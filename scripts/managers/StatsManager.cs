@@ -57,7 +57,7 @@ public class StatsManager
     {
       _stats[statChange.Stat].Value += statChange.Amount;
     }
-    
+    // some logic to limit the individual stats like cap water level at 100;
     StatChanged?.Invoke(statChange.Stat, _stats[statChange.Stat].Value);
   }
 
