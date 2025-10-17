@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_cwmg2"]
 [ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_evwsw"]
 [ext_resource type="Resource" uid="uid://b3f8826x00ce1" path="res://resources/skills/stag/stagSkill2.tres" id="1_pxjyj"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_sv0qs"]
+[ext_resource type="Texture2D" uid="uid://d3b7jh5d46fhn" path="res://assets/sprites/ui/icons/atlas.sprites/Health.tres" id="2_evwsw"]
 
 [resource]
 script = ExtResource("1_cwmg2")
 SkillName = "skill 1 "
 Description = "HP +20"
 BorderTexture = ExtResource("1_evwsw")
-IconTexture = ExtResource("2_sv0qs")
+IconTexture = ExtResource("2_evwsw")
 Unlocked = true
 Value = 20.0
 Mode = 1

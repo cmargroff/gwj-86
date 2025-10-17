@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_g73rj"]
 [ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_qagog"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_i1bg3"]
+[ext_resource type="Texture2D" uid="uid://dvw7gpd4cad4b" path="res://assets/sprites/ui/icons/atlas.sprites/HealthBonusOutline.tres" id="2_g73rj"]
 
 [resource]
 script = ExtResource("1_qagog")
 SkillName = "skill 5"
 Description = "Passive HP regeneration"
 BorderTexture = ExtResource("1_g73rj")
-IconTexture = ExtResource("2_i1bg3")
+IconTexture = ExtResource("2_g73rj")
 StatName = 17
 Value = 5.0
 Mode = 1

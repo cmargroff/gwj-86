@@ -1,15 +1,15 @@
 [gd_resource type="Resource" script_class="SkillResource" load_steps=4 format=3 uid="uid://dkauuaxn50okw"]
 
-[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_taqiq"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_jwxj4"]
-[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="3_yj8d5"]
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_gbccp"]
+[ext_resource type="Texture2D" uid="uid://ba771ndv6in1o" path="res://assets/sprites/ui/icons/atlas.sprites/JumpHeight.tres" id="2_mustn"]
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="3_be5s3"]
 
 [resource]
-script = ExtResource("3_yj8d5")
+script = ExtResource("3_be5s3")
 SkillName = "skill 3"
 Description = "Jump higher"
-BorderTexture = ExtResource("1_taqiq")
-IconTexture = ExtResource("2_jwxj4")
+BorderTexture = ExtResource("1_gbccp")
+IconTexture = ExtResource("2_mustn")
 StatName = 8
 Value = -50.0
 Mode = 1

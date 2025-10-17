@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_d0shu"]
 [ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_qqkdb"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_nlcxf"]
+[ext_resource type="Texture2D" uid="uid://c4l27rio3ea7t" path="res://assets/sprites/ui/icons/atlas.sprites/AttackAltOutline.tres" id="2_qqkdb"]
 [ext_resource type="Resource" uid="uid://dccb3ioqbaf1i" path="res://resources/skills/stag/stagSkill3.tres" id="3_yd2bj"]
 
 [resource]
@@ -10,7 +10,7 @@ script = ExtResource("1_d0shu")
 SkillName = "skill 2"
 Description = "Attak +5"
 BorderTexture = ExtResource("1_qqkdb")
-IconTexture = ExtResource("2_nlcxf")
+IconTexture = ExtResource("2_qqkdb")
 StatName = 3
 Value = 5.0
 Mode = 1

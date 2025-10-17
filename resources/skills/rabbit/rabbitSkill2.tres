@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="SkillResource" load_steps=5 format=3 uid="uid://0r4mvqs87lxx"]
 
-[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_cpm2h"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_g1myj"]
-[ext_resource type="Resource" uid="uid://dkauuaxn50okw" path="res://resources/skills/rabbit/rabbitSkill3.tres" id="3_2ys4o"]
-[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="4_p58ow"]
+[ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_pef8t"]
+[ext_resource type="Texture2D" uid="uid://bpj3i2uo7el1m" path="res://assets/sprites/ui/icons/atlas.sprites/RunSpeed.tres" id="2_yas03"]
+[ext_resource type="Resource" uid="uid://dkauuaxn50okw" path="res://resources/skills/rabbit/rabbitSkill3.tres" id="3_a66hc"]
+[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="4_dwc0t"]
 
 [resource]
-script = ExtResource("4_p58ow")
+script = ExtResource("4_dwc0t")
 SkillName = "skill 2"
 Description = "Speed x1.5"
-BorderTexture = ExtResource("1_cpm2h")
-IconTexture = ExtResource("2_g1myj")
+BorderTexture = ExtResource("1_pef8t")
+IconTexture = ExtResource("2_yas03")
 ExpCost = 2
 StatName = 7
 Value = 1.5
-UnlockSkills = Array[Object]([ExtResource("3_2ys4o")])
+UnlockSkills = Array[Object]([ExtResource("3_a66hc")])
 metadata/_custom_type_script = "uid://jfvhoncsydvq"
