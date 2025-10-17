@@ -11,14 +11,14 @@ public partial class HudStat : HBoxContainer
   public StatType StatType;
   [Export]
   public Color BarColor = Colors.White;
-  private Label Label;
+  private RichTextLabel Label;
   private ProgressBar ProgressBar;
   public string Text { get { return Label?.Text; } set { if (Label != null) Label.Text = value; } }
   private StatsManager _statsManager;
   public override void _Ready()
   {
-    Label = GetNode<Label>("%Label");
-    Label.Text = Tr("Stat/" + StatType.ToString());
+    Label = GetNode<RichTextLabel>("%Label");
+    Label.Text = $"<icon:{Tr("Stat/" + StatType.ToString())}>";
     ProgressBar = GetNode<ProgressBar>("%ProgressBar");
     ProgressBar.AddThemeColorOverride("bg_color", BarColor);
     _statsManager = Globals.ServiceProvider.GetRequiredService<StatsManager>();

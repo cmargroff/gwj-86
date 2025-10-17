@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7tpea1cely5u"]
+[gd_scene load_steps=3 format=3 uid="uid://b7tpea1cely5u"]
 
 [ext_resource type="Script" uid="uid://4euoectan4p1" path="res://scripts/components/ui/HudStat.cs" id="1_3oigu"]
+[ext_resource type="Script" uid="uid://c7s54pblnuq8v" path="res://scripts/components/ui/WithIcons.cs" id="2_6qwbl"]
 
 [node name="HudStat" type="HBoxContainer"]
 offset_left = 25.0
@@ -10,11 +11,19 @@ offset_bottom = 60.0
 theme_override_constants/separation = 11
 script = ExtResource("1_3oigu")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
 text = "Text"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="WithIcons" type="Node" parent="Label"]
+script = ExtResource("2_6qwbl")
+metadata/_custom_type_script = "uid://c7s54pblnuq8v"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
