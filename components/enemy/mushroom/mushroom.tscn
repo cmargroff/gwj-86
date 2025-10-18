@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://0vkouc7prftr"]
+
+[ext_resource type="Texture2D" uid="uid://brk14yu63fbe0" path="res://assets/sprites/mushroom/atlas.sprites/body.tres" id="1_44ai3"]
+[ext_resource type="Texture2D" uid="uid://egrhr74f7cgp" path="res://assets/sprites/mushroom/atlas.sprites/collar.tres" id="2_tvvj8"]
+[ext_resource type="Texture2D" uid="uid://8gdevkmoltmi" path="res://assets/sprites/mushroom/atlas.sprites/cap.tres" id="3_55n1s"]
+[ext_resource type="Texture2D" uid="uid://vafmtybq1cmr" path="res://assets/sprites/mushroom/atlas.sprites/eyes.tres" id="4_guxle"]
+
+[node name="Mushroom" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Node2D"]
+
+[node name="Root" type="Bone2D" parent="Node2D/Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Body" type="Bone2D" parent="Node2D/Skeleton2D/Root"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Body" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body"]
+position = Vector2(0, -318)
+texture = ExtResource("1_44ai3")
+
+[node name="Collar" type="Bone2D" parent="Node2D/Skeleton2D/Root/Body"]
+position = Vector2(0, -612)
+rest = Transform2D(1, 0, 0, 1, 0, -612)
+
+[node name="Collar" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body/Collar"]
+position = Vector2(-12, 98)
+texture = ExtResource("2_tvvj8")
+
+[node name="Cap" type="Bone2D" parent="Node2D/Skeleton2D/Root/Body"]
+position = Vector2(0, -690)
+rest = Transform2D(1, 0, 0, 1, 0, -690)
+
+[node name="Cap" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body/Cap"]
+position = Vector2(55, -114)
+texture = ExtResource("3_55n1s")
+
+[node name="Eyes" type="Bone2D" parent="Node2D/Skeleton2D/Root/Body"]
+position = Vector2(-59, -325)
+rest = Transform2D(1, 0, 0, 1, -59, -325)
+auto_calculate_length_and_angle = false
+length = 100.0
+bone_angle = 0.0
+
+[node name="Eyes" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body/Eyes"]
+position = Vector2(24, -7)
+texture = ExtResource("4_guxle")
