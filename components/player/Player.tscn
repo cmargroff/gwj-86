@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://cvy1h1nsiklsp" path="res://scripts/components/combat/Hurtbox.cs" id="2_ocmko"]
 [ext_resource type="Texture2D" uid="uid://cavvwiogt7c0p" path="res://assets/sprites/player/atlas.sprites/HoodShadow.tres" id="3_lbsqm"]
 [ext_resource type="Texture2D" uid="uid://sg87slxyhve5" path="res://assets/sprites/player/atlas.sprites/FootBack.tres" id="3_ocmko"]
-[ext_resource type="Texture2D" uid="uid://dgx0ey7g6pg7o" path="res://assets/sprites/player/atlas.sprites/ShinBack.tres" id="3_x1ks5"]
+[ext_resource type="Texture2D" uid="uid://bbrxatkvb0gbf" path="res://assets/sprites/player/atlas.sprites/ShinBack.tres" id="3_x1ks5"]
 [ext_resource type="Texture2D" uid="uid://kqxb1ahenocy" path="res://assets/sprites/player/atlas.sprites/Eyes.tres" id="4_5u2jg"]
-[ext_resource type="Texture2D" uid="uid://ci24s7spawa64" path="res://assets/sprites/player/atlas.sprites/ShinFront.tres" id="4_hvdg6"]
+[ext_resource type="Texture2D" uid="uid://bhvekks13wovp" path="res://assets/sprites/player/atlas.sprites/ShinFront.tres" id="4_hvdg6"]
 [ext_resource type="Texture2D" uid="uid://dech0esfkeugq" path="res://assets/sprites/player/atlas.sprites/FootFront.tres" id="4_wtb5b"]
 [ext_resource type="Texture2D" uid="uid://b2id541mo37xw" path="res://assets/sprites/player/atlas.sprites/Hood1.tres" id="5_xnekc"]
 [ext_resource type="SpriteFrames" path="res://assets/sprites/player/CloakLightFrames.tres" id="6_rvha6"]
-[ext_resource type="SpriteFrames" uid="uid://dfue5umkloyuj" path="res://assets/sprites/player/CloakFrames.tres" id="6_yngd5"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/player/CloakFrames.tres" id="6_yngd5"]
 [ext_resource type="Texture2D" uid="uid://c8bet7o5pums8" path="res://assets/sprites/player/atlas.sprites/Sleeve.tres" id="7_hvdg6"]
 [ext_resource type="Texture2D" uid="uid://dtquteyhh8vbe" path="res://assets/sprites/player/atlas.sprites/SleeveLight.tres" id="8_x1ks5"]
 [ext_resource type="Script" uid="uid://b0xljugu36hnp" path="res://scripts/components/player/Eyes.cs" id="11_op7db"]
@@ -18,8 +18,8 @@
 [ext_resource type="Script" uid="uid://cbiudxqyhryc8" path="res://scripts/components/combat/Damageable.cs" id="12_wtb5b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfe3d"]
-radius = 34.83
-height = 225.0
+radius = 20.0
+height = 100.0
 
 [sub_resource type="Animation" id="Animation_hvdg6"]
 length = 0.001
@@ -985,6 +985,7 @@ radius = 38.0
 height = 390.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("AnimationPlayer")]
+collision_mask = 15
 script = ExtResource("1_kfe3d")
 AnimationPlayer = NodePath("AnimationPlayer")
 
@@ -993,7 +994,7 @@ position = Vector2(0, -16)
 zoom = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -112)
+position = Vector2(0, -50)
 shape = SubResource("CapsuleShape2D_kfe3d")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -1003,7 +1004,7 @@ libraries = {
 playback_default_blend_time = 0.1
 
 [node name="Visuals" type="Node2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.1, 0.1)
 
 [node name="FootL_IK" type="Marker2D" parent="Visuals"]
 position = Vector2(-42, -42)
@@ -1117,7 +1118,7 @@ shape = SubResource("CapsuleShape2D_ocmko")
 [node name="LegR" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip"]
 position = Vector2(41, 13)
 rotation = 0.0027548075
-scale = Vector2(0.9998542, 0.9998542)
+scale = Vector2(0.999854, 0.999854)
 rest = Transform2D(0.9999246, 0.0027547264, -0.0027547264, 0.9999246, 41, 13)
 metadata/_local_pose_override_enabled_ = true
 
@@ -1204,7 +1205,7 @@ texture = ExtResource("3_lbsqm")
 [node name="Eyes" type="Bone2D" parent="Visuals/Skeleton2D/Root/Hip/Head"]
 position = Vector2(-40.001526, -84.00043)
 rotation = 2.9952528
-scale = Vector2(0.9999945, 0.9999945)
+scale = Vector2(0.99999434, 0.99999434)
 rest = Transform2D(0.99842656, 0.05597828, -0.05597828, 0.99842656, -40.002007, -83.996826)
 editor_settings/show_bone_gizmo = false
 metadata/_local_pose_override_enabled_ = true
@@ -1234,7 +1235,7 @@ shape = SubResource("CircleShape2D_x1ks5")
 visible = false
 position = Vector2(91, -209)
 rotation = 0.01576454
-scale = Vector2(0.9999789, 0.9999789)
+scale = Vector2(0.9999787, 0.9999787)
 rest = Transform2D(0.99985504, 0.015763618, -0.015763618, 0.99985504, 91, -209)
 auto_calculate_length_and_angle = false
 length = 355.213
