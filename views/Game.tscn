@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://chdpsg75xvmwq"]
+[gd_scene load_steps=9 format=3 uid="uid://chdpsg75xvmwq"]
 
 [ext_resource type="PackedScene" uid="uid://c8en35aminwok" path="res://components/player/Player.tscn" id="1_5pph0"]
 [ext_resource type="PackedScene" uid="uid://c8a1wyw5ac7hq" path="res://components/ui/skillTree/SkillTree.tscn" id="2_j5piy"]
-[ext_resource type="PackedScene" path="res://components/ui/HUD.tscn" id="3_leryn"]
+[ext_resource type="PackedScene" uid="uid://dxxjhkg6kei5p" path="res://components/ui/HUD.tscn" id="3_leryn"]
+[ext_resource type="PackedScene" uid="uid://wyhee2xl4p3w" path="res://components/enemy/hedgehog/hedgehog.tscn" id="4_26sbl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5pph0"]
 
@@ -20,6 +21,7 @@ size = Vector2(20, 100)
 [node name="Player" parent="." instance=ExtResource("1_5pph0")]
 
 [node name="Floor" type="StaticBody2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(0, 2)
@@ -30,8 +32,8 @@ position = Vector2(0, 10)
 texture = SubResource("PlaceholderTexture2D_5pph0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
-position = Vector2(232, 0)
+position = Vector2(-190, 0)
+collision_layer = 4
 
 [node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(0, -50)
@@ -44,6 +46,7 @@ shape = SubResource("RectangleShape2D_j5piy")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SkillTree" parent="CanvasLayer" instance=ExtResource("2_j5piy")]
+visible = false
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
@@ -54,4 +57,8 @@ visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
+zoom = Vector2(0.56, 0.56)
 editor_draw_limits = true
+
+[node name="Hedgehog" parent="." instance=ExtResource("4_26sbl")]
+position = Vector2(571, 0)
