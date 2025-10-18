@@ -9,7 +9,7 @@
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/Skeleton2D/Root/Body:scale:x")
+tracks/0/path = NodePath("Body:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,7 +20,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/Skeleton2D/Root/Body:scale:y")
+tracks/1/path = NodePath("Body:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -31,7 +31,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:scale:x")
+tracks/2/path = NodePath("Body/Eyes:scale:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -42,7 +42,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:scale:y")
+tracks/3/path = NodePath("Body/Eyes:scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -53,7 +53,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:position:x")
+tracks/4/path = NodePath("Body/Eyes:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -64,7 +64,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:position:y")
+tracks/5/path = NodePath("Body/Eyes:position:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -75,7 +75,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:skew")
+tracks/6/path = NodePath("Body/Eyes:skew")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -86,7 +86,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visual/Skeleton2D/Root/Body:position:x")
+tracks/7/path = NodePath("Body:position:x")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -97,7 +97,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Visual/Skeleton2D/Root/Body:position:y")
+tracks/8/path = NodePath("Body:position:y")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -108,7 +108,7 @@ tracks/8/keys = {
 tracks/9/type = "bezier"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("Visual/Skeleton2D/Root:position:x")
+tracks/9/path = NodePath("position:x")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -119,7 +119,7 @@ tracks/9/keys = {
 tracks/10/type = "bezier"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("Visual/Skeleton2D/Root:position:y")
+tracks/10/path = NodePath("position:y")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -130,7 +130,7 @@ tracks/10/keys = {
 tracks/11/type = "bezier"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Visual/Skeleton2D/Root/Body:rotation")
+tracks/11/path = NodePath("Body:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
@@ -141,7 +141,7 @@ tracks/11/keys = {
 tracks/12/type = "bezier"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Visual/Skeleton2D/Root/Body:skew")
+tracks/12/path = NodePath("Body:skew")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
@@ -152,7 +152,7 @@ tracks/12/keys = {
 tracks/13/type = "bezier"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Visual/Skeleton2D/Root/Body/Collar:skew")
+tracks/13/path = NodePath("Body/Collar:skew")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
@@ -160,6 +160,8 @@ tracks/13/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+
+[sub_resource type="Animation" id="Animation_7c66s"]
 
 [sub_resource type="Animation" id="Animation_tvvj8"]
 
@@ -169,7 +171,7 @@ loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/Skeleton2D/Root/Body:scale:x")
+tracks/0/path = NodePath("Root/Body:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -180,7 +182,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/Skeleton2D/Root/Body:scale:y")
+tracks/1/path = NodePath("Root/Body:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -191,7 +193,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:scale:x")
+tracks/2/path = NodePath("Root/Body/Eyes:scale:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -202,7 +204,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:scale:y")
+tracks/3/path = NodePath("Root/Body/Eyes:scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -213,7 +215,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:position:x")
+tracks/4/path = NodePath("Root/Body/Eyes:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -224,7 +226,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:position:y")
+tracks/5/path = NodePath("Root/Body/Eyes:position:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -235,7 +237,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:skew")
+tracks/6/path = NodePath("Root/Body/Eyes:skew")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -244,13 +246,16 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0, 2.8, 2.9, 3.1000001, 3.2)
 }
 
+[sub_resource type="Animation" id="Animation_tpl5k"]
+resource_name = "run"
+
 [sub_resource type="Animation" id="Animation_guxle"]
 length = 1.3333367
 loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visual/Skeleton2D/Root/Body:position:x")
+tracks/0/path = NodePath("Body:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -261,7 +266,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visual/Skeleton2D/Root/Body:position:y")
+tracks/1/path = NodePath("Body:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -272,7 +277,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Visual/Skeleton2D/Root:position:x")
+tracks/2/path = NodePath("position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -283,7 +288,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Visual/Skeleton2D/Root:position:y")
+tracks/3/path = NodePath("position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -294,7 +299,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Visual/Skeleton2D/Root/Body:scale:x")
+tracks/4/path = NodePath("Body:scale:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -305,7 +310,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Visual/Skeleton2D/Root/Body:scale:y")
+tracks/5/path = NodePath("Body:scale:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -316,7 +321,7 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Visual/Skeleton2D/Root/Body:rotation")
+tracks/6/path = NodePath("Body:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -327,7 +332,7 @@ tracks/6/keys = {
 tracks/7/type = "bezier"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Visual/Skeleton2D/Root/Body:skew")
+tracks/7/path = NodePath("Body:skew")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -338,7 +343,7 @@ tracks/7/keys = {
 tracks/8/type = "bezier"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Visual/Skeleton2D/Root/Body/Collar:skew")
+tracks/8/path = NodePath("Body/Collar:skew")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -346,11 +351,17 @@ tracks/8/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.43633232, -0.01111111, 0.072722055, 0, 0, -0.43633232, -0.07777779, 0, 0, 0, 0.2617994, -0.011111101, -0.116355285, 0, 0, -0.12217305, -0.016666671, 0.063995406, 0, 0, 0, -0.011111121, -0.020362174, 0, 0),
 "times": PackedFloat32Array(0.40000004, 0.4666667, 0.9333334, 1, 1.1, 1.1666667)
 }
-
-[sub_resource type="Animation" id="Animation_7c66s"]
-
-[sub_resource type="Animation" id="Animation_tpl5k"]
-resource_name = "run"
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Body/Eyes:skew")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3on6"]
 _data = {
@@ -365,6 +376,7 @@ _data = {
 [node name="Mushroom" type="Node2D"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Visual/Skeleton2D/Root")
 libraries = {
 &"": SubResource("AnimationLibrary_u3on6")
 }
@@ -387,6 +399,7 @@ texture = ExtResource("1_44ai3")
 
 [node name="Collar" type="Bone2D" parent="Visual/Skeleton2D/Root/Body"]
 position = Vector2(0, -612)
+scale = Vector2(1, 0.9999944)
 rest = Transform2D(1, 0, 0, 1, 0, -612)
 auto_calculate_length_and_angle = false
 length = 100.0
