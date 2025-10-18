@@ -1,49 +1,240 @@
-[gd_scene load_steps=5 format=3 uid="uid://0vkouc7prftr"]
+[gd_scene load_steps=12 format=3 uid="uid://0vkouc7prftr"]
 
 [ext_resource type="Texture2D" uid="uid://brk14yu63fbe0" path="res://assets/sprites/mushroom/atlas.sprites/body.tres" id="1_44ai3"]
 [ext_resource type="Texture2D" uid="uid://egrhr74f7cgp" path="res://assets/sprites/mushroom/atlas.sprites/collar.tres" id="2_tvvj8"]
 [ext_resource type="Texture2D" uid="uid://8gdevkmoltmi" path="res://assets/sprites/mushroom/atlas.sprites/cap.tres" id="3_55n1s"]
 [ext_resource type="Texture2D" uid="uid://vafmtybq1cmr" path="res://assets/sprites/mushroom/atlas.sprites/eyes.tres" id="4_guxle"]
 
+[sub_resource type="Animation" id="Animation_44ai3"]
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/Skeleton2D/Root/Body:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/Skeleton2D/Root/Body:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-59, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-325, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:skew")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.39793506, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_tvvj8"]
+
+[sub_resource type="Animation" id="Animation_55n1s"]
+length = 4.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/Skeleton2D/Root/Body:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2, 2, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.050000004, 0, 0, 0, 1, -0.060000002, 0, 0, 0, 1, -0.056666665, 0, 0, 0, 1, -0.050000004, 0, 0, 0, 1, -0.060000002, 0, 0, 0, 1, -0.056666665, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.33333334, 0.66, 1, 1.3333333, 1.6666666, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/Skeleton2D/Root/Body:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 2, 2, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.8, -0.050000004, 0.033333335, 0, 0, 1.1, -0.060000002, -0.06666667, 0, 0, 1, -0.056666665, 0.033333343, 0, 0, 0.8, -0.050000004, 0.033333335, 0, 0, 1.1, -0.060000002, -0.06666667, 0, 0, 1, -0.056666665, 0.033333343, 0, 0),
+"times": PackedFloat32Array(0, 0.33333334, 0.66, 1, 1.3333333, 1.6666666, 2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2, 0, 2, 2, 2, 2, 2, 2, 0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.33333334, 0, 1, -0.25, 0, 0.25, 0, 1, -0.01666665, 0, 0, 0, 1, -0.016666692, 0, 0, 0, 1, -0.01666665, 0, 0, 0, 1, -0.016666692, 0, 0, 0, 1, -0.06666665, 0, 0, 0, 0.81, -0.016666692, 0.03166667, 0, 0, 0.81, -0.01666665, 0, 0, 0, 1, -0.025000017, -0.031666666, 0, 0),
+"times": PackedFloat32Array(0, 2, 2.1, 2.2, 2.3, 2.4, 2.8, 2.9, 3.1000001, 3.2)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(2, 0, 2, 2, 2, 2, 2, 2, 0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.33333334, 0, 1, -0.25, 0, 0.25, 0, 1e-05, -0.01666665, 0.166665, 0, 0, 1, -0.016666692, -0.166665, 0, 0, 1e-05, -0.01666665, 0.166665, 0, 0, 1, -0.016666692, -0.166665, 0, 0, 1, -0.06666665, 0, 0, 0, 1, -0.016666692, 0, 0, 0, 1, -0.01666665, 0, 0, 0, 1, -0.025000017, 0, 0, 0),
+"times": PackedFloat32Array(0, 2, 2.1, 2.2, 2.3, 2.4, 2.8, 2.9, 3.1000001, 3.2)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 0, 2, 2),
+"points": PackedFloat32Array(-59, -0.25, 0, 0.25, 0, -59, -0.46666667, 0, 0, 0, 89, -0.016666692, -24.66667, 0, 0, 89, -0.018333316, 0, 0, 0, -123.999985, -0.023333352, 35.5, 0, 0, -123.999985, -0.029567163, 0, 0, 0, -59, -0.018041372, -10.833331, 0, 0),
+"times": PackedFloat32Array(0, 2.8, 2.9, 3.1000001, 3.2, 3.377403, 3.4856513)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 2, 2, 0, 0, 2, 2),
+"points": PackedFloat32Array(-325, -0.25, 0, 0.25, 0, -325, -0.46666667, 0, 0, 0, -278, -0.016666692, -7.833334, 0, 0, -278, -0.018333316, 0, 0, 0, -160.99997, -0.023333352, -19.500006, 0, 0, -160.99997, -0.029567163, 0, 0, 0, -325, -0.018041372, 27.333338, 0, 0),
+"times": PackedFloat32Array(0, 2.8, 2.9, 3.1000001, 3.2, 3.377403, 3.4856513)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visual/Skeleton2D/Root/Body/Eyes:skew")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(2, 2, 2, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.40000004, 0, 0, -0.46666667, 0, 0, 0, -0.6335545, -0.016666692, 0.10559242, 0, 0, -0.6335545, -0.01666665, 0, 0, 0, 0, -0.025000017, -0.10559243, 0, 0),
+"times": PackedFloat32Array(0, 2.8, 2.9, 3.1000001, 3.2)
+}
+
+[sub_resource type="Animation" id="Animation_guxle"]
+
+[sub_resource type="Animation" id="Animation_7c66s"]
+
+[sub_resource type="Animation" id="Animation_tpl5k"]
+resource_name = "run"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u3on6"]
+_data = {
+&"RESET": SubResource("Animation_44ai3"),
+&"attack": SubResource("Animation_7c66s"),
+&"entry": SubResource("Animation_tvvj8"),
+&"idle": SubResource("Animation_55n1s"),
+&"run": SubResource("Animation_tpl5k"),
+&"walk": SubResource("Animation_guxle")
+}
+
 [node name="Mushroom" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u3on6")
+}
 
-[node name="Skeleton2D" type="Skeleton2D" parent="Node2D"]
+[node name="Visual" type="Node2D" parent="."]
 
-[node name="Root" type="Bone2D" parent="Node2D/Skeleton2D"]
+[node name="Skeleton2D" type="Skeleton2D" parent="Visual"]
+
+[node name="Root" type="Bone2D" parent="Visual/Skeleton2D"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
-[node name="Body" type="Bone2D" parent="Node2D/Skeleton2D/Root"]
+[node name="Body" type="Bone2D" parent="Visual/Skeleton2D/Root"]
 rest = Transform2D(1, 0, 0, 1, 0, 0)
 
-[node name="Body" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body"]
+[node name="Body" type="Sprite2D" parent="Visual/Skeleton2D/Root/Body"]
 position = Vector2(0, -318)
 texture = ExtResource("1_44ai3")
 
-[node name="Collar" type="Bone2D" parent="Node2D/Skeleton2D/Root/Body"]
+[node name="Collar" type="Bone2D" parent="Visual/Skeleton2D/Root/Body"]
 position = Vector2(0, -612)
 rest = Transform2D(1, 0, 0, 1, 0, -612)
+auto_calculate_length_and_angle = false
+length = 100.0
+bone_angle = 0.0
 
-[node name="Collar" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body/Collar"]
+[node name="Collar" type="Sprite2D" parent="Visual/Skeleton2D/Root/Body/Collar"]
 position = Vector2(-12, 98)
 texture = ExtResource("2_tvvj8")
 
-[node name="Cap" type="Bone2D" parent="Node2D/Skeleton2D/Root/Body"]
+[node name="Cap" type="Bone2D" parent="Visual/Skeleton2D/Root/Body"]
 position = Vector2(0, -690)
 rest = Transform2D(1, 0, 0, 1, 0, -690)
+auto_calculate_length_and_angle = false
+length = 100.0
+bone_angle = 0.0
 
-[node name="Cap" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body/Cap"]
+[node name="Cap" type="Sprite2D" parent="Visual/Skeleton2D/Root/Body/Cap"]
 position = Vector2(55, -114)
 texture = ExtResource("3_55n1s")
 
-[node name="Eyes" type="Bone2D" parent="Node2D/Skeleton2D/Root/Body"]
+[node name="Eyes" type="Bone2D" parent="Visual/Skeleton2D/Root/Body"]
 position = Vector2(-59, -325)
+skew = -0.39793506
 rest = Transform2D(1, 0, 0, 1, -59, -325)
 auto_calculate_length_and_angle = false
 length = 100.0
 bone_angle = 0.0
 
-[node name="Eyes" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body/Eyes"]
+[node name="Eyes" type="Sprite2D" parent="Visual/Skeleton2D/Root/Body/Eyes"]
 position = Vector2(24, -7)
 texture = ExtResource("4_guxle")
