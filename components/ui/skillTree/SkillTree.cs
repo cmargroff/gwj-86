@@ -8,14 +8,6 @@ using Microsoft.Extensions.DependencyInjection;
 
 public partial class SkillTree : Control
 {
-    private SkillTreeManager _skillTreeManager;
-
-    public override void _EnterTree()
-    {
-        _skillTreeManager = Globals.ServiceProvider.GetRequiredService<SkillTreeManager>();
-        
-    }
-
     public override void _Process(double delta)
     {
         QueueRedraw();
@@ -29,8 +21,6 @@ public partial class SkillTree : Control
                 foreach (var resource in skillNode.SkillResource.UnlockSkills)
                 {
                     var targetNode = GetSkillNode(resource);
-
-
 
                     if (targetNode == null) continue;
 

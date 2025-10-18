@@ -90,6 +90,7 @@ public partial class Player : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		_fsm.Process(delta);
+		GD.Print(_statsManager.GetStat(StatType.SpeedMuliplier).Value);
 	}
 
 	public override void _PhysicsProcess(double delta)

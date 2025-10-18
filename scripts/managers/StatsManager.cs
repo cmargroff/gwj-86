@@ -7,12 +7,19 @@ namespace JamTemplate.Managers;
 
 public class StatsManager
 {
+  
+
   public event Action<StatType, float> StatChanged;
+  public event Action<MaskType, MaskType> MaskChanged;
   private Dictionary<StatType, Stat> _stats = new();
+  private MaskType _mask = MaskType.Rabbit;
+
+  
   public StatsManager()
   {
+
     _stats[StatType.Health] = new Stat(100f);
-    _stats[StatType.Exp] = new Stat(5);
+    _stats[StatType.Exp] = new Stat(10);
     _stats[StatType.Will] = new Stat(0);
     _stats[StatType.Strength] = new Stat(0);
 
@@ -57,13 +64,25 @@ public class StatsManager
     {
       _stats[statChange.Stat].Value += statChange.Amount;
     }
-    // some logic to limit the individual stats like cap water level at 100;
+    
     StatChanged?.Invoke(statChange.Stat, _stats[statChange.Stat].Value);
   }
 
   public Stat GetStat(StatType stat)
   {
     return _stats[stat];
+  }
+
+  public void ChangeMask(MaskType mask)
+  {
+    MaskChanged?.Invoke(_mask, mask);
+    _mask = mask;
+    
+  }
+
+  public MaskType GetMask()
+  {
+    return _mask;
   }
   public void BindToStatConfigChange(Action<Stat> action)
   {

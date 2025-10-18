@@ -41,6 +41,7 @@ public partial class Globals : Node
     .AddSingleton<StatsManager>()
     .AddSingleton<SkillsManager>()
     .AddSingleton<SkillTreeManager>()
+    .AddSingleton<MasksManager>()
     ;
 
     AddScenes(services);

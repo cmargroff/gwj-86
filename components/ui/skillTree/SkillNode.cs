@@ -22,11 +22,13 @@ public partial class SkillNode : PanelContainer
 
     private SkillTreeManager _skillTreeManager;
     private StatsManager _statsManager;
+    private SkillsManager _skillsManager;
 
     public override void _EnterTree()
     {
         _skillTreeManager = Globals.ServiceProvider.GetRequiredService<SkillTreeManager>();
         _statsManager = Globals.ServiceProvider.GetRequiredService<StatsManager>();
+        _skillsManager = Globals.ServiceProvider.GetRequiredService<SkillsManager>();
 
         _button = GetNode<Button>("%Button");
         _border = GetNode<TextureRect>("%Border");
@@ -69,33 +71,17 @@ public partial class SkillNode : PanelContainer
                 break;
             case SkillState.Activated:
                 Modulate = ThemeColor.ACTIVATED;
+                _cost.SelfModulate = ThemeColor.HIDE;
                 break;
         }
 
     }
 
-    public void UnlockSkill(SkillResource skillResource)
-    {
-        skillResource.State = SkillState.Unlocked;
-        _skillTreeManager.UpdateTree();
-    }
 
     public void ActivateSkill()
     {
-        if (SkillResource.State == SkillState.Unlocked && _skillTreeManager.CheckExp(SkillResource.ExpCost))
-        {
-            SkillResource.State = SkillState.Activated;
-            _cost.SelfModulate = ThemeColor.HIDE;
+        _skillsManager.ActivateSkill(SkillResource);
 
-            if (SkillResource.UnlockSkills != null)
-            {
-                foreach (var skill in SkillResource.UnlockSkills)
-                {
-                    UnlockSkill(skill);
-                }
-            }
-        }
-        SetStyle();
     }
 
     public void ShowText()

@@ -8,12 +8,10 @@ public class SkillTreeManager
 {
 	public event Action SkillTreeUpdated;
 	private StatsManager _statsManager;
-	private SkillsManager _skillsManager;
 
-	public SkillTreeManager(StatsManager statsManager, SkillsManager skillsManager)
+	public SkillTreeManager(StatsManager statsManager)
 	{
 		_statsManager = statsManager;
-		_skillsManager = skillsManager;
 		
 	}
 	public bool CheckExp(float exp)
@@ -24,7 +22,6 @@ public class SkillTreeManager
 		{
 			_statsManager.GetStat(StatType.Exp).Value -= exp;
 
-			//call function to apply skill 
 		}
 		return check;
 	}

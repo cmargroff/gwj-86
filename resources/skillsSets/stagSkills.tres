@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="SkillsSet" load_steps=7 format=3 uid="uid://dox6mj5gchk7d"]
+[gd_resource type="Resource" script_class="SkillsSet" load_steps=8 format=3 uid="uid://dox6mj5gchk7d"]
 
+[ext_resource type="Resource" uid="uid://d0wkmac4vbrpo" path="res://resources/skills/stag/stag.tres" id="1_cyddr"]
 [ext_resource type="Resource" uid="uid://cnwp636472x5k" path="res://resources/skills/stag/stagSkill1.tres" id="1_no3pp"]
 [ext_resource type="Script" uid="uid://6d5kkdekdloc" path="res://scripts/resources/SkillsSet.cs" id="1_uydlf"]
 [ext_resource type="Resource" uid="uid://b3f8826x00ce1" path="res://resources/skills/stag/stagSkill2.tres" id="2_cyddr"]
@@ -9,5 +10,5 @@
 
 [resource]
 script = ExtResource("1_uydlf")
-Skills = Array[Object]([ExtResource("1_no3pp"), ExtResource("2_cyddr"), ExtResource("3_svvgu"), ExtResource("4_tolja"), ExtResource("5_cx17u")])
+Skills = Array[Object]([ExtResource("1_cyddr"), ExtResource("1_no3pp"), ExtResource("2_cyddr"), ExtResource("3_svvgu"), ExtResource("4_tolja"), ExtResource("5_cx17u")])
 metadata/_custom_type_script = "uid://6d5kkdekdloc"

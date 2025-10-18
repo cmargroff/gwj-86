@@ -8,7 +8,7 @@
 
 [resource]
 script = ExtResource("1_vcds7")
-SkillName = "stag"
+SkillName = "Mask"
 BorderTexture = ExtResource("1_qtdfr")
 IconTexture = ExtResource("2_lnrsg")
 Unlocked = true
