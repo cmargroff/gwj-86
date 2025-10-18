@@ -1,0 +1,16 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+uid="uid://cvlbvu2wgc3ys"
+path="res://.godot/imported/atlas.tpsheet-f1b76052008d411ce673663f0454f613.res"
+
+[deps]
+
+files=["res://assets/sprites/hedgehog/atlas.sprites/body.tres", "res://assets/sprites/hedgehog/atlas.sprites/eye.tres"]
+
+source_file="res://assets/sprites/hedgehog/atlas.tpsheet"
+dest_files=["res://.godot/imported/atlas.tpsheet-f1b76052008d411ce673663f0454f613.res", "res://assets/sprites/hedgehog/atlas.sprites/body.tres", "res://assets/sprites/hedgehog/atlas.sprites/eye.tres"]
+
+[params]
+

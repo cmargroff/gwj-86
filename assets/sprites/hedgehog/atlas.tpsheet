@@ -1,0 +1,1 @@
+{"textures":[{"image":"atlas.png","size":{"w":0,"h":0},"sprites":[{"filename":"body","region":{"x":0,"y":0,"w":1024,"h":789},"margin":{"x":0,"y":0,"w":0,"h":0},"rotation":0},{"filename":"eye","region":{"x":0,"y":791,"w":78,"h":87},"margin":{"x":0,"y":0,"w":0,"h":0},"rotation":0}]}]}

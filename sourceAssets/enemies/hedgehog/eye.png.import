@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk7a7ioieel4i"
-path="res://.godot/imported/body.png-7e11e0d39664a7b8e2fae67b8a9412fe.ctex"
+uid="uid://f73tsqb5s3ps"
+path="res://.godot/imported/eye.png-a9de2652a7d304ba3a4dc12aa0ce620a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hedgehog/body.png"
-dest_files=["res://.godot/imported/body.png-7e11e0d39664a7b8e2fae67b8a9412fe.ctex"]
+source_file="res://sourceAssets/enemies/hedgehog/eye.png"
+dest_files=["res://.godot/imported/eye.png-a9de2652a7d304ba3a4dc12aa0ce620a.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
