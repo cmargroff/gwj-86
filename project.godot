@@ -23,6 +23,7 @@ Globals="*res://scripts/Globals.cs"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
@@ -71,6 +72,11 @@ pause={
 ]
 }
 
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://strings.en.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Player"
@@ -82,6 +88,7 @@ pause={
 2d_physics/layer_7="EnemyHurtbox"
 2d_physics/layer_8="EnemyHitbox"
 2d_physics/layer_9="Item"
+2d_physics/layer_10="Door"
 
 [rendering]
 
