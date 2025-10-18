@@ -1,0 +1,16 @@
+[remap]
+
+importer="codeandweb.texturepacker_import_spritesheet"
+type="Resource"
+uid="uid://0oah2abm8o11"
+path="res://.godot/imported/atlas.tpsheet-9e586f15b666ff7d15db2f87e5edf708.res"
+
+[deps]
+
+files=["res://assets/sprites/mushroom/atlas.sprites/cap.tres", "res://assets/sprites/mushroom/atlas.sprites/body.tres", "res://assets/sprites/mushroom/atlas.sprites/collar.tres", "res://assets/sprites/mushroom/atlas.sprites/eyes.tres"]
+
+source_file="res://assets/sprites/mushroom/atlas.tpsheet"
+dest_files=["res://.godot/imported/atlas.tpsheet-9e586f15b666ff7d15db2f87e5edf708.res", "res://assets/sprites/mushroom/atlas.sprites/cap.tres", "res://assets/sprites/mushroom/atlas.sprites/body.tres", "res://assets/sprites/mushroom/atlas.sprites/collar.tres", "res://assets/sprites/mushroom/atlas.sprites/eyes.tres"]
+
+[params]
+
