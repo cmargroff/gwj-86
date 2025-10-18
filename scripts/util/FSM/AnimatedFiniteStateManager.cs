@@ -3,9 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate.Util.FSM;
 
-public partial class AnimatedFiniteStateManager : FiniteStateManager
+public class AnimatedFiniteStateManager : FiniteStateManager
 {
-  [Export]
   public AnimationPlayer AnimationPlayer;
 
   public bool Playing

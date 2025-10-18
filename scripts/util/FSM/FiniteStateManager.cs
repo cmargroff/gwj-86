@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace JamTemplate.Util.FSM;
 
-public partial class FiniteStateManager
+public class FiniteStateManager
 {
   public ServiceProvider StateProvider;
   public string InitialStateName = "entry";
