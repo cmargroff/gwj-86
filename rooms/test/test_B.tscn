@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bglb4ukrw0isf"]
+
+[ext_resource type="PackedScene" uid="uid://c8sgxvtlot12" path="res://components/level/base_floor.tscn" id="1_bvuk3"]
+[ext_resource type="PackedScene" uid="uid://wxekkc3m1eh7" path="res://components/level/door.tscn" id="2_fydev"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bvuk3"]
+size = Vector2(64, 4)
+
+[node name="TestRoomB" type="Node2D"]
+
+[node name="BaseFloor" parent="." instance=ExtResource("1_bvuk3")]
+position = Vector2(643, 1081)
+
+[node name="DoorToA1" parent="." instance=ExtResource("2_fydev")]
+position = Vector2(0, 1079)
+
+[node name="DoorToA2" parent="." instance=ExtResource("2_fydev")]
+position = Vector2(1920, 1079)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.45299113, 0.0023992218, 0.9759229, 1)
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(944, 1148)
+scale = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_bvuk3")
