@@ -1,3 +1,5 @@
+using JamTemplate.Enum;
+
 namespace JamTemplate.Managers;
 
 public class SkillsManager
@@ -13,7 +15,7 @@ public class SkillsManager
     {
         foreach (var skill in skillsSet.Skills)
         {
-            if (skill.Activated && !skill.Enabled)
+            if (skill.State == SkillState.Activated && !skill.Enabled)
             {
                 skill.Enabled = true;
                 _statsManager.ChangeStat(new()

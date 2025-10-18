@@ -12,7 +12,6 @@ SkillName = "stag"
 BorderTexture = ExtResource("1_qtdfr")
 IconTexture = ExtResource("2_lnrsg")
 Unlocked = true
-Activated = true
 Mode = 1
 UnlockSkills = Array[Object]([ExtResource("3_4fsmj"), ExtResource("4_qw6s0")])
 metadata/_custom_type_script = "uid://jfvhoncsydvq"

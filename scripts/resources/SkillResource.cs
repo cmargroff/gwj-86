@@ -20,9 +20,9 @@ public partial class SkillResource : Resource
     [Export]
     public bool Unlocked { get; set; }
     [Export]
-    public bool Activated { get; set; }
+    public SkillState State;
     [Export]
-    public bool Enabled { get; set; }
+    public bool Enabled;
     [Export]
     public StatType StatName;
     [Export]

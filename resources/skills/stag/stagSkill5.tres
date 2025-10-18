@@ -10,6 +10,7 @@ SkillName = "skill 5"
 Description = "Passive HP regeneration"
 BorderTexture = ExtResource("1_g73rj")
 IconTexture = ExtResource("2_g73rj")
+ExpCost = 1
 StatName = 17
 Value = 5.0
 Mode = 1

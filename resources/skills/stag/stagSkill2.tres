@@ -11,6 +11,7 @@ SkillName = "skill 2"
 Description = "Attak +5"
 BorderTexture = ExtResource("1_qqkdb")
 IconTexture = ExtResource("2_qqkdb")
+ExpCost = 1
 StatName = 3
 Value = 5.0
 Mode = 1

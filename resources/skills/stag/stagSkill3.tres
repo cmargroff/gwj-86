@@ -10,5 +10,6 @@ SkillName = "skill 3"
 Description = "Speed x1.2"
 BorderTexture = ExtResource("1_bf3g7")
 IconTexture = ExtResource("2_bf3g7")
+ExpCost = 1
 UnlockSkills = null
 metadata/_custom_type_script = "uid://jfvhoncsydvq"

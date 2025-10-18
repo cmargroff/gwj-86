@@ -11,6 +11,7 @@ SkillName = "skill 4"
 Description = "Damage on dash"
 BorderTexture = ExtResource("1_gknrv")
 IconTexture = ExtResource("2_u3t5b")
+ExpCost = 1
 Unlocked = true
 StatName = 18
 Value = 10.0

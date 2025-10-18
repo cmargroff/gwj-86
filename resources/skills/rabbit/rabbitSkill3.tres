@@ -10,6 +10,7 @@ SkillName = "skill 3"
 Description = "Jump higher"
 BorderTexture = ExtResource("1_gbccp")
 IconTexture = ExtResource("2_mustn")
+ExpCost = 1
 StatName = 8
 Value = -50.0
 Mode = 1

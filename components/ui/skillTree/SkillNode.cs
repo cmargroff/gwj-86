@@ -3,6 +3,9 @@ using JamTemplate;
 using JamTemplate.Enum;
 using JamTemplate.Managers;
 using JamTemplate.Resources;
+using JamTemplate.Themes;
+
+
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -13,11 +16,7 @@ public partial class SkillNode : PanelContainer
     private TextureRect _icon;
     private Label _text;
     private Label _cost;
-    private readonly static Color LOCKED = new Color(0.5f, 0.1f, 0, 1f);
-    private readonly static Color UNLOCKED = new Color(0.5f, 0.5f, 0.5f);
-    private readonly static Color ACTIVATED = new Color(1, 1, 1);
-    private readonly static Color SHOW = new Color(1, 1, 1, 1);
-    private readonly static Color HIDE = new Color(1, 1, 1, 0);
+
     [Export]
     public SkillResource SkillResource;
 
@@ -33,9 +32,9 @@ public partial class SkillNode : PanelContainer
         _border = GetNode<TextureRect>("%Border");
         _icon = GetNode<TextureRect>("%Icon");
         _text = GetNode<Label>("%Text");
-        _text.SelfModulate = new Color(1, 1, 1, 0);
+        _text.SelfModulate = ThemeColor.HIDE;
         _cost = GetNode<Label>("%Cost");
-        _cost.SelfModulate = new Color(1, 1, 1, 0);
+        _cost.SelfModulate = ThemeColor.HIDE;
 
         _skillTreeManager.SkillTreeUpdated += SetStyle;
     }
@@ -51,7 +50,8 @@ public partial class SkillNode : PanelContainer
 
         var exp = _statsManager.GetStat(StatType.Exp);
         exp.OnChange += Exp_OnChange;
-        _cost.Text = $"Exp: {exp.Value}/{SkillResource.ExpCost}";
+        if (SkillResource.ExpCost > 0)
+            _cost.Text = $"Exp: {exp.Value}/{SkillResource.ExpCost}";
 
         SetStyle();
     }
@@ -59,33 +59,33 @@ public partial class SkillNode : PanelContainer
 
     public void SetStyle()
     {
-        if (SkillResource.Unlocked && !SkillResource.Activated)
+        switch(SkillResource.State) 
         {
-            Modulate = UNLOCKED;
-        }
-        else if (SkillResource.Unlocked && SkillResource.Activated)
-        {
-            Modulate = ACTIVATED;
-        }
-        else
-        {
-            Modulate = LOCKED;
+            case SkillState.Locked:
+                Modulate = ThemeColor.LOCKED;
+                break;
+            case SkillState.Unlocked:
+                Modulate = ThemeColor.UNLOCKED;
+                break;
+            case SkillState.Activated:
+                Modulate = ThemeColor.ACTIVATED;
+                break;
         }
 
     }
 
     public void UnlockSkill(SkillResource skillResource)
     {
-        skillResource.Unlocked = true;
+        skillResource.State = SkillState.Unlocked;
         _skillTreeManager.UpdateTree();
     }
 
     public void ActivateSkill()
     {
-        if (SkillResource.Unlocked && !SkillResource.Activated && _skillTreeManager.CheckExp(SkillResource.ExpCost))
+        if (SkillResource.State == SkillState.Unlocked && _skillTreeManager.CheckExp(SkillResource.ExpCost))
         {
-            SkillResource.Activated = true;
-            _cost.SelfModulate = HIDE;
+            SkillResource.State = SkillState.Activated;
+            _cost.SelfModulate = ThemeColor.HIDE;
 
             if (SkillResource.UnlockSkills != null)
             {
@@ -100,15 +100,15 @@ public partial class SkillNode : PanelContainer
 
     public void ShowText()
     {
-        _text.SelfModulate = SHOW;
-        if (!SkillResource.Activated)
-            _cost.SelfModulate = SHOW;
+        _text.SelfModulate = ThemeColor.SHOW;
+        if (SkillResource.State != SkillState.Activated )
+            _cost.SelfModulate = ThemeColor.SHOW;
     }
 
     public void HideText()
     {
-        _text.SelfModulate = HIDE;
-        _cost.SelfModulate = HIDE;
+        _text.SelfModulate = ThemeColor.HIDE;
+        _cost.SelfModulate = ThemeColor.HIDE;
     }
 
     public Vector2 GetCenter()
@@ -117,6 +117,7 @@ public partial class SkillNode : PanelContainer
     }
 
     public void Exp_OnChange(float exp) {
-        _cost.Text = $"{exp}/{SkillResource.ExpCost}";
+        if (SkillResource.ExpCost > 0)
+            _cost.Text = $"{exp}/{SkillResource.ExpCost}";
     }
 }

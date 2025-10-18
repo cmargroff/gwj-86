@@ -14,6 +14,7 @@ public class SkillTreeManager
 	{
 		_statsManager = statsManager;
 		_skillsManager = skillsManager;
+		
 	}
 	public bool CheckExp(float exp)
 	{

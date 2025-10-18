@@ -11,6 +11,7 @@ SkillName = "skill 1 "
 Description = "HP +20"
 BorderTexture = ExtResource("1_evwsw")
 IconTexture = ExtResource("2_evwsw")
+ExpCost = 1
 Unlocked = true
 Value = 20.0
 Mode = 1

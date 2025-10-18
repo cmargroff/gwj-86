@@ -1,13 +1,14 @@
 using Godot;
 using JamTemplate;
+using JamTemplate.Enum;
 using JamTemplate.Managers;
 using JamTemplate.Resources;
+using JamTemplate.Themes;
 using Microsoft.Extensions.DependencyInjection;
 
 public partial class SkillTree : Control
 {
     private SkillTreeManager _skillTreeManager;
-    private readonly static Color COLOR = new Color(214, 234, 233);
 
     public override void _EnterTree()
     {
@@ -37,8 +38,20 @@ public partial class SkillTree : Control
 
 
                     var targetPosition = targetNode.GlobalPosition + targetNode.GetCenter();
-
-                    DrawLine(sourcePosition, targetPosition, COLOR, 4.0f);
+                    switch(resource.State) 
+                    {
+                        case SkillState.Locked:
+                            DrawLine(sourcePosition, targetPosition, ThemeColor.LOCKED, 3.0f);
+                            break;
+                        case SkillState.Unlocked:
+                            DrawLine(sourcePosition, targetPosition, ThemeColor.UNLOCKED, 3.0f);
+                            break;
+                        case SkillState.Activated:
+                            DrawLine(sourcePosition, targetPosition, ThemeColor.ACTIVATED, 3.0f);
+                            break;
+                    }
+                    
+                    
                 }
             }
 
