@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillResource" load_steps=4 format=3 uid="uid://c2ljhccgicrwf"]
 
 [ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_6qtbv"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_mn5t4"]
+[ext_resource type="Texture2D" uid="uid://3stnw3bakabt" path="res://assets/sprites/ui/icons/atlas.sprites/DashArmor.tres" id="2_6qtbv"]
 [ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="3_txt1a"]
 
 [resource]
@@ -9,7 +9,7 @@ script = ExtResource("3_txt1a")
 SkillName = "skill 5"
 Description = "Larger invulnerability window"
 BorderTexture = ExtResource("1_6qtbv")
-IconTexture = ExtResource("2_mn5t4")
+IconTexture = ExtResource("2_6qtbv")
 ExpCost = 1
 StatName = 13
 Value = 0.5

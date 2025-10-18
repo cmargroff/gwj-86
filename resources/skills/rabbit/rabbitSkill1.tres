@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SkillResource" load_steps=5 format=3 uid="uid://y3phkr6utmoe"]
 
 [ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_bwrp4"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_7kdoc"]
+[ext_resource type="Texture2D" uid="uid://bsblgf6d6y2rp" path="res://assets/sprites/ui/icons/atlas.sprites/AttackSpeed.tres" id="2_bwrp4"]
 [ext_resource type="Resource" uid="uid://0r4mvqs87lxx" path="res://resources/skills/rabbit/rabbitSkill2.tres" id="3_bg5hp"]
 [ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="4_3v75s"]
 
@@ -10,7 +10,7 @@ script = ExtResource("4_3v75s")
 SkillName = "skill 1"
 Description = "Attack speed +1"
 BorderTexture = ExtResource("1_bwrp4")
-IconTexture = ExtResource("2_7kdoc")
+IconTexture = ExtResource("2_bwrp4")
 ExpCost = 1
 Unlocked = true
 State = 1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="1_g40n8"]
 [ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_gknrv"]
-[ext_resource type="Texture2D" uid="uid://gflrqts57o6o" path="res://icon.svg" id="2_u3t5b"]
+[ext_resource type="Texture2D" uid="uid://rploju5r43bi" path="res://assets/sprites/ui/icons/atlas.sprites/DashDamage.tres" id="2_u3t5b"]
 [ext_resource type="Resource" uid="uid://cnf5av0veel4w" path="res://resources/skills/stag/stagSkill5.tres" id="3_u3t5b"]
 
 [resource]
