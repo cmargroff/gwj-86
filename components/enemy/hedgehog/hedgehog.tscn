@@ -1,0 +1,245 @@
+[gd_scene load_steps=14 format=3 uid="uid://wyhee2xl4p3w"]
+
+[ext_resource type="Texture2D" uid="uid://bk7a7ioieel4i" path="res://assets/sprites/hedgehog/body.png" id="1_1w5sc"]
+[ext_resource type="Script" uid="uid://bavf20hhx8yd8" path="res://components/enemy/hedgehog/Hedgehog.cs" id="1_t36h4"]
+[ext_resource type="Script" uid="uid://d1ncs0i8oqee7" path="res://scripts/components/combat/Hitbox.cs" id="3_a8eb6"]
+[ext_resource type="Script" uid="uid://cvy1h1nsiklsp" path="res://scripts/components/combat/Hurtbox.cs" id="4_mak1u"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ej4vn"]
+radius = 240.7041
+height = 1063.6837
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a8eb6"]
+radius = 229.0
+height = 1043.9999
+
+[sub_resource type="Animation" id="Animation_mak1u"]
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Skeleton2D/Root/Body:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Skeleton2D/Root/Body:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Skeleton2D/Root/Body:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_nhmvl"]
+
+[sub_resource type="Animation" id="Animation_3gfbg"]
+length = 3.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Skeleton2D/Root/Body:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.07333334, 0, 0, 0, 1, -0.010000001, 0, 0, 0, 1, -0.075, 0, 0, 0, 1, -0.008333336, 0, 0, 0),
+"times": PackedFloat32Array(0.03333334, 1.3093333, 1.4833333, 2.7883334, 2.9333334)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Skeleton2D/Root/Body:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.8, -0.376, 0.16014326, 0, 0, 1, -0.010000001, -0.056666665, 0, 0, 0.66, -0.32166672, 0.22365022, 0, 0, 1, -0.008333336, -0.056666665, 0, 0),
+"times": PackedFloat32Array(0.03333334, 1.3093333, 1.4833333, 2.7883334, 2.9333334)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Skeleton2D/Root/Body:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_n4xsf"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Skeleton2D/Root/Body:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.083333336, 0, 1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.23333335, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Skeleton2D/Root/Body:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.083333336, -0.050000004, 0.7, -0.25, 0, 0.25, 0, 1, -0.083333336, -0.050000004, 0, 0),
+"times": PackedFloat32Array(0, 0.23333335, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Skeleton2D/Root/Body:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_a8eb6"]
+resource_name = "walk"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/Skeleton2D/Root/Body:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.083333336, 0, 1, -0.25, 0, 0.25, 0, 1, -0.083333336, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.23333335, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/Skeleton2D/Root/Body:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 0, 0),
+"points": PackedFloat32Array(1, 0, 0, 0.083333336, -0.050000004, 0.7, -0.25, 0, 0.25, 0, 1, -0.083333336, -0.050000004, 0, 0),
+"times": PackedFloat32Array(0, 0.23333335, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/Skeleton2D/Root/Body:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.2617994, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rkbip"]
+_data = {
+&"RESET": SubResource("Animation_mak1u"),
+&"chase": SubResource("Animation_a8eb6"),
+&"entry": SubResource("Animation_nhmvl"),
+&"idle": SubResource("Animation_3gfbg"),
+&"walk": SubResource("Animation_n4xsf")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a8eb6"]
+radius = 35.0
+
+[node name="Hedgehog" type="Node2D"]
+script = ExtResource("1_t36h4")
+
+[node name="PlayerDetection" type="RayCast2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -38)
+target_position = Vector2(-500, 0)
+hit_from_inside = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="Node2D"]
+scale = Vector2(0.1, 0.1)
+
+[node name="Root" type="Bone2D" parent="Node2D/Skeleton2D"]
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+
+[node name="Body" type="Bone2D" parent="Node2D/Skeleton2D/Root"]
+position = Vector2(-2, 1)
+rest = Transform2D(1, 0, 0, 1, 0, 0)
+auto_calculate_length_and_angle = false
+length = 200.0
+bone_angle = 0.0
+
+[node name="Body" type="Sprite2D" parent="Node2D/Skeleton2D/Root/Body"]
+position = Vector2(0, -478)
+texture = ExtResource("1_1w5sc")
+
+[node name="Damage" type="Area2D" parent="Node2D/Skeleton2D/Root/Body"]
+collision_layer = 128
+collision_mask = 48
+script = ExtResource("3_a8eb6")
+FromScene = true
+Damage = 2.0
+Angle = -90.0
+IsPlayer = false
+metadata/_custom_type_script = "uid://d1ncs0i8oqee7"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Skeleton2D/Root/Body/Damage"]
+position = Vector2(69, -431.00003)
+rotation = -0.858454
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_ej4vn")
+debug_color = Color(0.99584323, 0, 0.20622629, 0.41960785)
+
+[node name="Hurtbox" type="Area2D" parent="Node2D/Skeleton2D/Root/Body"]
+script = ExtResource("4_mak1u")
+metadata/_custom_type_script = "uid://cvy1h1nsiklsp"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Skeleton2D/Root/Body/Hurtbox"]
+position = Vector2(0, -230)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_a8eb6")
+debug_color = Color(0, 0.6409177, 0.34735668, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_rkbip")
+}
+
+[node name="Collision" type="RigidBody2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2(0, -35)
+shape = SubResource("CircleShape2D_a8eb6")
