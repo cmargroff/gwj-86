@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8a1wyw5ac7hq"]
+[gd_scene load_steps=16 format=3 uid="uid://c8a1wyw5ac7hq"]
 
 [ext_resource type="Script" uid="uid://c73gqfqvi1ide" path="res://components/ui/skillTree/SkillTree.cs" id="1_oup23"]
 [ext_resource type="PackedScene" uid="uid://cpa1uy70vulch" path="res://components/ui/skillTree/SkillNode.tscn" id="2_q5c43"]
@@ -15,6 +15,8 @@
 [ext_resource type="Resource" uid="uid://cnf5av0veel4w" path="res://resources/skills/stag/stagSkill5.tres" id="13_21030"]
 [ext_resource type="Resource" uid="uid://dccb3ioqbaf1i" path="res://resources/skills/stag/stagSkill3.tres" id="14_kjrya"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tydyj"]
+
 [node name="SkillTree" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -28,27 +30,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oup23")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tydyj")
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+self_modulate = Color(1, 1, 1, 0.5137255)
+layout_mode = 2
+color = Color(0.15686275, 0.2509804, 0.26666668, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -185.0
-offset_top = -425.0
-offset_right = 185.0
-offset_bottom = 425.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -56,6 +55,7 @@ theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 100
 
 [node name="Rabbit" type="VBoxContainer" parent="Panel/MarginContainer/HBoxContainer"]
@@ -101,7 +101,7 @@ SkillResource = ExtResource("7_glf01")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Rabbit"]
 layout_mode = 2
-size_flags_horizontal = 5
+size_flags_horizontal = 0
 theme_override_constants/separation = 100
 
 [node name="Skill3" parent="Panel/MarginContainer/HBoxContainer/Rabbit/HBoxContainer4" instance=ExtResource("2_q5c43")]
@@ -151,7 +151,7 @@ SkillResource = ExtResource("13_21030")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Panel/MarginContainer/HBoxContainer/Stag"]
 layout_mode = 2
-size_flags_horizontal = 5
+size_flags_horizontal = 0
 theme_override_constants/separation = 100
 
 [node name="Skill3" parent="Panel/MarginContainer/HBoxContainer/Stag/HBoxContainer4" instance=ExtResource("2_q5c43")]

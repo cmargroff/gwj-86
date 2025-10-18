@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bpvy76ad1ukqw" path="res://assets/kenney_fantasy-ui-borders/PNG/Double/Border/panel-border-000.png" id="1_pef8t"]
 [ext_resource type="Texture2D" uid="uid://bpj3i2uo7el1m" path="res://assets/sprites/ui/icons/atlas.sprites/RunSpeed.tres" id="2_yas03"]
 [ext_resource type="Resource" uid="uid://dkauuaxn50okw" path="res://resources/skills/rabbit/rabbitSkill3.tres" id="3_a66hc"]
-[ext_resource type="Script" uid="uid://jfvhoncsydvq" path="res://scripts/resources/SkillResource.cs" id="4_dwc0t"]
+[ext_resource type="Script" path="res://scripts/resources/SkillResource.cs" id="4_dwc0t"]
 
 [resource]
 script = ExtResource("4_dwc0t")

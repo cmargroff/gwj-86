@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 public partial class SkillTree : Control
 {
     private SkillTreeManager _skillTreeManager;
+    private readonly static Color COLOR = new Color(214, 234, 233);
 
     public override void _EnterTree()
     {
@@ -36,9 +37,8 @@ public partial class SkillTree : Control
 
 
                     var targetPosition = targetNode.GlobalPosition + targetNode.GetCenter();
-                    var color = new Color(255, 255, 255);
 
-                    DrawLine(sourcePosition, targetPosition, color, -7.0f);
+                    DrawLine(sourcePosition, targetPosition, COLOR, 4.0f);
                 }
             }
 
